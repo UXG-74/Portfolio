@@ -57,7 +57,8 @@
   }
 
   injectThemeToggles();
-  setTheme(getSavedTheme() === "dark");
+  /* Default dark on first visit; respect saved preference when set ("light" or "dark"). */
+  setTheme(getSavedTheme() !== "light");
 
   var navToggle = document.querySelector("[data-nav-toggle]");
   var mobileNav = document.querySelector("[data-nav-mobile]");
