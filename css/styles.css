@@ -1,4 +1,4 @@
-/* Pearl / DEPT-style portfolio (mobile-first) */
+/* Ged Devine / DEPT-style portfolio (mobile-first) */
 
 :root {
   --white: #ffffff;
@@ -128,7 +128,6 @@ main {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  text-transform: lowercase;
   z-index: 2;
 }
 
@@ -209,11 +208,13 @@ main {
 .menu-toggle {
   display: grid;
   place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--white);
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--black);
   cursor: pointer;
 }
 
@@ -401,8 +402,9 @@ main {
   border-bottom: 0;
 }
 
-/* Contact-only: remove header keyline (minimal page, no default footer) */
-.contact-page .site-header {
+/* Contact-only: remove keyline separators (same as Home / About / Work) */
+.contact-page .site-header,
+.contact-page .site-footer {
   border-top: 0;
   border-bottom: 0;
 }
@@ -421,7 +423,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-block: clamp(2.25rem, 6vw, 4.5rem) clamp(3rem, 8vw, 5rem);
+  padding-block: clamp(2.25rem, 6vw, 4.5rem) clamp(3.5rem, 9vw, 6rem);
 }
 
 .contact-kicker {
@@ -435,6 +437,10 @@ main {
 .contact-hero-row {
   display: grid;
   gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+#cv.contact-hero-row {
+  scroll-margin-top: clamp(4.75rem, 11vw, 6.75rem);
 }
 
 @media (min-width: 768px) {
@@ -520,59 +526,6 @@ main {
 }
 
 .contact-maps:hover {
-  opacity: 0.8;
-}
-
-.contact-tail {
-  display: grid;
-  gap: clamp(1.75rem, 4vw, 2.25rem);
-  margin-top: auto;
-  padding-top: clamp(4rem, 14vw, 12rem);
-}
-
-@media (min-width: 768px) {
-  .contact-tail {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
-    justify-items: start;
-    column-gap: 2rem;
-  }
-
-  .contact-legal {
-    justify-self: end;
-    text-align: right;
-  }
-}
-
-.contact-marque {
-  margin: 0;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  text-transform: lowercase;
-}
-
-.contact-legal {
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--muted);
-}
-
-.contact-legal p {
-  margin: 0;
-}
-
-.contact-legal p + p {
-  margin-top: 0.25rem;
-}
-
-.contact-legal-link {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.contact-legal-link:hover {
   opacity: 0.8;
 }
 
@@ -1088,6 +1041,10 @@ main {
   text-align: left;
 }
 
+.case-study-section + .case-study-section {
+  margin-top: clamp(3rem, 9vw, 5.5rem);
+}
+
 .grid-3 {
   display: grid;
   gap: clamp(0.75rem, 2vw, 1rem);
@@ -1200,10 +1157,14 @@ body.theme-dark {
 
 body.theme-dark .skip-link,
 body.theme-dark .site-header,
-body.theme-dark .menu-toggle,
 body.theme-dark .nav-drawer,
 body.theme-dark .site-footer {
   background: #1e1e1e;
+}
+
+body.theme-dark .menu-toggle {
+  background: transparent;
+  color: #f3f3f3;
 }
 
 body.theme-dark .feature-visual,
@@ -1240,3 +1201,41 @@ body.theme-dark .theme-toggle {
 body.theme-dark .cta-band {
   background: #8d6d20;
 }
+
+/* Dark-mode overrides for Figma-positioned work inner pages */
+body.theme-dark .work-inner-figma {
+  background: #1e1e1e !important;
+  color: #f3f3f3 !important;
+}
+
+body.theme-dark .work-inner-figma p {
+  color: #f3f3f3 !important;
+}
+
+body.theme-dark .work-inner-figma .placeholder {
+  background: #1e1e1e !important;
+  border-color: #3a3a3a !important;
+}
+
+body.theme-dark .work-inner-figma [style*="background:#fff"] {
+  background: #1e1e1e !important;
+}
+
+body.theme-dark .work-inner-figma [style*="color:#f2f2f2"] {
+  color: #f3f3f3 !important;
+}
+
+body.theme-dark .work-inner-figma .cta {
+  background: #f3f3f3 !important;
+  color: #1e1e1e !important;
+}
+
+/* Remove header keyline for Figma case-study pages */
+body.case-figma-page .site-header {
+  border-bottom: 0;
+}
+
+body.case-figma-page .site-footer {
+  border-top: 0;
+}
+

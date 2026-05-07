@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Contact pearl — email, phone, and social links." />
-    <title>Contact · pearl</title>
+    <meta name="description" content="Contact Ged Devine — email, phone, and social links." />
+    <title>Contact · Ged Devine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,14 +17,14 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="shell header-row">
-        <a class="logo" href="index.html">pearl</a>
+        <a class="logo" href="index.html">Ged Devine</a>
         <nav class="nav-primary" aria-label="Primary">
           <a href="work.html">Work</a>
           <a href="about.html">About</a>
-          <a href="contact.html" aria-current="page">Contact</a>
+          <a href="contact.html#cv" aria-current="page">CV</a>
         </nav>
         <div class="header-tools">
-          <a class="btn-contact" href="mailto:geddevine@hotmail.com">Contact</a>
+          <a class="btn-contact" href="contact.html">Contact</a>
         </div>
         <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -35,9 +35,9 @@
       <div class="shell nav-drawer" id="nav-drawer" data-nav-mobile>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="contact.html#cv">CV</a>
         <div class="drawer-tools">
-          <a class="btn-contact" href="mailto:geddevine@hotmail.com">Contact</a>
+          <a class="btn-contact" href="contact.html">Contact</a>
         </div>
       </div>
     </header>
@@ -46,7 +46,7 @@
       <div class="shell contact-layout">
         <h1 class="contact-kicker">Let's talk</h1>
 
-        <div class="contact-hero-row">
+        <div id="cv" class="contact-hero-row" aria-label="Résumé / contact details">
           <div class="contact-primary">
             <a class="contact-line contact-line--primary" href="mailto:geddevine@hotmail.com">geddevine@hotmail.com</a>
             <a class="contact-line contact-line--primary" href="tel:+44161245638">+44 (0)161 245 638</a>
@@ -66,18 +66,18 @@
             <a class="contact-maps" href="https://maps.google.com" target="_blank" rel="noopener noreferrer">Google Maps</a>
           </p>
         </div>
-
-        <div class="contact-tail" aria-label="Site information">
-          <p class="contact-marque">pearl</p>
-          <div class="contact-legal">
-            <p>© <span id="y"></span></p>
-            <p>Company No. 06431134</p>
-            <p><a class="contact-legal-link" href="#">Privacy Policy &amp; Terms of Service</a></p>
-          </div>
-        </div>
       </div>
     </main>
 
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>© <span id="y"></span> Ged Devine</p>
+        <div class="footer-links">
+          <a href="contact.html">Get in touch</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
     </script>
