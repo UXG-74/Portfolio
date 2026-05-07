@@ -80,7 +80,7 @@ main {
 
 @media (max-width: 640px) {
   :root {
-    --gutter: 0.75rem;
+    --gutter: 30px;
   }
 }
 
@@ -1195,6 +1195,37 @@ body.nav-open {
 
 .footer-links a:hover {
   color: var(--black);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 30px;
+  }
+
+  .site-footer {
+    margin-top: 30px;
+    font-size: 12pt;
+    color: #c8c8c8;
+  }
+
+  .site-footer .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .site-footer .footer-inner p,
+  .site-footer .footer-links {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .site-footer .footer-links {
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
 }
 
 .visually-hidden {
