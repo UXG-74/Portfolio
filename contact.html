@@ -11,6 +11,21 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('portfolio-theme');
+          var useDark = saved !== 'light';
+          if (!useDark) return;
+          document.documentElement.style.background = '#1e1e1e';
+          document.documentElement.style.color = '#f3f3f3';
+          var s = document.createElement('style');
+          s.id = 'portfolio-theme-preload';
+          s.textContent = 'body{background:#1e1e1e;color:#f3f3f3} .site-header,.nav-drawer,.site-footer{background:#1e1e1e}';
+          document.head.appendChild(s);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="page contact-page">

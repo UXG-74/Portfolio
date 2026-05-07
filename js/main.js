@@ -59,6 +59,10 @@
   injectThemeToggles();
   /* Default dark on first visit; respect saved preference when set ("light" or "dark"). */
   setTheme(getSavedTheme() !== "light");
+  document.documentElement.style.background = "";
+  document.documentElement.style.color = "";
+  var preloadThemeStyle = document.getElementById("portfolio-theme-preload");
+  if (preloadThemeStyle) preloadThemeStyle.remove();
 
   var navToggle = document.querySelector("[data-nav-toggle]");
   var mobileNav = document.querySelector("[data-nav-mobile]");
