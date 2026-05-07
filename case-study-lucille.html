@@ -8,21 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet" />
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem('portfolio-theme');
-          var useDark = saved !== 'light';
-          if (!useDark) return;
-          document.documentElement.style.background = '#1e1e1e';
-          document.documentElement.style.color = '#f3f3f3';
-          var s = document.createElement('style');
-          s.id = 'portfolio-theme-preload';
-          s.textContent = 'body{background:#1e1e1e;color:#f3f3f3} .site-header,.nav-drawer,.site-footer{background:#1e1e1e}';
-          document.head.appendChild(s);
-        } catch (e) {}
-      })();
-    </script>
     <link rel="stylesheet" href="css/styles.css" />
 <style>
       .work-inner-wrap {
@@ -52,86 +37,51 @@
       .work-inner-figma .body-sm { font: 400 16px/1.3 Inter, system-ui, sans-serif; }
       .work-inner-figma .hero-image-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; max-width: none; }
       .work-inner-figma .figma-site-cta { transform-origin: top left; }
-      .work-inner-mobile {
-        display: none;
-        padding: 24px 30px 72px;
-      }
-      .work-inner-mobile .mobile-kicker {
-        margin: 0 0 12px;
-        font-size: 14pt;
-        font-weight: 500;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-      .work-inner-mobile .mobile-title {
-        margin: 0;
-        font-size: 34px;
-        line-height: 1.08;
-        font-weight: 900;
-        letter-spacing: -0.02em;
-      }
-      .work-inner-mobile .mobile-subtitle {
-        margin: 8px 0 0;
-        font-size: 22pt;
-        line-height: 1.2;
-        font-weight: 500;
-      }
-      .work-inner-mobile .mobile-hero {
-        margin: 26px 0 30px;
-        width: 100%;
-        aspect-ratio: 16 / 10;
-        overflow: hidden;
-      }
-      .work-inner-mobile .mobile-hero img,
-      .work-inner-mobile .mobile-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-      .work-inner-mobile .mobile-cta-band {
-        margin: 0 -30px 34px;
-        padding: 20px 30px;
-        background: #1e1e1e;
-        color: #f2f2f2;
-      }
-      .work-inner-mobile .mobile-cta-text {
-        margin: 0 0 14px;
-        font-size: 22pt;
-        line-height: 1.2;
-        font-weight: 500;
-      }
-      .work-inner-mobile .mobile-section {
-        margin-bottom: 34px;
-      }
-      .work-inner-mobile .mobile-section h2 {
-        margin: 0 0 12px;
-        font-size: 22pt;
-        line-height: 1.22;
-        font-weight: 500;
-      }
-      .work-inner-mobile .mobile-section p {
-        margin: 0 0 12px;
-        font-size: 16pt;
-        line-height: 1.4;
-      }
-      .work-inner-mobile .mobile-gallery {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 14px;
-        margin: 18px 0 34px;
-      }
-      .work-inner-mobile .mobile-image {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        overflow: hidden;
-      }
       @media (max-width: 768px) {
         .work-inner-wrap {
-          display: none;
+          width: calc(100% - 60px);
+          margin: 0 auto;
+          overflow: visible;
         }
-        .work-inner-mobile {
-          display: block;
+        .work-inner-figma .placeholder { border-width: 1.5px; }
+        .work-inner-figma .label,
+        .work-inner-figma .body16 { font-size: 16pt; }
+        .work-inner-figma .h2,
+        .work-inner-figma .h3 { font-size: 26pt; line-height: 1.25; }
+        .work-inner-figma .body24,
+        .work-inner-figma .body-sm { font-size: 14pt; line-height: 1.4; }
+        .work-inner-figma .figma-carousel-track {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 14px;
+          height: auto;
+          overflow: visible;
+          scroll-snap-type: none;
+          cursor: default;
+        }
+        .work-inner-figma .figma-carousel-slide {
+          width: 100%;
+          height: 320px;
+          min-width: 0;
+        }
+        .work-inner-figma .figma-carousel-handle-wrap { display: none; }
+        body.case-figma-page .site-footer .shell.footer-inner {
+          padding-left: 30px;
+          padding-right: 30px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          flex-wrap: nowrap;
+        }
+        body.case-figma-page .site-footer .footer-inner p,
+        body.case-figma-page .site-footer .footer-links {
+          white-space: nowrap;
+          margin: 0;
+        }
+        body.case-figma-page .site-footer .footer-links {
+          flex-wrap: nowrap;
+          gap: 14px;
         }
       }
     </style>
@@ -310,62 +260,6 @@
       <div style="position:absolute;left:416px;top:5048px;width:220px;height:6px;background:#696969"></div>
           </section>
       </div>
-
-      <section class="work-inner-mobile" aria-label="Lucille case study mobile layout">
-        <p class="mobile-kicker">AI &amp; Brand · Commerce</p>
-        <h1 class="mobile-title">LUCILLE LONDON</h1>
-        <p class="mobile-subtitle">AI-crafted brand identity.</p>
-
-        <figure class="mobile-hero">
-          <img src="https://www.figma.com/api/mcp/asset/2a092de9-ecf3-4c5b-bab3-6b78f3897266" alt="Lucille London campaign hero image" />
-        </figure>
-
-        <section class="mobile-section">
-          <h2>A speculative luxury brand built end to end with AI.</h2>
-          <p>Lucille London is a fictional fine lingerie and nightwear brand, created to test whether a full luxury experience could hold up when strategy, visuals, narrative, and shipping product all came through an AI-led process.</p>
-          <p>The constraint was deliberate: use Cursor to structure flows and UX, Higgsfield for visual exploration, and Claude Code for language architecture, then iterate until the output felt coherent, premium, and believable.</p>
-        </section>
-
-        <section class="mobile-cta-band" aria-label="Visit site call to action">
-          <p class="mobile-cta-text">Visit the Lucille London website here</p>
-          <a class="btn-contact" href="https://lucille-london.vercel.app/" target="_blank" rel="noopener noreferrer">SEE THE SITE</a>
-        </section>
-
-        <section class="mobile-section">
-          <p class="mobile-kicker">Overview</p>
-          <h2>Design language that reads as craft, not template.</h2>
-          <p>The experience was shaped to balance desire and trust: editorial tone, calm spacing, clear hierarchy, and conversion reassurance that never breaks the brand spell.</p>
-        </section>
-
-        <div class="mobile-gallery" aria-label="Project imagery">
-          <figure class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/0cd6b309-6ff2-40bb-9f34-a3fb09b9830b" alt="Lucille shopping bag in boutique" /></figure>
-          <figure class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/83c82f95-901f-4221-93f6-793d11e3d35d" alt="Lucille gift box display" /></figure>
-          <figure class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/faeacbbd-c681-483a-a05d-3cd8dfab5c7b" alt="Lucille poster in London street" /></figure>
-        </div>
-
-        <section class="mobile-section">
-          <p class="mobile-kicker">The Challenge</p>
-          <h2>An AI-crafted luxury shelf still has to pass the squint test.</h2>
-          <p>Luxury reads as decision, not abundance. Every section needed restraint, intent, and tonal consistency from hero message through collection navigation and policy reassurance.</p>
-        </section>
-
-        <section class="mobile-section">
-          <p class="mobile-kicker">Boutique Experience</p>
-          <h2>Mood becomes a product requirement.</h2>
-          <p>The UX was designed to feel intimate and assured: slow rhythm, quiet language, and merchandising patterns that support confidence instead of hard-selling.</p>
-        </section>
-
-        <div class="mobile-gallery" aria-label="Extended project imagery">
-          <figure class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/ca262cbb-11e5-4c26-9c14-53a19b1b55fb" alt="Full-width Lucille storefront campaign" /></figure>
-          <figure class="mobile-image"><img src="img/font.png" alt="Lucille typography treatment" /></figure>
-        </div>
-
-        <section class="mobile-section">
-          <p class="mobile-kicker">Conclusion</p>
-          <h2>What this proves.</h2>
-          <p>AI accelerates exploration, but design judgment still decides what ships. The live Lucille storefront shows how disciplined curation can turn machine speed into a coherent, premium brand story.</p>
-        </section>
-      </section>
     </main>
 
     <footer class="site-footer">
