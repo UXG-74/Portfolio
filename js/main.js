@@ -33,7 +33,7 @@
   }
 
   function injectThemeToggles() {
-    var targets = document.querySelectorAll(".header-tools, .nav-drawer .drawer-tools");
+    var targets = document.querySelectorAll(".header-tools");
 
     targets.forEach(function (target) {
       if (target.querySelector("[data-theme-toggle]")) return;
@@ -59,6 +59,9 @@
   injectThemeToggles();
   /* Default dark on first visit; respect saved preference when set ("light" or "dark"). */
   setTheme(getSavedTheme() !== "light");
+  document.querySelectorAll("[data-menu-year]").forEach(function (node) {
+    node.textContent = new Date().getFullYear();
+  });
   document.documentElement.style.background = "";
   document.documentElement.style.color = "";
   var preloadThemeStyle = document.getElementById("portfolio-theme-preload");
@@ -68,15 +71,37 @@
   var mobileNav = document.querySelector("[data-nav-mobile]");
   if (!navToggle || !mobileNav) return;
 
+  function setMenuOpen(open) {
+    mobileNav.classList.toggle("is-open", open);
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.classList.toggle("nav-open", open);
+  }
+
   navToggle.addEventListener("click", function () {
     var open = mobileNav.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    setMenuOpen(open);
   });
 
   mobileNav.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      mobileNav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
+    link.addEventListener("click", function (event) {
+      var href = link.getAttribute("href");
+      var isHash = href && href.charAt(0) === "#";
+      var isExternal = href && /^(https?:)?\/\//.test(href);
+      if (!href || isHash || isExternal) {
+        setMenuOpen(false);
+        return;
+      }
+
+      // Keep menu motion coherent: selection exits right-to-left before route change.
+      event.preventDefault();
+      mobileNav.classList.add("is-routing");
+      setTimeout(function () {
+        window.location.href = href;
+      }, 320);
     });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") setMenuOpen(false);
   });
 })();
