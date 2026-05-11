@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/case-study-lucille.html", "destination": "/work/lucille-london/", "permanent": true },
+    { "source": "/case-study-02.html", "destination": "/work/kinetik/", "permanent": true },
+    { "source": "/case-study-03.html", "destination": "/work/northline-care/", "permanent": true },
+    { "source": "/case-study.html", "destination": "/work/lucille-london/", "permanent": true }
+  ]
+}

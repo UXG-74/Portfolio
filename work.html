@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="I turn complex product and service challenges into measurable growth, using AI to move from insight to shipped outcomes faster."
+      content="AI-led senior UX: faster cycles from insight to shipped outcomes - and measurable growth on complex product challenges."
     />
     <title>Work · Ged Devine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,21 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem('portfolio-theme');
-          var useDark = saved !== 'light';
-          if (!useDark) return;
-          document.documentElement.style.background = '#1e1e1e';
-          document.documentElement.style.color = '#f3f3f3';
-          var s = document.createElement('style');
-          s.id = 'portfolio-theme-preload';
-          s.textContent = 'body{background:#1e1e1e;color:#f3f3f3} .site-header,.nav-drawer,.site-footer{background:#1e1e1e}';
-          document.head.appendChild(s);
-        } catch (e) {}
-      })();
-    </script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="page work-page">
@@ -39,27 +24,21 @@
         <nav class="nav-primary" aria-label="Primary">
           <a href="work.html" aria-current="page">Work</a>
           <a href="about.html">About</a>
-          <a href="contact.html#cv">CV</a>
         </nav>
         <div class="header-tools">
           <a class="btn-contact" href="contact.html">Contact</a>
         </div>
         <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M5 7h14M3.5 12h17M7 17h12" stroke-linecap="round" />
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
           </svg>
         </button>
       </div>
       <div class="shell nav-drawer" id="nav-drawer" data-nav-mobile>
         <a href="work.html" aria-current="page">Work</a>
         <a href="about.html">About</a>
-        <a href="contact.html#cv">CV</a>
         <div class="drawer-tools">
-          <p class="drawer-copyright">© <span data-menu-year></span>.</p>
-          <div class="drawer-links">
-            <a href="contact.html">Get in touch</a>
-            <a href="#">LinkedIn</a>
-          </div>
+          <a class="btn-contact" href="contact.html">Contact</a>
         </div>
       </div>
     </header>
@@ -67,44 +46,44 @@
     <main id="main">
       <section class="shell work-hero" aria-labelledby="work-hero-heading">
         <h1 id="work-hero-heading" class="headline-display">
-          I turn complex product and service challenges into measurable growth, using AI to move from insight to shipped
-          outcomes faster.
+          AI lets me uncover the right bets, tighten the UX, and turn complex challenges into measurable growth - from research to shipped outcomes, faster
         </h1>
       </section>
 
       <section class="shell work-showcase" aria-labelledby="work-index-heading">
         <div class="work-row">
           <h2 id="work-index-heading" class="work-title">WORK</h2>
-          <a class="btn-ghost-pill" href="#">View all work</a>
+          <a class="btn-ghost-pill" href="#work-index-heading">View all work</a>
         </div>
 
         <div class="work-studies-grid">
           <article class="work-study-slot">
-            <a href="case-study-lucille.html" class="work-study-hit" aria-label="Open Lucille London case study">
-              <div class="work-study-thumb work-study-thumb--landscape"></div>
+            <a href="/work/lucille-london/" class="work-study-hit" aria-label="Open Lucille London case study">
+              <div class="work-study-thumb work-study-thumb--landscape">
+                <img src="img/Lucille-main.png" alt="Lucille London case study preview" />
+              </div>
               <div class="work-study-meta">
                 <h3 class="work-study-heading">Lucille London</h3>
                 <div class="work-study-tags">
                   <span>Brand · UX</span>
-                  <span>Luxury e-commerce</span>
                 </div>
               </div>
             </a>
           </article>
           <article class="work-study-slot work-study-slot--tall">
-            <a href="case-study-02.html" class="work-study-hit" aria-label="Open Aster House case study">
+            <a href="/work/kinetik/" class="work-study-hit" aria-label="Open KINETIK case study">
               <div class="work-study-thumb work-study-thumb--tall"></div>
               <div class="work-study-meta">
-                <h3 class="work-study-heading">Aster House</h3>
+                <h3 class="work-study-heading">KINETIK</h3>
                 <div class="work-study-tags">
-                  <span>Brand system</span>
-                  <span>Boutique hospitality</span>
+                  <span>Smartwear UX</span>
+                  <span>Performance product</span>
                 </div>
               </div>
             </a>
           </article>
           <article class="work-study-slot work-study-slot--wide">
-            <a href="case-study-03.html" class="work-study-hit" aria-label="Open Northline Care case study">
+            <a href="/work/northline-care/" class="work-study-hit" aria-label="Open Northline Care case study">
               <div class="work-study-thumb work-study-thumb--wide"></div>
               <div class="work-study-meta">
                 <h3 class="work-study-heading">Northline Care</h3>
@@ -119,7 +98,7 @@
 
         <div class="work-grid-figma">
           <p class="hero-lede work-sample-caption">
-            <a class="work-sample-cta" href="case-study-lucille.html">Open Lucille case study →</a>
+            <a class="work-sample-cta" href="/work/lucille-london/">Open Lucille case study →</a>
           </p>
         </div>
       </section>

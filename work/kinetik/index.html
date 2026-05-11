@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Design reference: https://www.figma.com/design/tQdl6ug0q7SVITewCQlGJW/KINETIK?node-id=2111-622 -->
+    <meta name="description" content="Kinetik  -  smartwear-grade UX, connecting splash narrative with dashboard guidance; AI supports insight while craft keeps touchpoints consistent and calm." />
+    <title>Kinetik · Ged Devine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+<style>
+      .work-inner-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .work-inner-figma {
+        position: relative;
+        width: 1440px;
+        height: 14753px;
+        margin: 0;
+        background: #fff;
+        overflow: hidden;
+        color: #1e1e1e;
+        transform-origin: top left;
+      }
+      .work-inner-figma p { margin: 0; }
+      .work-inner-figma .placeholder { position: absolute; background: #fff; border: 2px solid #d9d9d9; }
+      .work-inner-figma .label { font: 500 16px/1.3 Inter, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
+      .work-inner-figma .h1 { font: 900 90px/1.2 Inter, system-ui, sans-serif; letter-spacing: -0.01em; }
+      .work-inner-figma .h2 { font: 500 48px/1.2 Inter, system-ui, sans-serif; }
+      .work-inner-figma .h3 { font: 500 46px/1.2 Inter, system-ui, sans-serif; }
+      .work-inner-figma .body24 { font: 400 24px/1.3 Inter, system-ui, sans-serif; }
+      .work-inner-figma .body-sm { font: 400 16px/1.3 Inter, system-ui, sans-serif; }
+      .work-inner-figma .hero-image-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; max-width: none; }
+      .work-inner-figma .figma-site-cta { transform-origin: top left; }
+      .work-inner-mobile {
+        display: none;
+        padding: 24px 30px 56px;
+      }
+      .work-inner-mobile p { margin: 0; }
+      .work-inner-mobile .mobile-title {
+        margin-bottom: 2px;
+        font: 900 30px/1.1 Inter, system-ui, sans-serif;
+        letter-spacing: -0.01em;
+      }
+      .work-inner-mobile .mobile-subtitle {
+        margin-bottom: 18px;
+        font: 500 22px/1.2 Inter, system-ui, sans-serif;
+      }
+      .work-inner-mobile .mobile-hero {
+        width: 100%;
+        height: 186px;
+        margin-bottom: 22px;
+        overflow: hidden;
+      }
+      .work-inner-mobile .mobile-hero img,
+      .work-inner-mobile .mobile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-width: none;
+      }
+      .work-inner-mobile .mobile-services {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .work-inner-mobile .mobile-services-kicker {
+        color: #767676;
+        font: 400 16px/1.3 Inter, system-ui, sans-serif;
+      }
+      .work-inner-mobile .mobile-services-list {
+        display: flex;
+        gap: 8px;
+        text-transform: uppercase;
+        font: 400 16px/1.3 Inter, system-ui, sans-serif;
+      }
+      .work-inner-mobile .mobile-block {
+        margin-bottom: 24px;
+      }
+      .work-inner-mobile .mobile-kicker {
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font: 500 14px/1.3 Inter, system-ui, sans-serif;
+      }
+      .work-inner-mobile .mobile-h {
+        margin-bottom: 12px;
+        font: 500 22px/1.2 Inter, system-ui, sans-serif;
+      }
+      .work-inner-mobile .mobile-body p {
+        margin-bottom: 12px;
+        font: 400 16px/1.3 Inter, system-ui, sans-serif;
+      }
+      .work-inner-mobile .mobile-body p:last-child { margin-bottom: 0; }
+      .work-inner-mobile .mobile-cta-band {
+        margin: 0 -30px 24px;
+        padding: 18px 30px;
+        background: #1e1e1e;
+      }
+      .work-inner-mobile .mobile-cta-lead {
+        margin: 0 0 10px;
+        color: #f2f2f2;
+        font: 500 16px/1.2 Inter, system-ui, sans-serif;
+      }
+      .work-inner-mobile .mobile-cta-copy {
+        color: #f2f2f2;
+        font: 500 16px/1.2 Inter, system-ui, sans-serif;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .work-inner-mobile .mobile-stack {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .work-inner-mobile .mobile-image {
+        width: 100%;
+        height: 235px;
+        overflow: hidden;
+      }
+      .work-inner-mobile .mobile-image.mobile-image-tall { height: 337px; }
+      .work-inner-mobile .mobile-image.mobile-image-short { height: 193px; }
+      body.theme-dark .work-inner-mobile {
+        background: #1e1e1e;
+        color: #f3f3f3;
+      }
+      body.theme-dark .work-inner-mobile .mobile-services-kicker { color: #a5a5a5; }
+      body.theme-dark .work-inner-mobile .mobile-cta-band { background: #2a2a2a; }
+      body.theme-dark .work-inner-mobile .mobile-cta-lead { color: #f3f3f3; }
+      body.theme-dark .work-inner-mobile .mobile-cta-copy { color: #f3f3f3; }
+      @media (max-width: 768px) {
+        .work-inner-wrap { display: none; }
+        .work-inner-mobile { display: block; }
+        .work-inner-figma .placeholder { border-width: 1.5px; }
+        .work-inner-figma .h1 { font-size: 30px; line-height: 1.1; }
+        .work-inner-figma .label { font-size: 14px; line-height: 1.3; }
+        .work-inner-figma .body16 { font-size: 16px; line-height: 1.3; }
+        .work-inner-figma .h2,
+        .work-inner-figma .h3 { font-size: 22px; line-height: 1.2; }
+        .work-inner-figma .body24,
+        .work-inner-figma .body-sm { font-size: 16px; line-height: 1.3; }
+        .work-inner-figma .figma-site-cta {
+          font-size: 14px;
+          line-height: 1.2;
+        }
+        .work-inner-figma .figma-carousel-track {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 14px;
+          height: auto;
+          overflow: visible;
+          scroll-snap-type: none;
+          cursor: default;
+        }
+        .work-inner-figma .figma-carousel-slide {
+          width: 100%;
+          height: 320px;
+          min-width: 0;
+        }
+        .work-inner-figma .figma-carousel-handle-wrap { display: none; }
+        body.case-figma-page .site-footer .shell.footer-inner {
+          padding-left: 30px;
+          padding-right: 30px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          flex-wrap: nowrap;
+          font-size: 16px;
+          line-height: 1.3;
+        }
+        body.case-figma-page .site-footer .footer-inner p,
+        body.case-figma-page .site-footer .footer-links {
+          white-space: nowrap;
+          margin: 0;
+        }
+        body.case-figma-page .site-footer .footer-links {
+          flex-wrap: nowrap;
+          gap: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body class="page case-figma-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header case-dept">
+      <div class="shell header-row">
+        <a class="logo" href="/index.html">Ged Devine</a>
+        <nav class="nav-primary" aria-label="Primary">
+          <a href="/work.html">Work</a>
+          <a href="/about.html">About</a>
+        </nav>
+        <div class="header-tools">
+          <a class="btn-contact" href="/contact.html">Contact</a>
+        </div>
+        <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="shell nav-drawer" id="nav-drawer" data-nav-mobile>
+        <a href="/work.html">Work</a>
+        <a href="/about.html">About</a>
+        <div class="drawer-tools">
+          <a class="btn-contact" href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="work-inner-wrap">
+      <section class="work-inner-figma">
+      <div style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/38e3b0ae-27a3-47b2-bc8d-5af5993994cb" alt="" style="position:absolute;left:0;top:-9.51%;width:100%;height:125.66%;max-width:none" /></div>
+      <div style="position:absolute;left:-47px;top:189px;width:1540px;height:5645px;background:#fff"></div>
+      <div style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/75763643-10c7-4412-bd05-285a8cdfa199" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:0;top:173px;width:1175px;height:209px;background:#fff"></div>
+
+      <div class="hero-image-wrap" style="position:absolute;left:23px;top:504px;width:1400px;height:780px;overflow:hidden">
+        <img src="https://www.figma.com/api/mcp/asset/0593fbdf-c0f4-42d4-a167-7856d0901788" alt="" style="position:absolute;left:0;top:-22.95%;width:100%;height:130.98%;max-width:none" />
+      </div>
+
+      <div style="position:absolute;left:56px;top:278px;width:1278px;display:flex;flex-direction:column;line-height:1.2">
+        <p class="h1">KINETIK</p>
+        <p class="h2">Disruptor fitness experience</p>
+      </div>
+
+      <div style="position:absolute;left:589px;top:1431px;width:735px;display:flex;flex-direction:column;gap:32px">
+        <p class="h3">KINETIK is a fitness experience built for ambition, with no drift from splash promise to dashboard proof. Goals, streaks, shared achievements, and progress clarity were shaped together, then iterated with AI until each touchpoint felt fast, social, and trusted.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">Kinetik sits where wearable brands connect aspiration with readable telemetry. Targets called for journey traction across lived training weeks plus tighter IA inside the shell. Stakes stayed clear: steady hero clarity, confident thumb ergonomics, parity across onboarding, diagnostics, leaderboard context, pairing flows, recovery reads - credibility intact.</p>
+          <p class="body24">The constraint was deliberate: use AI as the creative accelerator - models to compress research and sharpen narrative, generative passes for mood and variants, Cursor with Claude Code for flows and microcopy - so quality came from iteration, not volume.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:352px;top:2472px;width:735px;display:flex;flex-direction:column;gap:16px">
+        <p class="body24">Performance software is judged in milliseconds - hierarchy, restraint, and spacing either read as confidence - or as chaos. Every module had to earn its place: hero promise, collections of proof in product detail, quiet states and failure paths, and dashboards that answer what matters now.</p>
+        <p class="body24">The stack was the studio: snapshot variants, prompt loops, microcopy drafts - all AI-native. Discipline was in direction - which routes shipped, which metaphors stayed, what still scans as intentional when someone opens the app before breakfast.</p>
+        <p class="body24">The outcome is a coherent product story captured in layouts and build handover: one voice (&quot;KINETIK&quot;), journeys from landing through logged-in ritual, and interaction patterns that respect hesitation in high-consideration analytics - without the experience reading like a slick poster beside an intentional shell.</p>
+      </div>
+
+      <div style="position:absolute;left:-2px;top:3791px;width:1442px;height:166px;background:#1e1e1e"></div>
+      <p style="position:absolute;left:96px;top:3851px;width:980px;color:#f2f2f2;font-size:38px;line-height:1.2;font-weight:500">Visit the Kinetik website here</p>
+      <a class="btn-contact figma-site-cta" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer" style="position:absolute;left:1172px;top:3854px;">SEE THE SITE</a>
+
+      <div style="position:absolute;left:592px;top:4052px;width:735px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">OVERVIEW</p>
+        <p class="h3">Design language that carries from story to telemetry.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">Kinetik spans two audiences inside one product instinct: fluent analysts and newcomers who sense effort before they decode charts. The brief wasn&apos;t “more hype” - it was to keep trust and momentum coexisting.</p>
+          <p class="body24">Strategy, UX, and storytelling were prompted, critiqued, and refined as one system so the voice could repeat without sounding repetitive. The goal was cohesion: the promise in the hero, the proof in KPI detail, calm orientation in onboarding, and reassurance where tension spikes.</p>
+        </div>
+      </div>
+      <div style="position:absolute;left:969px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/faeacbbd-c681-483a-a05d-3cd8dfab5c7b" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:496px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/83c82f95-901f-4221-93f6-793d11e3d35d" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:23px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/0cd6b309-6ff2-40bb-9f34-a3fb09b9830b" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:0;top:4150px;width:490px;height:355.5px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/f1a16625-1647-4c7c-b59f-143a18d8a696" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:672px;top:5146px;width:620px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">THE CHALLENGE</p>
+        <p class="h3" style="width:601px">A considered fitness product has to earn trust now.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">This was never a template dashboard exercise. Discovery set the brief: define what people need to see, when they need it, and how quickly they can act with confidence under pressure. The challenge: shape clear IA and a component kit in Figma first, then use Cursor and Claude-assisted flows only to polish language and tighten the final experience.</p>
+          <p class="body24">Every pass followed client briefs: calm motion for legibility, modules for leaderboard, session, recovery, and onboarding, with plain language refined only after user testing.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:211px;top:5917px;width:735px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">SPEED &amp; PRECISION</p>
+        <p class="h3">Instrumentation with clarity, before focus slips.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">Training analytics is judged with emotion first - pride, rivalry, doubt - then justified with numbers: pacing, deltas, anomalies. The experience needed breathable rhythm: typography and spacing tuned for early-morning skim, terminology that sounds spoken, not pasted from a datasheet.</p>
+          <p class="body24">I treated scoreboard pacing as UX: restrained motion, generous gaps around ranked scores until dense graphs earn admission. Density stayed consciously opt-in - one voice bridging marketing heat straight into utterly forensic drill downs.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:343px;top:7979px;width:735px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">THE LAUNCH</p>
+        <p class="h3">Hardware realities, calm onboarding, with repeat visits.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">Launch is where hype meets physiology. Flows assumed first-week onboarding, rusty returns, flaky Bluetooth firmware, and leaderboard comparisons at thumb speed - all without collapsing into legal footnotes at the scroll&apos;s edge.</p>
+          <p class="body24">Secondary reassurance sits where cognition spikes permissions, retries, restores. Documentation captured component boundaries so intent survives build - not a zipped mystery file. Elevate narrative, calm evaluation, give proof permission to steer the next action.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:115px;top:9290px;width:580px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">COLOUR PALETTE</p>
+        <p class="h3">Navy-steady. Emerald-electric - with Sky, Sunrise, and Pulse.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">Primary stack follows the kinetic design tokens: Emerald (#02FB9B) for uplift and KPI wins, Navy (#121A2E) anchoring typography and dashboards, neutral NIKEL greys bridging density without washing out numerals - the same discipline as layering strain on a midnight UI.</p>
+          <p class="body24">Secondary accents dial Sky (#29A4F6), Sunrise (#FEC053), and PULSE (#FC5862) for alerts, rivalry moments, or coachable hotspots - controlled voltage, never confetti.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:745px;top:9422px;width:580px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">WORDMARK</p>
+        <p class="h3">Typographic velocity over decorative badges.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">The identity leans on wordmark discipline - KINETIK set in a heavy Inter black - rather than an illustrated logo zoo. Supporting marks stay functional: stat callouts, rank chips, and wayfinding cues that appear only when motion or data needs emphasis.</p>
+          <p class="body24">Headlines carry kinetic energy in uppercase blocks; the neutral sans family carries numerals, micro-labels, and dense analytics so emotion lives in marketing rhythm while clarity lives in training telemetry.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:671px;top:11441px;width:620px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">OUTCOMES</p>
+        <p class="h3" style="width:601px">Fewer narratives, sharper comprehension.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">Research sessions converged around one storyline of value - not competing decks. Participants moved faster through onboarding and weekly check-ins once hierarchy and jargon were disciplined.</p>
+          <p class="body24">Product and engineering left with the same pragmatic picture of what ships next - component boundaries annotated, anomalies documented - so roadmap debates skipped theatre.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:117px;top:12136px;width:735px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">COLLABORATION</p>
+        <p class="h3">Documentation that mirrors the live promise.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">Decisions lived in critiques, paired working sessions, and written specs - not surprise files. Build partners could implement without reverse-engineering intent; brand partners could see the same language applied in marketing and inside the shell.</p>
+          <p class="body24">Continuity from first touch to daily dashboard matters - when those promises align, trust stays strong in performance categories.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:326px;top:13477px;width:735px;display:flex;flex-direction:column;gap:32px">
+        <p class="label">CONCLUSION</p>
+        <p class="h3">What this proves.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p class="body24">AI accelerates the messy middle - research synthesis, variants, KPI copy drafts, motion studies - but design still arbitrates tone, friction, truth. Kinetik is a case in disciplined iteration: fewer loud claims, more consistent signals, and a product world that invites return visits because it feels considered.</p>
+          <p class="body24">The live site and extended screens are the artifact - motion, campaign detail, and deeper narrative continue on the Kinetik website via SEE THE SITE in the band above.</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:42px;top:6509px;width:1338px;height:777px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/ca262cbb-11e5-4c26-9c14-53a19b1b55fb" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:7284px;width:565px;height:396px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/32ff0d76-1a81-4831-be9f-d2845321c18f" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:607px;top:7284px;width:773px;height:600px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/24a369b2-3787-461c-9f03-d71a40c80b1a" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:8595px;width:773px;height:541px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/e4477f09-7bfd-4014-9ea3-c15b01ffd17d" alt="" style="position:absolute;left:-0.02%;top:0.02%;width:100.02%;height:100.04%;max-width:none" /></div>
+      <div style="position:absolute;left:815px;top:8595px;width:565px;height:396px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/04c305da-0d7c-4952-9d4a-5201a2924bfd" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:10069px;width:669px;height:500px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/723f4c57-25e9-45d5-92dd-d5b00e8c7706" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:711px;top:10070px;width:669px;height:500px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/fa06b49f-7e77-47a9-9694-416a7782747e" alt="" style="position:absolute;left:-12%;top:-9%;width:124%;height:117.99%;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:10569px;width:1338px;height:777px;overflow:hidden"><img src="/img/font.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/4f2f0498-60c0-410e-83ba-295afb8bde22" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/1445a586-6c05-4a8a-9748-cf71163073ce" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/af110e45-35db-4c34-b9b2-2ffc12abfad4" alt="" style="position:absolute;left:0;top:-34.72%;width:100%;height:143.57%;max-width:none" /></div>
+
+      <div style="position:absolute;left:116px;top:1493px;width:244px;display:flex;flex-direction:column;gap:16px">
+        <p class="body16" style="color:#767676">( Services )</p>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <p class="body16" style="text-transform:uppercase">AI &amp; PRODUCT</p>
+          <p class="body16" style="text-transform:uppercase">training analytics</p>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:416px;top:5052px;width:660px;height:0">
+        <img src="https://www.figma.com/api/mcp/asset/9adaf7bb-751d-47c6-a8a0-5d923f84ebaa" alt="" style="position:absolute;inset:-2px 0 0 0;width:100%;height:100%;max-width:none" />
+      </div>
+      <div style="position:absolute;left:416px;top:5048px;width:220px;height:6px;background:#696969"></div>
+          </section>
+      </div>
+
+      <section class="work-inner-mobile" aria-label="Kinetik mobile">
+        <p class="mobile-title">KINETIK</p>
+        <p class="mobile-subtitle">Disruptor fitness experience</p>
+
+        <div class="mobile-hero">
+          <img src="https://www.figma.com/api/mcp/asset/0593fbdf-c0f4-42d4-a167-7856d0901788" alt="" />
+        </div>
+
+        <div class="mobile-services">
+          <p class="mobile-services-kicker">( Services )</p>
+          <div class="mobile-services-list">
+            <p>AI &amp; PRODUCT</p>
+            <p>training analytics</p>
+          </div>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-h">KINETIK is a fitness experience built for ambition, with no drift from splash promise to dashboard proof. Goals, streaks, shared achievements, and progress clarity were shaped together, then iterated with AI until each touchpoint felt fast, social, and trusted.</p>
+          <div class="mobile-body">
+            <p>Kinetik sits where wearable brands connect aspiration with readable telemetry. Targets called for journey traction across lived training weeks plus tighter IA inside the shell. Stakes stayed clear: steady hero clarity, confident thumb ergonomics, parity across onboarding, diagnostics, leaderboard context, pairing flows, recovery reads - credibility intact.</p>
+            <p>The constraint was deliberate: use AI as the creative accelerator - models to compress research and sharpen narrative, generative passes for mood and variants, Cursor with Claude Code for flows and microcopy - so quality came from iteration, not volume.</p>
+            <p>Performance software is judged in milliseconds - hierarchy, restraint, and spacing either read as confidence - or as chaos. Every module had to earn its place: hero promise, collections of proof in product detail, quiet states and failure paths, and dashboards that answer what matters now.</p>
+            <p>The stack was the studio: snapshot variants, prompt loops, microcopy drafts - all AI-native. Discipline was in direction - which routes shipped, which metaphors stayed, what still scans as intentional when someone opens the app before breakfast.</p>
+            <p>The outcome is a coherent product story captured in layouts and build handover: one voice (&quot;KINETIK&quot;), journeys from landing through logged-in ritual, and interaction patterns that respect hesitation in high-consideration analytics - without the experience reading like a slick poster beside an intentional shell.</p>
+          </div>
+        </div>
+
+        <div class="mobile-image" style="margin-bottom:24px;">
+          <img src="https://www.figma.com/api/mcp/asset/f1a16625-1647-4c7c-b59f-143a18d8a696" alt="" />
+        </div>
+
+        <div class="mobile-cta-band">
+          <p class="mobile-cta-lead">Visit the Kinetik website here</p>
+          <a class="mobile-cta-copy" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer">SEE THE SITE</a>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">OVERVIEW</p>
+          <p class="mobile-h">Design language that carries from story to telemetry.</p>
+          <div class="mobile-body">
+            <p>Kinetik spans two audiences inside one product instinct: fluent analysts and newcomers who sense effort before they decode charts. The brief wasn&apos;t “more hype” - it was to keep trust and momentum coexisting.</p>
+            <p>Strategy, UX, and storytelling were prompted, critiqued, and refined as one system so the voice could repeat without sounding repetitive. The goal was cohesion: the promise in the hero, the proof in KPI detail, calm orientation in onboarding, and reassurance where tension spikes.</p>
+          </div>
+        </div>
+
+        <div class="mobile-stack">
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/0cd6b309-6ff2-40bb-9f34-a3fb09b9830b" alt="" /></div>
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/83c82f95-901f-4221-93f6-793d11e3d35d" alt="" /></div>
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/faeacbbd-c681-483a-a05d-3cd8dfab5c7b" alt="" /></div>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">THE CHALLENGE</p>
+          <p class="mobile-h">A considered fitness product has to earn trust now.</p>
+          <div class="mobile-body">
+            <p>This was never a template dashboard exercise. Discovery set the brief: define what people need to see, when they need it, and how quickly they can act with confidence under pressure. The challenge: shape clear IA and a component kit in Figma first, then use Cursor and Claude-assisted flows only to polish language and tighten the final experience.</p>
+            <p>Every pass followed client briefs: calm motion for legibility, modules for leaderboard, session, recovery, and onboarding, with plain language refined only after user testing.</p>
+          </div>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">SPEED &amp; PRECISION</p>
+          <p class="mobile-h">Instrumentation with clarity, before focus slips.</p>
+          <div class="mobile-body">
+            <p>Training analytics is judged with emotion first - pride, rivalry, doubt - then justified with numbers: pacing, deltas, anomalies. The experience needed breathable rhythm: typography and spacing tuned for early-morning skim, terminology that sounds spoken, not pasted from a datasheet.</p>
+            <p>I treated scoreboard pacing as UX: restrained motion, generous gaps around ranked scores until dense graphs earn admission. Density stayed consciously opt-in - one voice bridging marketing heat straight into utterly forensic drill downs.</p>
+          </div>
+        </div>
+
+        <div class="mobile-stack">
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/ca262cbb-11e5-4c26-9c14-53a19b1b55fb" alt="" /></div>
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/32ff0d76-1a81-4831-be9f-d2845321c18f" alt="" /></div>
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/24a369b2-3787-461c-9f03-d71a40c80b1a" alt="" /></div>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">THE LAUNCH</p>
+          <p class="mobile-h">Hardware realities, calm onboarding, with repeat visits.</p>
+          <div class="mobile-body">
+            <p>Launch is where hype meets physiology. Flows assumed first-week onboarding, rusty returns, flaky Bluetooth firmware, and leaderboard comparisons at thumb speed - all without collapsing into legal footnotes at the scroll&apos;s edge.</p>
+            <p>Secondary reassurance sits where cognition spikes permissions, retries, restores. Documentation captured component boundaries so intent survives build - not a zipped mystery file. Elevate narrative, calm evaluation, give proof permission to steer the next action.</p>
+          </div>
+        </div>
+
+        <div class="mobile-stack">
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/e4477f09-7bfd-4014-9ea3-c15b01ffd17d" alt="" /></div>
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/04c305da-0d7c-4952-9d4a-5201a2924bfd" alt="" /></div>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">COLOUR PALETTE</p>
+          <p class="mobile-h">Navy-steady. Emerald-electric - with Sky, Sunrise, and Pulse.</p>
+          <div class="mobile-body">
+            <p>Primary stack follows the kinetic design tokens: Emerald (#02FB9B) for uplift and KPI wins, Navy (#121A2E) anchoring typography and dashboards, neutral NIKEL greys bridging density without washing out numerals - the same discipline as layering strain on a midnight UI.</p>
+            <p>Secondary accents dial Sky (#29A4F6), Sunrise (#FEC053), and PULSE (#FC5862) for alerts, rivalry moments, or coachable hotspots - controlled voltage, never confetti.</p>
+          </div>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">WORDMARK</p>
+          <p class="mobile-h">Typographic velocity over decorative badges.</p>
+          <div class="mobile-body">
+            <p>The identity leans on wordmark discipline - KINETIK set in a heavy Inter black - rather than an illustrated logo zoo. Supporting marks stay functional: stat callouts, rank chips, and wayfinding cues that appear only when motion or data needs emphasis.</p>
+            <p>Headlines carry kinetic energy in uppercase blocks; the neutral sans family carries numerals, micro-labels, and dense analytics so emotion lives in marketing rhythm while clarity lives in training telemetry.</p>
+          </div>
+        </div>
+
+        <div class="mobile-stack">
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/723f4c57-25e9-45d5-92dd-d5b00e8c7706" alt="" /></div>
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/fa06b49f-7e77-47a9-9694-416a7782747e" alt="" /></div>
+          <div class="mobile-image"><img src="/img/font.png" alt="" /></div>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">OUTCOMES</p>
+          <p class="mobile-h">Fewer narratives, sharper comprehension.</p>
+          <div class="mobile-body">
+            <p>Research sessions converged around one storyline of value - not competing decks. Participants moved faster through onboarding and weekly check-ins once hierarchy and jargon were disciplined.</p>
+            <p>Product and engineering left with the same pragmatic picture of what ships next - component boundaries annotated, anomalies documented - so roadmap debates skipped theatre.</p>
+          </div>
+        </div>
+
+        <div class="mobile-image mobile-image-tall" style="margin-bottom:24px;">
+          <img src="https://www.figma.com/api/mcp/asset/4f2f0498-60c0-410e-83ba-295afb8bde22" alt="" />
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">COLLABORATION</p>
+          <p class="mobile-h">Documentation that mirrors the live promise.</p>
+          <div class="mobile-body">
+            <p>Decisions lived in critiques, paired working sessions, and written specs - not surprise files. Build partners could implement without reverse-engineering intent; brand partners could see the same language applied in marketing and inside the shell.</p>
+            <p>Continuity from first touch to daily dashboard matters - when those promises align, trust stays strong in performance categories.</p>
+          </div>
+        </div>
+
+        <div class="mobile-stack">
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/1445a586-6c05-4a8a-9748-cf71163073ce" alt="" /></div>
+          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/af110e45-35db-4c34-b9b2-2ffc12abfad4" alt="" /></div>
+        </div>
+
+        <div class="mobile-block">
+          <p class="mobile-kicker">CONCLUSION</p>
+          <p class="mobile-h">What this proves.</p>
+          <div class="mobile-body">
+            <p>AI accelerates the messy middle - research synthesis, variants, KPI copy drafts, motion studies - but design still arbitrates tone, friction, truth. Kinetik is a case in disciplined iteration: fewer loud claims, more consistent signals, and a product world that invites return visits because it feels considered.</p>
+            <p>The live site and extended screens are the artifact - motion, campaign detail, and deeper narrative continue on the Kinetik website via SEE THE SITE in the band above.</p>
+          </div>
+        </div>
+
+        <div class="mobile-image mobile-image-short">
+          <img src="https://www.figma.com/api/mcp/asset/38e3b0ae-27a3-47b2-bc8d-5af5993994cb" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>© <span id="y"></span> Ged Devine</p>
+        <div class="footer-links">
+          <a href="/contact.html">Get in touch</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        function resizeFigmaFrame() {
+          var wrap = document.querySelector(".work-inner-wrap");
+          var frame = document.querySelector(".work-inner-figma");
+          if (!wrap || !frame) return;
+          var baseW = 1440;
+          var baseH = 14753;
+          var scale = Math.min(1, wrap.clientWidth / baseW);
+          frame.style.transform = "scale(" + scale + ")";
+          wrap.style.height = baseH * scale + "px";
+          var ctas = frame.querySelectorAll(".figma-site-cta");
+          var inverse = scale > 0 ? 1 / scale : 1;
+          ctas.forEach(function (cta) {
+            cta.style.transform = "scale(" + inverse + ")";
+          });
+        }
+        window.addEventListener("resize", resizeFigmaFrame);
+        window.addEventListener("orientationchange", resizeFigmaFrame);
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", resizeFigmaFrame);
+        } else {
+          resizeFigmaFrame();
+        }
+      })();
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

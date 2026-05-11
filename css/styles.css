@@ -90,7 +90,7 @@ main {
   }
 }
 
-/* —— Header —— */
+/*  -  -  Header  -  -  */
 
 .site-header {
   position: sticky;
@@ -98,14 +98,6 @@ main {
   z-index: 50;
   background: var(--white);
   border-bottom: 1px solid var(--line);
-}
-
-.site-header.case-dept .logo {
-  font-family: var(--font);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.9375rem;
 }
 
 .header-row {
@@ -125,9 +117,11 @@ main {
 }
 
 .logo {
-  font-size: 1.25rem;
+  font-family: var(--font);
+  font-size: 0.9375rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   z-index: 2;
 }
 
@@ -250,7 +244,7 @@ body.nav-open .menu-toggle svg {
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding: 6rem 1.875rem 2.25rem;
+  padding: 6rem 1.875rem 0.75rem;
   border-top: 0;
   font-weight: 500;
   position: fixed;
@@ -297,7 +291,7 @@ body.nav-open .menu-toggle svg {
   gap: 0.875rem;
   margin-top: auto;
   padding-top: 0;
-  font-size: 14pt;
+  font-size: 8pt;
   line-height: 1.3;
   color: #c8c8c8;
 }
@@ -365,9 +359,12 @@ body.nav-open {
   overflow: hidden;
 }
 
-/* —— Home hero —— */
+/*  -  -  Home hero  -  -  */
 
 .hero-home {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
   padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
 }
 
@@ -404,7 +401,7 @@ body.nav-open {
   }
 }
 
-/* —— Home feature (collage + copy) —— */
+/*  -  -  Home feature (collage + copy)  -  -  */
 
 .feature-split {
   display: grid;
@@ -412,19 +409,26 @@ body.nav-open {
   padding-bottom: clamp(3rem, 8vw, 6rem);
 }
 
-/* —— About section (single-page) —— */
+/*  -  -  About section (single-page)  -  -  */
 
 .about-panel {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
   padding-block: clamp(2.5rem, 6vw, 4.5rem);
   border-top: 1px solid var(--line);
 }
 
 .about-copy {
-  margin: clamp(1.5rem, 3vw, 2rem) 0 0;
+  margin: 0;
   max-width: 52rem;
   font-size: clamp(1.2rem, 2.4vw, 2rem);
   line-height: 1.35;
   color: var(--black);
+}
+
+.about-copy + .about-copy {
+  margin-top: clamp(1rem, 2vw, 1.25rem);
 }
 
 .about-links {
@@ -475,7 +479,7 @@ body.nav-open {
   border-bottom: 0;
 }
 
-/* —— Contact (Loaf-style minimalist) —— */
+/*  -  -  Contact (Loaf-style minimalist)  -  -  */
 
 .contact-main {
   flex: 1;
@@ -503,9 +507,6 @@ body.nav-open {
 .contact-hero-row {
   display: grid;
   gap: clamp(2rem, 5vw, 3.5rem);
-}
-
-#cv.contact-hero-row {
   scroll-margin-top: clamp(4.75rem, 11vw, 6.75rem);
 }
 
@@ -562,37 +563,6 @@ body.nav-open {
 .contact-social a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
-}
-
-.contact-address-block {
-  margin-top: clamp(2.5rem, 6vw, 4.5rem);
-  max-width: 22rem;
-}
-
-.contact-address {
-  margin: 0;
-  font-size: clamp(0.875rem, 1.35vw, 1rem);
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
-.contact-maps-wrap {
-  margin: 1rem 0 0;
-}
-
-.contact-maps {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.contact-maps:hover {
-  opacity: 0.8;
 }
 
 @media (min-width: 960px) {
@@ -656,7 +626,7 @@ body.nav-open {
   opacity: 0.9;
 }
 
-/* —— Work index —— */
+/*  -  -  Work index  -  -  */
 
 .work-hero {
   padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
@@ -694,6 +664,10 @@ body.nav-open {
   text-transform: uppercase;
 }
 
+#work-index-heading {
+  scroll-margin-top: clamp(4.75rem, 11vw, 6.75rem);
+}
+
 .btn-ghost-pill {
   display: inline-flex;
   align-items: center;
@@ -714,7 +688,7 @@ body.nav-open {
   color: var(--white);
 }
 
-/* Figma Work frame 110:460 — three case placeholders (keyline frames), no section tint */
+/* Figma Work frame 110:460  -  three case placeholders (keyline frames), no section tint */
 .work-studies-grid {
   display: grid;
   gap: clamp(1.25rem, 3vw, 1.75rem);
@@ -743,6 +717,14 @@ body.nav-open {
   width: 100%;
   background: transparent;
   border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.work-study-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Ratios from Figma image frames (650×435, 650×653, 1317×737) */
@@ -851,7 +833,7 @@ body.nav-open {
   text-transform: none;
 }
 
-/* —— Case study —— */
+/*  -  -  Case study  -  -  */
 
 .case-hero {
   padding-block: clamp(2rem, 5vw, 3rem);
@@ -1154,12 +1136,12 @@ body.nav-open {
   text-align: center;
 }
 
-/* —— Footer —— */
+/*  -  -  Footer  -  -  */
 
 .site-footer {
   border-top: 1px solid var(--line);
   padding-block: clamp(2rem, 5vw, 3rem);
-  font-size: 14pt;
+  font-size: 10pt;
   color: #c8c8c8;
 }
 
@@ -1203,8 +1185,9 @@ body.nav-open {
   }
 
   .site-footer {
-    margin-top: 30px;
-    font-size: 12pt;
+    margin-top: 8px;
+    padding-block: 0.5rem 0.35rem;
+    font-size: 10pt;
     color: #c8c8c8;
   }
 
@@ -1240,7 +1223,7 @@ body.nav-open {
   border: 0;
 }
 
-/* —— Dark mode —— */
+/*  -  -  Dark mode  -  -  */
 
 body.theme-dark {
   --white: #1e1e1e;

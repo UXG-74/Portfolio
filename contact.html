@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Contact Ged Devine — email, phone, and social links." />
+    <meta name="description" content="Contact Ged Devine  -  email, phone, and social links." />
     <title>Contact · Ged Devine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,21 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem('portfolio-theme');
-          var useDark = saved !== 'light';
-          if (!useDark) return;
-          document.documentElement.style.background = '#1e1e1e';
-          document.documentElement.style.color = '#f3f3f3';
-          var s = document.createElement('style');
-          s.id = 'portfolio-theme-preload';
-          s.textContent = 'body{background:#1e1e1e;color:#f3f3f3} .site-header,.nav-drawer,.site-footer{background:#1e1e1e}';
-          document.head.appendChild(s);
-        } catch (e) {}
-      })();
-    </script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="page contact-page">
@@ -36,27 +21,21 @@
         <nav class="nav-primary" aria-label="Primary">
           <a href="work.html">Work</a>
           <a href="about.html">About</a>
-          <a href="contact.html#cv" aria-current="page">CV</a>
         </nav>
         <div class="header-tools">
           <a class="btn-contact" href="contact.html">Contact</a>
         </div>
         <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M5 7h14M3.5 12h17M7 17h12" stroke-linecap="round" />
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
           </svg>
         </button>
       </div>
       <div class="shell nav-drawer" id="nav-drawer" data-nav-mobile>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
-        <a href="contact.html#cv">CV</a>
         <div class="drawer-tools">
-          <p class="drawer-copyright">© <span data-menu-year></span>.</p>
-          <div class="drawer-links">
-            <a href="contact.html">Get in touch</a>
-            <a href="#">LinkedIn</a>
-          </div>
+          <a class="btn-contact" href="contact.html">Contact</a>
         </div>
       </div>
     </header>
@@ -65,7 +44,7 @@
       <div class="shell contact-layout">
         <h1 class="contact-kicker">Let's talk</h1>
 
-        <div id="cv" class="contact-hero-row" aria-label="Résumé / contact details">
+        <div class="contact-hero-row" aria-label="Contact details">
           <div class="contact-primary">
             <a class="contact-line contact-line--primary" href="mailto:geddevine@hotmail.com">geddevine@hotmail.com</a>
             <a class="contact-line contact-line--primary" href="tel:+44161245638">+44 (0)161 245 638</a>
@@ -74,16 +53,6 @@
             <li><a href="#">Instagram&nbsp;→</a></li>
             <li><a href="#">LinkedIn&nbsp;→</a></li>
           </ul>
-        </div>
-
-        <div class="contact-address-block">
-          <address class="contact-address">
-            Colony, Jactin House, 24 Hood Street<br />
-            Ancoats, Manchester M4 6WX
-          </address>
-          <p class="contact-maps-wrap">
-            <a class="contact-maps" href="https://maps.google.com" target="_blank" rel="noopener noreferrer">Google Maps</a>
-          </p>
         </div>
       </div>
     </main>
