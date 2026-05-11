@@ -1,10 +1,10 @@
 ================================================================================
-PREVAYL  -  CASE STUDY COPY (TEXT ONLY)
+PREVAYL - CASE STUDY COPY (TEXT ONLY)
 Reference: https://geddevine.framer.website/works/prevayl
 ================================================================================
-Tone: Senior lead UX  -  plain-spoken, evidence-led, grounded in craft (not deck-speak).
+Tone: Senior lead UX - plain-spoken, evidence-led, grounded in craft (not deck-speak).
 AI is named as accelerant where useful; judgement and editing carry the story.
-Purpose: Show end-to-end ownership, shippable rigour, and collaboration  -  without
+Purpose: Show end-to-end ownership, shippable rigour, and collaboration - without
 stacking abstract “commercial impact” claims.
 ================================================================================
 
@@ -17,8 +17,8 @@ Year         2024
 
 SEO ONE-LINER (optional)
 ------------------------
-Lead UX for Prevayl’s wearable fitness product  -  research synthesis, interaction
-and systems thinking, and documented handover  -  with AI tooling used to compress
+Lead UX for Prevayl’s wearable fitness product - research synthesis, interaction
+and systems thinking, and documented handover - with AI tooling used to compress
 exploration, not replace judgement.
 
 
@@ -51,12 +51,12 @@ Open case study (Framer)
 
 
 --------------------------------------------------------------------------------
-OPENING (intro under meta  -  two paragraphs)
+OPENING (intro under meta - two paragraphs)
 --------------------------------------------------------------------------------
 Stakeholders weren't asking for a cosmetic pass; they wanted sharper
 differentiation and an experience that lasted after novelty faded. I owned the
 UX thread: research into product reality, interaction patterns, and a tone and
-visual language that belonged to Prevayl  -  not default health-tech chrome.
+visual language that belonged to Prevayl - not default health-tech chrome.
 
 Discovery ran in focused bursts with early technical reality checks. Custom GPTs
 compressed interview notes into themes; Pencil and Figma supported fast visual
@@ -68,7 +68,7 @@ Decisions stayed anchored in usability, feasibility, and clarity.
 NARRATIVE BLOCK (three paragraphs)
 --------------------------------------------------------------------------------
 Companion apps die when hierarchy stops at dashboards. Empty states, edge
-cases, and failure paths needed the same polish as marketing screens  -  every
+cases, and failure paths needed the same polish as marketing screens - every
 surface had to answer what matters now.
 
 The work assumed uneven light, impatient thumbs, and half-known concepts:
@@ -76,11 +76,11 @@ calm rhythm, predictable components, and language that rewarded a glance rather
 than demanding a manual.
 
 Outcome: clearer comprehension in testing, a tighter frame around core
-journeys, and a handover toolkit engineering could implement  -  grounded in
+journeys, and a handover toolkit engineering could implement - grounded in
 critique, not aspiration slides.
 
 CALL TO ACTION LINE
-Read the full case study on Framer  -  https://geddevine.framer.website/works/prevayl
+Read the full case study on Framer - https://geddevine.framer.website/works/prevayl
 
 
 ================================================================================
@@ -95,7 +95,7 @@ One product story from marketing through logged-in ritual.
 
 Body
 The audience spans committed athletes and people who want steadier training
-signals  -  premium without austerity, explanatory without condescension.
+signals - premium without austerity, explanatory without condescension.
 
 Brand, UX, and copy moved together. If a screen failed the skim test for
 “what’s next?”, it went back for another pass.
@@ -105,15 +105,15 @@ Brand, UX, and copy moved together. If a screen failed the skim test for
 THE CHALLENGE
 --------------------------------------------------------------------------------
 Headline
-Sequencing trust  -  not shipping another chart.
+Sequencing trust - not shipping another chart.
 
 Body
 People need to know what they're wearing, what's measured, and what to do with
-an insight  -  in that order, without being talked down to. Depth was
+an insight - in that order, without being talked down to. Depth was
 choreographed: orientation first, jargon on demand.
 
 Clear IA, a tight component set, and narrative glue between sessions, trends,
-and recovery. Visual polish served legibility  -  not decoration alone.
+and recovery. Visual polish served legibility - not decoration alone.
 
 
 --------------------------------------------------------------------------------
@@ -126,7 +126,7 @@ Body
 High-consideration hardware starts with curiosity, then proof. Typography,
 spacing, and terminology had to build confidence before dense data.
 
-Atmosphere was deliverable: calm, intentional, no performative novelty  -  with
+Atmosphere was deliverable: calm, intentional, no performative novelty - with
 structure underneath for scan, compare, and return visits.
 
 
@@ -138,7 +138,7 @@ Contrast as a baseline, not garnish.
 
 Body
 Changing light and hurry change how interfaces are judged. State design and
-focus order were product requirements  -  deep anchors and breathable surfaces
+focus order were product requirements - deep anchors and breathable surfaces
 kept signal in front.
 
 Colour mapped to intent: quieter story zones; sharper contrast for action and anomalies.
@@ -151,7 +151,7 @@ Headline
 Components that scale without drifting.
 
 Body
-Worked toward a coherent kit  -  cards, modules, wayfinding  -  across onboarding,
+Worked toward a coherent kit - cards, modules, wayfinding - across onboarding,
 marketing, and the logged-in shell.
 
 Typography split roles: serif warmth for brand moments; neutral sans wherever
@@ -162,10 +162,10 @@ density and numerals dominate.
 THE LAUNCH / HANDOVER
 --------------------------------------------------------------------------------
 Headline
-Built for real routines  -  plus what happens when tech misbehaves.
+Built for real routines - plus what happens when tech misbehaves.
 
 Body
-First-week onboarding, return-after-break, Bluetooth hiccups  -  same rigour as
+First-week onboarding, return-after-break, Bluetooth hiccups - same rigour as
 hero states. Reassurance where anxiety spikes, not buried footnotes.
 
 Handover documented rationale and boundaries so intent survived implementation.
@@ -180,7 +180,7 @@ Body
 Stakeholders aligned on one value story; testing showed quicker comprehension on
 core paths. Engineering and product shared a clearer picture of what shipped next.
 
-Partnership stayed in critiques and specs  -  not late redlines  -  with decisions
+Partnership stayed in critiques and specs - not late redlines - with decisions
 written down so builders didn't guess intent.
 
 

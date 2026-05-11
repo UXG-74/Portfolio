@@ -1,4 +1,6 @@
 /case-study-lucille.html /work/lucille-london/ 301
 /case-study-02.html /work/kinetik/ 301
-/case-study-03.html /work/northline-care/ 301
+/case-study-03.html /work/distrelec/ 301
+/work/northline-care /work/distrelec/ 301
+/work/northline-care/ /work/distrelec/ 301
 /case-study.html /work/lucille-london/ 301

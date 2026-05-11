@@ -11,6 +11,10 @@
   --font: "Inter", system-ui, -apple-system, sans-serif;
   --cta-gold: #c9a227;
   --contact-bg: #ebebeb;
+  /* Same band as #work-index-heading when "View all work" is used: lead copy lines up under the sticky header. */
+  --anchor-lead-offset: clamp(4.75rem, 11vw, 6.75rem);
+  /* Tight top padding below header so lead headlines sit in that same vertical band (not header + large hero pad). */
+  --inner-lead-pad-top: clamp(0.35rem, 1vw, 0.85rem);
 }
 
 *,
@@ -90,7 +94,7 @@ main {
   }
 }
 
-/*  -  -  Header  -  -  */
+/* - Header - */
 
 .site-header {
   position: sticky;
@@ -359,12 +363,13 @@ body.nav-open {
   overflow: hidden;
 }
 
-/*  -  -  Home hero  -  -  */
+/* - Home hero - */
 
 .hero-home {
   display: flex;
   flex-direction: column;
   gap: clamp(1rem, 2.5vw, 1.5rem);
+  /* Homepage keeps more air above the hero line. */
   padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
 }
 
@@ -401,7 +406,7 @@ body.nav-open {
   }
 }
 
-/*  -  -  Home feature (collage + copy)  -  -  */
+/* - Home feature (collage + copy) - */
 
 .feature-split {
   display: grid;
@@ -409,13 +414,13 @@ body.nav-open {
   padding-bottom: clamp(3rem, 8vw, 6rem);
 }
 
-/*  -  -  About section (single-page)  -  -  */
+/* - About section (single-page) - */
 
 .about-panel {
   display: flex;
   flex-direction: column;
   gap: clamp(1rem, 2.5vw, 1.5rem);
-  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+  padding-block: var(--inner-lead-pad-top) clamp(2.5rem, 6vw, 4.5rem);
   border-top: 1px solid var(--line);
 }
 
@@ -479,7 +484,7 @@ body.nav-open {
   border-bottom: 0;
 }
 
-/*  -  -  Contact (Loaf-style minimalist)  -  -  */
+/* - Contact (Loaf-style minimalist) - */
 
 .contact-main {
   flex: 1;
@@ -493,7 +498,7 @@ body.nav-open {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-block: clamp(2.25rem, 6vw, 4.5rem) clamp(3.5rem, 9vw, 6rem);
+  padding-block: var(--inner-lead-pad-top) clamp(3.5rem, 9vw, 6rem);
 }
 
 .contact-kicker {
@@ -507,7 +512,7 @@ body.nav-open {
 .contact-hero-row {
   display: grid;
   gap: clamp(2rem, 5vw, 3.5rem);
-  scroll-margin-top: clamp(4.75rem, 11vw, 6.75rem);
+  scroll-margin-top: var(--anchor-lead-offset);
 }
 
 @media (min-width: 768px) {
@@ -626,9 +631,10 @@ body.nav-open {
   opacity: 0.9;
 }
 
-/*  -  -  Work index  -  -  */
+/* - Work index - */
 
 .work-hero {
+  /* Original hero air above the Work index headline (unchanged from before inner-page alignment work). */
   padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
 }
 
@@ -664,8 +670,11 @@ body.nav-open {
   text-transform: uppercase;
 }
 
-#work-index-heading {
-  scroll-margin-top: clamp(4.75rem, 11vw, 6.75rem);
+#work-index-heading,
+#work-hero-heading,
+.about-page .about-panel .headline-display,
+.contact-page .contact-kicker {
+  scroll-margin-top: var(--anchor-lead-offset);
 }
 
 .btn-ghost-pill {
@@ -688,7 +697,7 @@ body.nav-open {
   color: var(--white);
 }
 
-/* Figma Work frame 110:460  -  three case placeholders (keyline frames), no section tint */
+/* Figma Work frame 110:460 - three case placeholders (keyline frames), no section tint */
 .work-studies-grid {
   display: grid;
   gap: clamp(1.25rem, 3vw, 1.75rem);
@@ -833,7 +842,7 @@ body.nav-open {
   text-transform: none;
 }
 
-/*  -  -  Case study  -  -  */
+/* - Case study - */
 
 .case-hero {
   padding-block: clamp(2rem, 5vw, 3rem);
@@ -1136,7 +1145,7 @@ body.nav-open {
   text-align: center;
 }
 
-/*  -  -  Footer  -  -  */
+/* - Footer - */
 
 .site-footer {
   border-top: 1px solid var(--line);
@@ -1223,7 +1232,7 @@ body.nav-open {
   border: 0;
 }
 
-/*  -  -  Dark mode  -  -  */
+/* - Dark mode - */
 
 body.theme-dark {
   --white: #1e1e1e;
@@ -1308,6 +1317,45 @@ body.theme-dark .work-inner-figma [style*="color:#f2f2f2"] {
 body.theme-dark .work-inner-figma .cta {
   background: #f3f3f3 !important;
   color: #1e1e1e !important;
+}
+
+/* Case-study inner: pull the Figma canvas up so the project title band sits closer to the Work-index anchor line. */
+body.case-figma-page #main {
+  padding-top: 0;
+}
+
+body.case-figma-page .work-inner-wrap {
+  margin-top: clamp(-2.75rem, -6vw, -0.75rem);
+}
+
+@media (max-width: 768px) {
+  body.case-figma-page .work-inner-wrap {
+    margin-top: 0;
+  }
+
+  /* Overrides per-page inline .work-inner-mobile padding; top inset halved vs prior for ~50% less space under nav. */
+  body.case-figma-page .work-inner-mobile {
+    padding: calc(max(var(--inner-lead-pad-top), env(safe-area-inset-top, 0px)) * 0.5) 30px 56px;
+  }
+
+  body.case-figma-page .work-inner-mobile .mobile-title {
+    scroll-margin-top: var(--anchor-lead-offset);
+  }
+}
+
+/* Inner routes only (not Work index): desktop - ~50% less space between nav and lead title. */
+@media (min-width: 769px) {
+  .about-page .about-panel {
+    padding-block: calc(var(--inner-lead-pad-top) * 0.5) clamp(2.5rem, 6vw, 4.5rem);
+  }
+
+  .contact-page .contact-layout {
+    padding-block: calc(var(--inner-lead-pad-top) * 0.5) clamp(3.5rem, 9vw, 6rem);
+  }
+
+  body.case-figma-page .work-inner-wrap {
+    margin-top: clamp(-4.125rem, -9vw, -1.125rem);
+  }
 }
 
 /* Remove header keyline for Figma case-study pages */

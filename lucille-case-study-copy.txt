@@ -1,8 +1,8 @@
 ================================================================================
-LUCILLE LONDON  -  CASE STUDY COPY (TEXT ONLY)
+LUCILLE LONDON - CASE STUDY COPY (TEXT ONLY)
 Live site reference: https://lucille-london.vercel.app/
 ================================================================================
-DISCLOSURE: Lucille London is fictional  -  a deliberate AI-only exercise, not a
+DISCLOSURE: Lucille London is fictional - a deliberate AI-only exercise, not a
 live client or real business. Strategy, visuals, narrative, and the deployed
 prototype were produced with AI tools; the case study is honest about that.
 ================================================================================
@@ -21,7 +21,7 @@ Year         2025
 SEO ONE-LINER (optional)
 ------------------------
 A speculative case study: a fictional Lucille London luxury fashion brand and
-storefront created end to end with AI  -  positioning, UX, and live prototype.
+storefront created end to end with AI - positioning, UX, and live prototype.
 
 
 --------------------------------------------------------------------------------
@@ -34,18 +34,18 @@ Headline
 Harness AI to create a cohesive brand identity.
 
 Supporting line
-A speculative fine lingerie and nightwear brand  -  invented for this project, with
+A speculative fine lingerie and nightwear brand - invented for this project, with
 no traditional creative pipeline. Strategy, design language, commerce UX, and the
 deployed site were generated with AI, then iterated until they cleared a
 believable luxury shelf.
 
 
-HERO CAPTION (or secondary callout  -  mirrors site romance line + collection)
+HERO CAPTION (or secondary callout - mirrors site romance line + collection)
 Headline
 Fall in love with lace
 
 Body
-La Belle Époque  -  an ode to Parisian sensuality in the copy  -  French lace, silk,
+La Belle Époque - an ode to Parisian sensuality in the copy - French lace, silk,
 and an invented Kensington thread to give the fiction a sense of place.
 
 Button
@@ -53,9 +53,9 @@ Visit Lucille London
 
 
 --------------------------------------------------------------------------------
-OPENING (intro under meta  -  two paragraphs)
+OPENING (intro under meta - two paragraphs)
 --------------------------------------------------------------------------------
-Lucille London is not a live client  -  it exists purely as an AI-built piece of
+Lucille London is not a live client - it exists purely as an AI-built piece of
 work. The goal was to see whether a full luxury brand and storefront could be
 credible when strategy, visuals, narrative, and build all come out of the same
 machine-led workflow. The bar stayed high: editorial and intimate on first
@@ -69,7 +69,7 @@ Code for language architecture - so quality came from iteration, not volume.
 
 
 --------------------------------------------------------------------------------
-NARRATIVE BLOCK (process / principle  -  three paragraphs)
+NARRATIVE BLOCK (process / principle - three paragraphs)
 --------------------------------------------------------------------------------
 Luxury e-commerce is judged in milliseconds: hierarchy, whitespace, and
 restraint either read as confidence - or as empty. Every module had to earn its
@@ -77,17 +77,17 @@ place: hero proposition, collections, edits that behave like a magazine, and
 product cards that carry craft without noise.
 
 The stack was the studio: snapshot passes, variants, microcopy generations  - 
-all AI-native. Discipline was in direction  -  which prompts survived, which routes
+all AI-native. Discipline was in direction - which prompts survived, which routes
 shipped, what still scans as intentional when you scroll at 2 a.m. on a phone.
 
 The outcome is a coherent fiction on a live URL: one voice (“Lucille London”),
 a collection story that carries from landing to basket, and interaction patterns
-that respect hesitation in high-consideration categories  -  without the site
+that respect hesitation in high-consideration categories - without the site
 reading as a thin brochure.
 
 
 CALL TO ACTION LINE
-Walk the live experience  -  Go to Lucille London (https://lucille-london.vercel.app/)
+Walk the live experience - Go to Lucille London (https://lucille-london.vercel.app/)
 
 
 ================================================================================
@@ -103,7 +103,7 @@ Design language that reads as craft, not template.
 Body
 The invented world sits where Parisian romance meets London shopping culture:
 French lace and silk, a collection spine (La Belle Époque), and Kensington as
-lore in the copy  -  not a documented storefront. The brief to myself was sharper
+lore in the copy - not a documented storefront. The brief to myself was sharper
 than “make a pretty shop”: make trust and desire feel plausible in a category
 that punishes anything that reads as pasted-on.
 
@@ -218,7 +218,7 @@ gifting - so content reads as part of the product world, not a bolt-on blog.
 
 AI-assisted drafting produced breadth fast; steering and cuts produced
 cohesion. The final lines were chosen for memorability, propriety, and fit with
-a house that sells intimacy with dignity  -  all of it synthetic, all of it held
+a house that sells intimacy with dignity - all of it synthetic, all of it held
 to the same standard as real brand work.
 
 
@@ -246,13 +246,13 @@ Headline
 What this proves
 
 Body
-AI can brute-force the messy middle  -  options, variants, microcopy, visual
-passes  -  but the work still needs a point of view. This project is a case for
+AI can brute-force the messy middle - options, variants, microcopy, visual
+passes - but the work still needs a point of view. This project is a case for
 disciplined iteration on a fiction: fewer loud claims, more consistent signals,
 and a prototype store that earns a second scroll because it feels considered,
 not because the inventory is real.
 
-The live site is the artifact  -  browse La Belle Époque, move through nightwear
+The live site is the artifact - browse La Belle Époque, move through nightwear
 and swim, and judge whether restraint does the selling on its own terms.
 
 
