@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Contact Ged Devine - email, phone, and social links." />
+    <meta name="description" content="Contact Ged Devine — email, phone, and social links." />
     <title>Contact · Ged Devine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css?v=contact-hero" />
   </head>
   <body class="page contact-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -40,35 +40,35 @@
       </div>
     </header>
 
-    <main id="main" class="contact-main">
-      <div class="shell contact-layout">
-        <h1 class="contact-kicker">Let's talk</h1>
-
-        <div class="contact-hero-row" aria-label="Contact details">
-          <div class="contact-primary">
-            <a class="contact-line contact-line--primary" href="mailto:geddevine@hotmail.com">geddevine@hotmail.com</a>
-            <a class="contact-line contact-line--primary" href="tel:+44161245638">+44 (0)161 245 638</a>
+    <main id="main">
+      <section class="shell hero-home" aria-labelledby="contact-heading">
+        <h1 id="contact-heading" class="contact-hero-title">Let's talk.</h1>
+      </section>
+      <div class="contact-sheet">
+        <div class="shell contact-layout">
+          <div class="contact-hero-row" aria-label="Contact details">
+            <div class="contact-primary">
+              <a class="contact-line contact-line--primary" href="mailto:geddevine@hotmail.com">geddevine@hotmail.com</a>
+              <a class="contact-line contact-line--primary" href="tel:+44161245638">+44 (0)161 245 638</a>
+            </div>
+            <ul class="contact-social" aria-label="Social links">
+              <li><a href="#">Instagram&nbsp;→</a></li>
+              <li><a href="https://www.linkedin.com/in/ged-devine-08369213b/" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;→</a></li>
+            </ul>
           </div>
-          <ul class="contact-social" aria-label="Social links">
-            <li><a href="#">Instagram&nbsp;→</a></li>
-            <li><a href="#">LinkedIn&nbsp;→</a></li>
-          </ul>
         </div>
       </div>
     </main>
 
     <footer class="site-footer">
       <div class="shell footer-inner">
-        <p>© <span id="y"></span> Ged Devine</p>
+        <p>© 2026</p>
         <div class="footer-links">
           <a href="contact.html">Get in touch</a>
-          <a href="#">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/ged-devine-08369213b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </footer>
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
     <script src="js/main.js"></script>
   </body>
 </html>

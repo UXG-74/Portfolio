@@ -1,9 +1,9 @@
 /* Ged Devine / DEPT-style portfolio (mobile-first) */
 
 :root {
-  --white: #ffffff;
-  --black: #0a0a0a;
-  --muted: #404040;
+  --white: #f3f3f3;
+  --black: #1e1e1e;
+  --muted: #1e1e1e;
   --line: #e8e8e8;
   --max: 1440px;
   /* Horizontal inset for .shell (left/right padding) */
@@ -94,7 +94,7 @@ main {
   }
 }
 
-/* - Header - */
+/* —— Header —— */
 
 .site-header {
   position: sticky;
@@ -297,7 +297,7 @@ body.nav-open .menu-toggle svg {
   padding-top: 0;
   font-size: 8pt;
   line-height: 1.3;
-  color: #c8c8c8;
+  color: #1e1e1e;
 }
 
 .nav-drawer .drawer-copyright {
@@ -363,7 +363,7 @@ body.nav-open {
   overflow: hidden;
 }
 
-/* - Home hero - */
+/* —— Home hero —— */
 
 .hero-home {
   display: flex;
@@ -406,7 +406,7 @@ body.nav-open {
   }
 }
 
-/* - Home feature (collage + copy) - */
+/* —— Home feature (collage + copy) —— */
 
 .feature-split {
   display: grid;
@@ -414,7 +414,7 @@ body.nav-open {
   padding-bottom: clamp(3rem, 8vw, 6rem);
 }
 
-/* - About section (single-page) - */
+/* —— About section (single-page) —— */
 
 .about-panel {
   display: flex;
@@ -464,7 +464,7 @@ body.nav-open {
 
 /* About-only: remove keyline separators */
 .about-page .site-header,
-.about-page .about-panel,
+.about-page .hero-home,
 .about-page .site-footer {
   border-top: 0;
   border-bottom: 0;
@@ -479,34 +479,48 @@ body.nav-open {
 
 /* Contact-only: remove keyline separators (same as Home / About / Work) */
 .contact-page .site-header,
+.contact-page .hero-home,
 .contact-page .site-footer {
   border-top: 0;
   border-bottom: 0;
 }
 
-/* - Contact (Loaf-style minimalist) - */
+/* —— Contact (Loaf-style minimalist) —— */
 
-.contact-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+/* Contact: hero sits in <main> like Home (no flex wrapper); grey band only below the hero. */
+.contact-sheet {
   background: var(--contact-bg);
 }
 
+/* Contact hero title: own type scale (not .headline-display — same class was winning / cache made size fixes invisible). */
+.contact-page .contact-hero-title {
+  margin: 0 0 clamp(3rem, 12vw, 8rem);
+  max-width: 54rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: inherit;
+  font-size: clamp(1.125rem, calc(0.6rem + 2.8vw), 2rem) !important;
+  line-height: 1.15 !important;
+}
+
+@media (min-width: 900px) {
+  .contact-page .contact-hero-title {
+    font-size: 32px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-page .contact-hero-title {
+    letter-spacing: -0.025em;
+    font-size: clamp(1.125rem, calc(0.5rem + 3.5vw), 1.75rem) !important;
+  }
+}
+
 .contact-layout {
-  flex: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-block: var(--inner-lead-pad-top) clamp(3.5rem, 9vw, 6rem);
-}
-
-.contact-kicker {
-  margin: 0 0 clamp(3rem, 12vw, 8rem);
-  font-size: clamp(1.0625rem, 2vw, 1.25rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
 }
 
 .contact-hero-row {
@@ -631,7 +645,7 @@ body.nav-open {
   opacity: 0.9;
 }
 
-/* - Work index - */
+/* —— Work index —— */
 
 .work-hero {
   /* Original hero air above the Work index headline (unchanged from before inner-page alignment work). */
@@ -670,10 +684,11 @@ body.nav-open {
   text-transform: uppercase;
 }
 
+#home-hero-heading,
 #work-index-heading,
 #work-hero-heading,
-.about-page .about-panel .headline-display,
-.contact-page .contact-kicker {
+#about-copy-heading,
+#contact-heading {
   scroll-margin-top: var(--anchor-lead-offset);
 }
 
@@ -697,7 +712,7 @@ body.nav-open {
   color: var(--white);
 }
 
-/* Figma Work frame 110:460 - three case placeholders (keyline frames), no section tint */
+/* Figma Work frame 110:460 — three case placeholders (keyline frames), no section tint */
 .work-studies-grid {
   display: grid;
   gap: clamp(1.25rem, 3vw, 1.75rem);
@@ -776,7 +791,7 @@ body.nav-open {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.2;
-  color: #858585;
+  color: #1e1e1e;
 }
 
 .work-grid-figma {
@@ -842,7 +857,7 @@ body.nav-open {
   text-transform: none;
 }
 
-/* - Case study - */
+/* —— Case study —— */
 
 .case-hero {
   padding-block: clamp(2rem, 5vw, 3rem);
@@ -1145,13 +1160,13 @@ body.nav-open {
   text-align: center;
 }
 
-/* - Footer - */
+/* —— Footer —— */
 
 .site-footer {
   border-top: 1px solid var(--line);
   padding-block: clamp(2rem, 5vw, 3rem);
   font-size: 10pt;
-  color: #c8c8c8;
+  color: #1e1e1e;
 }
 
 .footer-inner {
@@ -1197,7 +1212,7 @@ body.nav-open {
     margin-top: 8px;
     padding-block: 0.5rem 0.35rem;
     font-size: 10pt;
-    color: #c8c8c8;
+    color: #1e1e1e;
   }
 
   .site-footer .footer-inner {
@@ -1232,7 +1247,7 @@ body.nav-open {
   border: 0;
 }
 
-/* - Dark mode - */
+/* —— Dark mode —— */
 
 body.theme-dark {
   --white: #1e1e1e;
@@ -1249,6 +1264,14 @@ body.theme-dark .site-header,
 body.theme-dark .nav-drawer,
 body.theme-dark .site-footer {
   background: #1e1e1e;
+}
+
+body.theme-dark .nav-drawer .drawer-tools {
+  color: #c8c8c8;
+}
+
+body.theme-dark .site-footer {
+  color: #c8c8c8;
 }
 
 body.theme-dark .menu-toggle {
@@ -1306,7 +1329,7 @@ body.theme-dark .work-inner-figma .placeholder {
   border-color: #3a3a3a !important;
 }
 
-body.theme-dark .work-inner-figma [style*="background:#fff"] {
+body.theme-dark .work-inner-figma [style*="background:#f3f3f3"] {
   background: #1e1e1e !important;
 }
 
@@ -1343,16 +1366,8 @@ body.case-figma-page .work-inner-wrap {
   }
 }
 
-/* Inner routes only (not Work index): desktop - ~50% less space between nav and lead title. */
+/* Inner routes only (not Work index): desktop — ~50% less space between nav and lead title. */
 @media (min-width: 769px) {
-  .about-page .about-panel {
-    padding-block: calc(var(--inner-lead-pad-top) * 0.5) clamp(2.5rem, 6vw, 4.5rem);
-  }
-
-  .contact-page .contact-layout {
-    padding-block: calc(var(--inner-lead-pad-top) * 0.5) clamp(3.5rem, 9vw, 6rem);
-  }
-
   body.case-figma-page .work-inner-wrap {
     margin-top: clamp(-4.125rem, -9vw, -1.125rem);
   }
