@@ -744,11 +744,17 @@ body.nav-open {
   overflow: hidden;
 }
 
-.work-study-thumb img {
+.work-study-thumb img,
+.work-study-thumb video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
+}
+
+.work-study-thumb--kinetik video {
+  object-position: right center;
 }
 
 /* Ratios from Figma image frames (650×435, 650×653, 1317×737) */
