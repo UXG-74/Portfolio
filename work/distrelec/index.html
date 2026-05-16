@@ -35,7 +35,31 @@
       .work-inner-figma .h3 { font: 500 46px/1.2 Inter, system-ui, sans-serif; }
       .work-inner-figma .body24 { font: 400 24px/1.3 Inter, system-ui, sans-serif; }
       .work-inner-figma .body-sm { font: 400 16px/1.3 Inter, system-ui, sans-serif; }
-      .work-inner-figma .hero-image-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; max-width: none; }
+      .work-inner-figma .hero-image-wrap {
+        background: #0b0f14;
+      }
+      .work-inner-figma .hero-image-wrap img {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-width: none;
+      }
+      .work-inner-figma .hero-image-wrap video {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 103%;
+        height: 103%;
+        display: block;
+        transform: translate(-50%, -50%) scale(1.025);
+        transform-origin: center center;
+        object-fit: cover;
+        object-position: center 54%;
+        max-width: none;
+      }
       .work-inner-figma .figma-site-cta { transform-origin: top left; }
       .work-inner-mobile {
         display: none;
@@ -52,16 +76,32 @@
         font: 500 22px/1.2 Inter, system-ui, sans-serif;
       }
       .work-inner-mobile .mobile-hero {
+        position: relative;
         width: 100%;
         height: 186px;
         margin-bottom: 22px;
         overflow: hidden;
+        background: #0b0f14;
       }
       .work-inner-mobile .mobile-hero img,
       .work-inner-mobile .mobile-image img {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        max-width: none;
+      }
+      .work-inner-mobile .mobile-hero video {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 103%;
+        height: 103%;
+        display: block;
+        transform: translate(-50%, -50%) scale(1.025);
+        transform-origin: center center;
+        object-fit: cover;
+        object-position: center 54%;
         max-width: none;
       }
       .work-inner-mobile .mobile-services {
@@ -218,13 +258,15 @@
     <main id="main">
       <div class="work-inner-wrap">
       <section class="work-inner-figma">
-      <div style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/38e3b0ae-27a3-47b2-bc8d-5af5993994cb" alt="" style="position:absolute;left:0;top:-9.51%;width:100%;height:125.66%;max-width:none" /></div>
+      <div style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-conclusion.png?v=reg-mockups" alt="Distrelec responsive registration on MacBook and iPhone showing country, customer type, and validated form fields." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:-47px;top:189px;width:1540px;height:5645px;background:#f3f3f3"></div>
-      <div style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/75763643-10c7-4412-bd05-285a8cdfa199" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/distrelec-user-flow.png?v=user-flow4" alt="Registration user-flow diagram mapping email lookup, B2B/B2C paths, validation, and account outcomes." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:0;top:173px;width:1175px;height:209px;background:#f3f3f3"></div>
 
       <div class="hero-image-wrap" style="position:absolute;left:23px;top:504px;width:1400px;height:780px;overflow:hidden">
-        <img src="https://www.figma.com/api/mcp/asset/2a092de9-ecf3-4c5b-bab3-6b78f3897266" alt="" style="position:absolute;left:0;top:-22.95%;width:100%;height:130.98%;max-width:none" />
+        <video autoplay muted playsinline loop preload="metadata" aria-label="Distrelec industrial manufacturing operations footage.">
+          <source src="/video/distrelec-factory-hero.mp4?v=2" type="video/mp4" />
+        </video>
       </div>
 
       <div style="position:absolute;left:56px;top:278px;width:1278px;display:flex;flex-direction:column;line-height:1.2">
@@ -254,14 +296,14 @@
         <p class="label">OVERVIEW</p>
         <p class="h3">Clarity before chrome.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
-          <p class="body24">Distrelec sits where catalogue depth meets procurement caution: parts, tools, infrastructure, six-region contracts, and the reality of reconciling purchase numbers. The brief was not prettier chrome; it was fewer duplicate identities, clearer proof, and speed finance can stand behind.</p>
+          <p class="body24">Distrelec sits where catalogue depth meets procurement caution: parts, tools, infrastructure, with registration and checkout varying by region. Duplicate accounts made orders hard to track and complaints to support rose. The brief was not prettier chrome; it was fewer identities, clearer proof, and speed finance can stand behind.</p>
           <p class="body24">Strategy, UX, and UI moved in one lane—reviewed with stakeholders, revised against tickets and transcripts—so the voice could repeat without sounding canned. Same signal at landing, in the steps, and at service handoff. No ornament. Only accountable steps.</p>
         </div>
       </div>
       <div style="position:absolute;left:969px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/faeacbbd-c681-483a-a05d-3cd8dfab5c7b" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:496px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/83c82f95-901f-4221-93f6-793d11e3d35d" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:23px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/0cd6b309-6ff2-40bb-9f34-a3fb09b9830b" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:0;top:4150px;width:490px;height:355.5px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/f1a16625-1647-4c7c-b59f-143a18d8a696" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:0;top:4150px;width:490px;height:355.5px;overflow:hidden"><img src="/img/distrelec-intro.png?v=overview" alt="Distrelec industrial manufacturing hero showing operations efficiency messaging." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:672px;top:5146px;width:620px;display:flex;flex-direction:column;gap:32px">
         <p class="label">THE CHALLENGE</p>
         <p class="h3" style="width:601px">A B2B registration surface has to read as audit-ready.</p>
@@ -284,7 +326,7 @@
         <p class="label">THE LAUNCH</p>
         <p class="h3">Launch when the path matches the warehouse.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
-          <p class="body24">Launch is where promise meets backlog. Flows were set for regional programmes, acknowledgements where consent matters, and recovery that does not live in a footer maze. The frame stayed blunt: state the registration story plainly, keep evaluation steady, and let support proofs carry the move into an active account.</p>
+          <p class="body24">Launch is where promise meets backlog. Flows were set for six regional programmes, acknowledgements where consent matters, and recovery that does not live in a footer maze. The frame stayed blunt: state the registration story plainly, keep evaluation steady, and let support proofs carry the move into an active account.</p>
           <p class="body24">Secondary proof—invoices, contract routing, returns wording—sat at commit, not buried as annex copy. The UI stayed simple: one narrative spine, calm review, and service evidence supporting the next action.</p>
         </div>
       </div>
@@ -334,17 +376,17 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:42px;top:6509px;width:1338px;height:777px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/ca262cbb-11e5-4c26-9c14-53a19b1b55fb" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:7284px;width:565px;height:396px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/32ff0d76-1a81-4831-be9f-d2845321c18f" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:607px;top:7284px;width:773px;height:600px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/24a369b2-3787-461c-9f03-d71a40c80b1a" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:8595px;width:773px;height:541px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/e4477f09-7bfd-4014-9ea3-c15b01ffd17d" alt="" style="position:absolute;left:-0.02%;top:0.02%;width:100.02%;height:100.04%;max-width:none" /></div>
-      <div style="position:absolute;left:815px;top:8595px;width:565px;height:396px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/04c305da-0d7c-4952-9d4a-5201a2924bfd" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:10069px;width:669px;height:500px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/723f4c57-25e9-45d5-92dd-d5b00e8c7706" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:711px;top:10070px;width:669px;height:500px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/fa06b49f-7e77-47a9-9694-416a7782747e" alt="" style="position:absolute;left:-12%;top:-9%;width:124%;height:117.99%;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:10569px;width:1338px;height:777px;overflow:hidden"><img src="/img/font.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/4f2f0498-60c0-410e-83ba-295afb8bde22" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:6509px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-wireframes.png?v=wireframes" alt="Distrelec mobile registration wireframes highlighting in-page tab login and country selector placement." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:7284px;width:565px;height:396px;overflow:hidden"><img src="/img/distrelec-user-testing.png?v=user-testing" alt="Four moderated usability sessions with participants reviewing the Distrelec registration flow." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:607px;top:7284px;width:773px;height:600px;overflow:hidden"><img src="/img/distrelec-painpoint.png?v=painpoint" alt="Distrelec checkout pain points: disabled purchase button and repeated payment logo interactions." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:8595px;width:773px;height:541px;overflow:hidden"><img src="/img/distrelec-launch-funnel.png?v=launch-funnel" alt="GA4 registration journey funnel by device category showing checkout steps, drop-off, and purchase completion." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:815px;top:8595px;width:565px;height:396px;overflow:hidden"><img src="/img/distrelec-abandonment-stats.png?v=abandonment" alt="79% registration abandonment stat for Distrelec unique visits in 2023." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:10069px;width:669px;height:500px;overflow:hidden"><img src="/img/distrelec-logo.png?v=logo" alt="Distrelec wordmark with Part of RS Group lockup on a dark background." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:711px;top:10070px;width:669px;height:500px;overflow:hidden"><img src="/img/distrelec-montserrat.png?v=montserrat" alt="Montserrat typography specimen showing character set and weight scale." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:42px;top:10569px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-colour-ramp.png?v=colour-ramp" alt="Distrelec colour ramp showing primary and accent colour scales." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="/img/distrelec-campaign.svg?v=register" alt="Distrelec mobile registration wireframe showing country selection, customer type, and validated email field." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/1445a586-6c05-4a8a-9748-cf71163073ce" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/af110e45-35db-4c34-b9b2-2ffc12abfad4" alt="" style="position:absolute;left:0;top:-34.72%;width:100%;height:143.57%;max-width:none" /></div>
+      <div style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="/img/distrelec-signposting.png?v=signposting" alt="Three Distrelec mobile screens showing inline validation, registration signposting, and region selection." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
 
       <div style="position:absolute;left:116px;top:1493px;width:244px;display:flex;flex-direction:column;gap:16px">
         <p class="body16" style="color:#1e1e1e">( Services )</p>
@@ -366,7 +408,9 @@
         <p class="mobile-subtitle">Registration built on evidence.</p>
 
         <div class="mobile-hero">
-          <img src="https://www.figma.com/api/mcp/asset/2a092de9-ecf3-4c5b-bab3-6b78f3897266" alt="" />
+          <video autoplay muted playsinline loop preload="metadata" aria-label="Distrelec industrial manufacturing operations footage.">
+            <source src="/video/distrelec-factory-hero.mp4?v=2" type="video/mp4" />
+          </video>
         </div>
 
         <div class="mobile-services">
@@ -389,7 +433,7 @@
         </div>
 
         <div class="mobile-image" style="margin-bottom:24px;">
-          <img src="https://www.figma.com/api/mcp/asset/f1a16625-1647-4c7c-b59f-143a18d8a696" alt="" />
+          <img src="/img/distrelec-user-flow.png?v=user-flow4" alt="Registration user-flow diagram mapping email lookup, B2B/B2C paths, validation, and account outcomes." />
         </div>
 
         <div class="mobile-cta-band">
@@ -397,11 +441,14 @@
           <a class="mobile-cta-copy" href="https://www.distrelec.ch/en/" target="_blank" rel="noopener noreferrer">SEE THE SITE</a>
         </div>
 
+        <div class="mobile-image" style="margin-bottom:24px;">
+          <img src="/img/distrelec-intro.png?v=overview" alt="Distrelec industrial manufacturing hero showing operations efficiency messaging." />
+        </div>
         <div class="mobile-block">
           <p class="mobile-kicker">OVERVIEW</p>
           <p class="mobile-h">Clarity before chrome.</p>
           <div class="mobile-body">
-            <p>Distrelec sits where catalogue depth meets procurement caution: parts, tools, infrastructure, six-region contracts, and the reality of reconciling purchase numbers. The brief was not prettier chrome; it was fewer duplicate identities, clearer proof, and speed finance can stand behind.</p>
+            <p>Distrelec sits where catalogue depth meets procurement caution: parts, tools, infrastructure, with registration and checkout varying by region. Duplicate accounts made orders hard to track and complaints to support rose. The brief was not prettier chrome; it was fewer identities, clearer proof, and speed finance can stand behind.</p>
             <p>Strategy, UX, and UI moved in one lane—reviewed with stakeholders, revised against tickets and transcripts—so the voice could repeat without sounding canned. Same signal at landing, in the steps, and at service handoff. No ornament. Only accountable steps.</p>
           </div>
         </div>
@@ -431,23 +478,23 @@
         </div>
 
         <div class="mobile-stack">
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/ca262cbb-11e5-4c26-9c14-53a19b1b55fb" alt="" /></div>
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/32ff0d76-1a81-4831-be9f-d2845321c18f" alt="" /></div>
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/24a369b2-3787-461c-9f03-d71a40c80b1a" alt="" /></div>
+          <div class="mobile-image"><img src="/img/distrelec-wireframes.png?v=wireframes" alt="Distrelec mobile registration wireframes highlighting in-page tab login and country selector placement." /></div>
+          <div class="mobile-image"><img src="/img/distrelec-user-testing.png?v=user-testing" alt="Four moderated usability sessions with participants reviewing the Distrelec registration flow." /></div>
+          <div class="mobile-image"><img src="/img/distrelec-painpoint.png?v=painpoint" alt="Distrelec checkout pain points: disabled purchase button and repeated payment logo interactions." /></div>
         </div>
 
         <div class="mobile-block">
           <p class="mobile-kicker">THE LAUNCH</p>
           <p class="mobile-h">Launch when the path matches the warehouse.</p>
           <div class="mobile-body">
-            <p>Launch is where promise meets backlog. Flows were set for regional programmes, acknowledgements where consent matters, and recovery that does not live in a footer maze. The frame stayed blunt: state the registration story plainly, keep evaluation steady, and let support proofs carry the move into an active account.</p>
+            <p>Launch is where promise meets backlog. Flows were set for six regional programmes, acknowledgements where consent matters, and recovery that does not live in a footer maze. The frame stayed blunt: state the registration story plainly, keep evaluation steady, and let support proofs carry the move into an active account.</p>
             <p>Secondary proof—invoices, contract routing, returns wording—sat at commit, not buried as annex copy. The UI stayed simple: one narrative spine, calm review, and service evidence supporting the next action.</p>
           </div>
         </div>
 
         <div class="mobile-stack">
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/e4477f09-7bfd-4014-9ea3-c15b01ffd17d" alt="" /></div>
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/04c305da-0d7c-4952-9d4a-5201a2924bfd" alt="" /></div>
+          <div class="mobile-image"><img src="/img/distrelec-launch-funnel.png?v=launch-funnel" alt="GA4 registration journey funnel by device category showing checkout steps, drop-off, and purchase completion." /></div>
+          <div class="mobile-image"><img src="/img/distrelec-abandonment-stats.png?v=abandonment" alt="79% registration abandonment stat for Distrelec unique visits in 2023." /></div>
         </div>
 
         <div class="mobile-block">
@@ -469,9 +516,9 @@
         </div>
 
         <div class="mobile-stack">
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/723f4c57-25e9-45d5-92dd-d5b00e8c7706" alt="" /></div>
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/fa06b49f-7e77-47a9-9694-416a7782747e" alt="" /></div>
-          <div class="mobile-image"><img src="/img/font.png" alt="" /></div>
+          <div class="mobile-image"><img src="/img/distrelec-logo.png?v=logo" alt="Distrelec wordmark with Part of RS Group lockup on a dark background." /></div>
+          <div class="mobile-image"><img src="/img/distrelec-montserrat.png?v=montserrat" alt="Montserrat typography specimen showing character set and weight scale." /></div>
+          <div class="mobile-image"><img src="/img/distrelec-colour-ramp.png?v=colour-ramp" alt="Distrelec colour ramp showing primary and accent colour scales." /></div>
         </div>
 
         <div class="mobile-block">
@@ -484,7 +531,7 @@
         </div>
 
         <div class="mobile-image mobile-image-tall" style="margin-bottom:24px;">
-          <img src="https://www.figma.com/api/mcp/asset/4f2f0498-60c0-410e-83ba-295afb8bde22" alt="" />
+          <img src="/img/distrelec-campaign.svg?v=register" alt="Distrelec mobile registration wireframe showing country selection, customer type, and validated email field." />
         </div>
 
         <div class="mobile-block">
@@ -498,7 +545,7 @@
 
         <div class="mobile-stack">
           <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/1445a586-6c05-4a8a-9748-cf71163073ce" alt="" /></div>
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/af110e45-35db-4c34-b9b2-2ffc12abfad4" alt="" /></div>
+          <div class="mobile-image"><img src="/img/distrelec-signposting.png?v=signposting" alt="Three Distrelec mobile screens showing inline validation, registration signposting, and region selection." /></div>
         </div>
 
         <div class="mobile-block">
@@ -511,7 +558,7 @@
         </div>
 
         <div class="mobile-image mobile-image-short">
-          <img src="https://www.figma.com/api/mcp/asset/38e3b0ae-27a3-47b2-bc8d-5af5993994cb" alt="" />
+          <img src="/img/distrelec-conclusion.png?v=reg-mockups" alt="Distrelec responsive registration on MacBook and iPhone showing country, customer type, and validated form fields." />
         </div>
       </section>
     </main>

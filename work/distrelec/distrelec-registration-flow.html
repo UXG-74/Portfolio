@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Distrelec registration flow</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #0f1b2d;
+        color: #f3f6fb;
+        font-family: Inter, system-ui, sans-serif;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #2f4561;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+      .actions {
+        display: flex;
+        gap: 0.75rem;
+      }
+      .actions a,
+      .actions button {
+        appearance: none;
+        border: 1px solid #8ec5ff;
+        background: #2f7fd3;
+        color: #fff;
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .actions a.secondary {
+        background: transparent;
+        color: #d8e6f5;
+      }
+      main {
+        padding: 1rem;
+        overflow: auto;
+      }
+      .diagram {
+        width: 100%;
+        min-width: 1200px;
+      }
+      .diagram object {
+        display: block;
+        width: 100%;
+        height: auto;
+        min-height: 520px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Distrelec EMEA  -  Registration user flow</h1>
+      <div class="actions">
+        <a class="secondary" href="/work/distrelec/">Back to case study</a>
+        <button type="button" onclick="window.print()">Print / Save PDF</button>
+      </div>
+    </header>
+    <main>
+      <div class="diagram" aria-label="Distrelec registration user flow diagram">
+        <object data="distrelec-registration-flow.svg" type="image/svg+xml" title="Distrelec registration user flow">
+          <p>Your browser could not display this diagram. Open this page in Safari or Chrome.</p>
+        </object>
+      </div>
+    </main>
+  </body>
+</html>

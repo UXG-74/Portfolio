@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2480 720" role="img" aria-labelledby="flow-title flow-desc">
+  <title id="flow-title">Distrelec EMEA registration user flow</title>
+  <desc id="flow-desc">Horizontal registration journey: email gate, B2C and B2B paths, company lookup, new versus existing customer handling, and recovery options.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#d8e6f5"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="2480" height="720" fill="#0f1b2d"/>
+
+  <text x="1240" y="40" text-anchor="middle" fill="#f3f6fb" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700">Distrelec EMEA  -  Registration user flow (corrected, horizontal)</text>
+
+  <!-- Legend -->
+  <g transform="translate(32, 58)">
+    <rect width="280" height="88" rx="6" fill="#15263b" stroke="#2f4561"/>
+    <text x="12" y="20" fill="#f3f6fb" font-size="12" font-weight="700" font-family="Inter, system-ui, sans-serif">Legend</text>
+    <ellipse cx="28" cy="40" rx="18" ry="10" fill="#7b5cff" stroke="#d4c9ff"/>
+    <text x="52" y="44" fill="#d8e6f5" font-size="11" font-family="Inter, system-ui, sans-serif">Start / End</text>
+    <polygon points="28,58 40,66 28,74 16,66" fill="#1f9d63" stroke="#7dffc0"/>
+    <text x="52" y="70" fill="#d8e6f5" font-size="11" font-family="Inter, system-ui, sans-serif">Decision</text>
+    <rect x="8" y="78" width="40" height="14" rx="3" fill="#2f7fd3" stroke="#8ec5ff"/>
+    <text x="52" y="88" fill="#d8e6f5" font-size="11" font-family="Inter, system-ui, sans-serif">Action</text>
+  </g>
+
+  <g font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+  <!-- Main spine (y=300) -->
+    <ellipse cx="70" cy="300" rx="48" ry="18" fill="#7b5cff" stroke="#d4c9ff" filter="url(#shadow)"/>
+    <text x="70" y="304" text-anchor="middle" fill="#fff">Start</text>
+
+    <polygon points="200,280 260,300 200,320 140,300" fill="#1f9d63" stroke="#7dffc0" filter="url(#shadow)"/>
+    <text x="200" y="298" text-anchor="middle" fill="#fff">Email exists?</text>
+
+    <rect x="310" y="282" width="150" height="36" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="385" y="304" text-anchor="middle" fill="#fff">Begin registration</text>
+
+    <rect x="490" y="274" width="170" height="52" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="575" y="296" text-anchor="middle" fill="#fff">Explain B2C / B2B</text>
+    <text x="575" y="312" text-anchor="middle" fill="#e8f4ff" font-size="9" font-weight="500">Set expectations</text>
+
+    <polygon points="720,280 780,300 720,320 660,300" fill="#1f9d63" stroke="#7dffc0" filter="url(#shadow)"/>
+    <text x="720" y="298" text-anchor="middle" fill="#fff">Customer type?</text>
+
+    <!-- Yes branch (duplicate email)  -  above spine -->
+    <rect x="140" y="168" width="170" height="44" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="225" y="186" text-anchor="middle" fill="#fff">Login / password reset</text>
+    <text x="225" y="202" text-anchor="middle" fill="#e8f4ff" font-size="9" font-weight="500">No duplicate account</text>
+    <ellipse cx="360" cy="190" rx="44" ry="16" fill="#7b5cff" stroke="#d4c9ff"/>
+    <text x="360" y="194" text-anchor="middle" fill="#fff">End</text>
+
+    <!-- B2C branch  -  above spine -->
+    <rect x="860" y="168" width="130" height="36" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="925" y="190" text-anchor="middle" fill="#fff">B2C registration</text>
+    <ellipse cx="1040" cy="186" rx="56" ry="16" fill="#7b5cff" stroke="#d4c9ff"/>
+    <text x="1040" y="190" text-anchor="middle" fill="#fff">End B2C</text>
+
+    <!-- B2B spine continues -->
+    <text x="900" y="248" text-anchor="middle" fill="#f3c969" font-size="12" font-weight="700">B2B</text>
+
+    <rect x="860" y="282" width="200" height="52" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="960" y="302" text-anchor="middle" fill="#fff">D&amp;B / Bisnode lookup</text>
+    <text x="960" y="318" text-anchor="middle" fill="#e8f4ff" font-size="9" font-weight="500">Match legal entity</text>
+
+    <rect x="1090" y="274" width="210" height="52" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="1195" y="296" text-anchor="middle" fill="#fff">Offer new / existing</text>
+    <text x="1195" y="312" text-anchor="middle" fill="#e8f4ff" font-size="9" font-weight="500">Show name hints</text>
+
+    <polygon points="1350,280 1410,300 1350,320 1290,300" fill="#1f9d63" stroke="#7dffc0" filter="url(#shadow)"/>
+    <text x="1350" y="298" text-anchor="middle" fill="#fff">New / existing?</text>
+
+    <!-- New B2B  -  below spine -->
+    <rect x="1280" y="400" width="180" height="44" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="1370" y="418" text-anchor="middle" fill="#fff">Straight-through new</text>
+    <text x="1370" y="434" text-anchor="middle" fill="#e8f4ff" font-size="9" font-weight="500">Pricing on create</text>
+    <ellipse cx="1500" cy="422" rx="62" ry="16" fill="#7b5cff" stroke="#d4c9ff"/>
+    <text x="1500" y="426" text-anchor="middle" fill="#fff">End new</text>
+
+    <!-- Existing  -  continues on spine -->
+    <rect x="1460" y="282" width="160" height="36" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="1540" y="304" text-anchor="middle" fill="#fff">Customer number</text>
+
+    <polygon points="1660,280 1720,300 1660,320 1600,300" fill="#1f9d63" stroke="#7dffc0" filter="url(#shadow)"/>
+    <text x="1660" y="298" text-anchor="middle" fill="#fff">Validated?</text>
+
+    <rect x="1760" y="274" width="190" height="52" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="1855" y="296" text-anchor="middle" fill="#fff">Link existing account</text>
+    <text x="1855" y="312" text-anchor="middle" fill="#e8f4ff" font-size="9" font-weight="500">Straight-through</text>
+
+    <rect x="1980" y="282" width="150" height="36" rx="6" fill="#2f7fd3" stroke="#8ec5ff" filter="url(#shadow)"/>
+    <text x="2055" y="298" text-anchor="middle" fill="#fff">Shipping address</text>
+    <text x="2055" y="312" text-anchor="middle" fill="#e8f4ff" font-size="9" font-weight="500">ERP may block order</text>
+
+    <ellipse cx="2200" cy="300" rx="58" ry="16" fill="#7b5cff" stroke="#d4c9ff"/>
+    <text x="2200" y="304" text-anchor="middle" fill="#fff">End existing</text>
+
+    <!-- Recovery  -  below validated -->
+    <rect x="1600" y="400" width="220" height="88" rx="6" fill="#3a241f" stroke="#e07a5a" filter="url(#shadow)"/>
+    <text x="1710" y="420" text-anchor="middle" fill="#ffd8cc" font-size="11" font-weight="700">Recovery (not validated)</text>
+    <text x="1616" y="440" fill="#ffe9e3" font-size="10" font-weight="500">Guest checkout</text>
+    <text x="1616" y="456" fill="#ffe9e3" font-size="10" font-weight="500">Sales support</text>
+    <text x="1616" y="472" fill="#ffe9e3" font-size="10" font-weight="500">Admin adds user</text>
+  </g>
+
+  <!-- Arrows -->
+  <g fill="none" stroke="#d8e6f5" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M118 300 L140 300"/>
+    <path d="M260 300 L310 300"/>
+    <text x="278" y="292" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">No</text>
+    <path d="M200 280 L225 212"/>
+    <text x="188" y="248" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">Yes</text>
+    <path d="M310 190 L360 190"/>
+    <path d="M460 300 L490 300"/>
+    <path d="M660 300 L720 300"/>
+    <path d="M780 300 L860 300"/>
+    <text x="812" y="292" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">B2B</text>
+    <path d="M720 280 L925 204"/>
+    <text x="800" y="248" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">B2C</text>
+    <path d="M990 186 L1040 186"/>
+    <path d="M1060 300 L1090 300"/>
+    <path d="M1300 300 L1320 300"/>
+    <path d="M1410 300 L1460 300"/>
+    <text x="1438" y="292" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">Existing</text>
+    <path d="M1350 320 L1370 400"/>
+    <text x="1330" y="368" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">New</text>
+    <path d="M1460 422 L1500 422"/>
+    <path d="M1620 300 L1640 300"/>
+    <path d="M1720 300 L1760 300"/>
+    <text x="1688" y="292" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">Yes</text>
+    <path d="M1950 300 L1980 300"/>
+    <path d="M2130 300 L2142 300"/>
+    <path d="M1660 320 L1710 400"/>
+    <text x="1648" y="368" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">No</text>
+  </g>
+
+  <!-- Notes strip -->
+  <g transform="translate(32, 520)">
+    <rect width="2416" height="172" rx="8" fill="#15263b" stroke="#2f4561"/>
+    <text x="16" y="28" fill="#f3f6fb" font-size="13" font-weight="700" font-family="Inter, system-ui, sans-serif">Key corrections</text>
+    <text x="16" y="52" fill="#d8e6f5" font-size="11" font-family="Inter, system-ui, sans-serif">Duplicate email → login only · B2C/B2B explicit · B2B requires D&amp;B before account type · Existing needs validation · Failed validation has guest / sales / admin paths · Shipping + ERP block on validated existing.</text>
+    <text x="16" y="76" fill="#9eb3cb" font-size="10" font-family="Inter, system-ui, sans-serif">Backlog (not steps): Hybris data cleanse, tax-number search, pricing automation, finance reconciliation for uncertain matches.</text>
+  </g>
+</svg>
