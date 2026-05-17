@@ -20,7 +20,7 @@
       .work-inner-figma {
         position: relative;
         width: 1440px;
-        height: 14753px;
+        height: 14659px;
         margin: 0;
         background: #f3f3f3;
         overflow: hidden;
@@ -120,6 +120,32 @@
         text-transform: uppercase;
         font: 400 16px/1.3 Inter, system-ui, sans-serif;
       }
+      .services-piped-sep,
+      .mobile-services-sep {
+        font-weight: 400;
+        color: #6b6b6b;
+        text-transform: none;
+      }
+      .mobile-services-list--piped {
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 4px;
+      }
+      .mobile-services-list--piped .mobile-services-sep {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+      }
+      .services-piped .services-piped-sep {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+      }
+      body.theme-dark .services-piped-sep,
+      body.theme-dark .mobile-services-sep {
+        color: #9a9a9a;
+      }
+
       .work-inner-mobile .mobile-block {
         margin-bottom: 24px;
       }
@@ -350,7 +376,7 @@
       </div>
 
       <div style="position:absolute;left:671px;top:11441px;width:620px;display:flex;flex-direction:column;gap:32px">
-        <p class="label">CAMPAIGN.</p>
+        <p class="label">CAMPAIGN</p>
         <p class="h3" style="width:601px">Programme rhythm, not promotion noise.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
           <p class="body24">Registration touchpoints ("Verify your email", "Choose your region") were written as programme beats—dated, plain, no discount theatre. The same lines fed internal scripts so sales, support, and procurement were not improvising different stories.</p>
@@ -359,7 +385,7 @@
       </div>
 
       <div style="position:absolute;left:117px;top:12136px;width:735px;display:flex;flex-direction:column;gap:32px">
-        <p class="label">POST-REGISTER.</p>
+        <p class="label">POST-REGISTER</p>
         <p class="h3">After the form is still the product.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
           <p class="body24">Confirmation and ticket language appeared where buyers need paper confidence: acknowledgements that match finance wording, next steps that mirror what support says on the phone, no surprise tone shifts.</p>
@@ -390,16 +416,15 @@
 
       <div style="position:absolute;left:116px;top:1493px;width:244px;display:flex;flex-direction:column;gap:16px">
         <p class="body16" style="color:#1e1e1e">( Services )</p>
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <p class="body16" style="text-transform:uppercase">UX &amp; UI</p>
-          <p class="body16" style="text-transform:uppercase">eCommerce</p>
+        <div class="services-piped" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;text-transform:uppercase">
+          <p class="body16">UX</p>
+          <p class="body16 services-piped-sep" aria-hidden="true">|</p>
+          <p class="body16">Usability</p>
+          <p class="body16 services-piped-sep" aria-hidden="true">|</p>
+          <p class="body16">eCommerce</p>
         </div>
       </div>
 
-      <div style="position:absolute;left:416px;top:5052px;width:660px;height:0">
-        <img src="https://www.figma.com/api/mcp/asset/9adaf7bb-751d-47c6-a8a0-5d923f84ebaa" alt="" style="position:absolute;inset:-2px 0 0 0;width:100%;height:100%;max-width:none" />
-      </div>
-      <div style="position:absolute;left:416px;top:5048px;width:220px;height:6px;background:#696969"></div>
           </section>
       </div>
 
@@ -415,8 +440,11 @@
 
         <div class="mobile-services">
           <p class="mobile-services-kicker">( Services )</p>
-          <div class="mobile-services-list">
-            <p>UX &amp; UI</p>
+          <div class="mobile-services-list mobile-services-list--piped">
+            <p>UX</p>
+            <p class="mobile-services-sep" aria-hidden="true">|</p>
+            <p>Usability</p>
+            <p class="mobile-services-sep" aria-hidden="true">|</p>
             <p>eCommerce</p>
           </div>
         </div>
@@ -522,7 +550,7 @@
         </div>
 
         <div class="mobile-block">
-          <p class="mobile-kicker">CAMPAIGN.</p>
+          <p class="mobile-kicker">CAMPAIGN</p>
           <p class="mobile-h">Programme rhythm, not promotion noise.</p>
           <div class="mobile-body">
             <p>Registration touchpoints ("Verify your email", "Choose your region") were written as programme beats—dated, plain, no discount theatre. The same lines fed internal scripts so sales, support, and procurement were not improvising different stories.</p>
@@ -535,7 +563,7 @@
         </div>
 
         <div class="mobile-block">
-          <p class="mobile-kicker">POST-REGISTER.</p>
+          <p class="mobile-kicker">POST-REGISTER</p>
           <p class="mobile-h">After the form is still the product.</p>
           <div class="mobile-body">
             <p>Confirmation and ticket language appeared where buyers need paper confidence: acknowledgements that match finance wording, next steps that mirror what support says on the phone, no surprise tone shifts.</p>
@@ -579,7 +607,7 @@
           var frame = document.querySelector('.work-inner-figma');
           if (!wrap || !frame) return;
           var baseW = 1440;
-          var baseH = 14753;
+          var baseH = 14659;
           var scale = Math.min(1, wrap.clientWidth / baseW);
           frame.style.transform = 'scale(' + scale + ')';
           wrap.style.height = baseH * scale + 'px';

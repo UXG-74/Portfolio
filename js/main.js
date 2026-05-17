@@ -104,4 +104,19 @@
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") setMenuOpen(false);
   });
+
+  document.querySelectorAll('[data-work-scroll="work-lead"]').forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      var hero = document.getElementById("work-hero-heading");
+      var work = document.getElementById("work-index-heading");
+      if (!hero || !work) return;
+      event.preventDefault();
+      var leadTop = hero.getBoundingClientRect().top + window.scrollY;
+      var workTop = work.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: window.scrollY + (workTop - leadTop) + 20,
+        behavior: "smooth",
+      });
+    });
+  });
 })();
