@@ -1,0 +1,18 @@
+---
+description: Portfolio typography - spaced hyphens, no periods on micro headers
+alwaysApply: true
+---
+
+# Typography: dashes
+
+- Never use the em dash `—` or en dash `–` in user-facing copy, meta descriptions, or alt text.
+- Always use a spaced hyphen instead: ` - ` (space, hyphen, space).
+- When editing existing content, replace any `—` or `–` with ` - `.
+- This applies to HTML case studies, marketing pages, and portfolio copy files.
+
+# Micro headers (section kickers)
+
+- Elements with `class="label"` or `class="mobile-kicker"` must **never** end with a full stop.
+- Correct: `CAMPAIGN`, `BRAND PACKAGING`, `POST-REGISTER`. Wrong: `CAMPAIGN.`, `BRAND PACKAGING.`
+- When restoring copy from git/Figma/reference files, **always** strip trailing `.` from these tags after merge.
+- Do not reintroduce periods from older reference commits.
