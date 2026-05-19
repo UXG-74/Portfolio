@@ -739,9 +739,12 @@ body.nav-open {
 
 .work-study-thumb {
   width: 100%;
-  background: transparent;
-  border: 1px solid var(--line);
+  background: #0b0f14;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
   overflow: hidden;
+  line-height: 0;
 }
 
 .work-study-thumb img,
@@ -751,10 +754,28 @@ body.nav-open {
   object-fit: cover;
   object-position: center center;
   display: block;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  transform: translateZ(0) scale(1.02);
+  transform-origin: center center;
+}
+
+.work-study-thumb--kinetik {
+  background: #0b0f14;
 }
 
 .work-study-thumb--kinetik video {
   object-position: right center;
+  width: 103%;
+  height: 103%;
+  max-width: none;
+  transform: translateZ(0) scale(1.025);
+}
+
+body.theme-dark .work-study-thumb,
+body.theme-dark .work-study-thumb--kinetik {
+  background: #1e1e1e;
 }
 
 /* Ratios from Figma image frames (650×435, 650×653, 1317×737) */
@@ -816,12 +837,17 @@ body.nav-open {
   margin: 0;
   font-size: 0.875rem;
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
   color: #6b6b6b;
 }
 
+.work-study-meta--deck .work-study-tag-lede,
+.work-study-meta--deck .work-study-tags {
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
 
 .work-study-tags {
   display: flex;
@@ -844,7 +870,6 @@ body.nav-open {
   padding: 0;
   line-height: 1;
 }
-
 
 .work-grid-figma {
   padding-bottom: clamp(4rem, 10vw, 7rem);
@@ -1353,7 +1378,6 @@ body.theme-dark .work-study-meta-sep {
   color: #9a9a9a;
 }
 
-
 body.theme-dark .btn-ghost-pill {
   border-color: #f3f3f3;
   color: #f3f3f3;
@@ -1384,7 +1408,47 @@ body.theme-dark .work-inner-figma p {
 
 body.theme-dark .work-inner-figma .placeholder {
   background: #1e1e1e !important;
-  border-color: #3a3a3a !important;
+  border: none !important;
+}
+
+/* Image areas: no grey keyline borders or frames */
+.work-study-thumb,
+.work-card figure,
+.figure-full,
+.grid-3 figure,
+.case-hero-shot,
+.work-inner-figma .hero-image-wrap,
+.work-inner-figma [style*="overflow:hidden"],
+.work-inner-mobile .mobile-image,
+.work-inner-mobile .mobile-hero {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.work-inner-figma img,
+.work-inner-mobile .mobile-image img,
+.work-inner-mobile .mobile-hero img,
+.work-inner-mobile .mobile-hero video,
+.work-study-thumb img,
+.work-study-thumb video,
+.work-card img,
+.figure-full img,
+.grid-3 img,
+.case-hero-shot img,
+.feature-visual img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  vertical-align: top;
+}
+
+.work-inner-figma .placeholder {
+  border: none !important;
+}
+
+body.theme-dark .work-inner-figma [style*="overflow:hidden"] {
+  background-color: #1e1e1e;
 }
 
 body.theme-dark .work-inner-figma [style*="background:#f3f3f3"] {

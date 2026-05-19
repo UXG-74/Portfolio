@@ -29,7 +29,7 @@
         transform-origin: top left;
       }
       .work-inner-figma p { margin: 0; }
-      .work-inner-figma .placeholder { position: absolute; background: #f3f3f3; border: 2px solid #d9d9d9; }
+      .work-inner-figma .placeholder { position: absolute; background: #f3f3f3; border: none; }
       .work-inner-figma .label { font: 500 16px/1.3 Inter, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
       .work-inner-figma .h1 { font: 900 90px/1.2 Inter, system-ui, sans-serif; letter-spacing: -0.01em; }
       .work-inner-figma .h2 { font: 500 48px/1.2 Inter, system-ui, sans-serif; }
@@ -249,7 +249,7 @@
         .work-inner-mobile .mobile-image video {
           object-position: center center;
         }
-        .work-inner-figma .placeholder { border-width: 1.5px; }
+
         .work-inner-figma .h1 { font-size: 30px; line-height: 1.1; }
         .work-inner-figma .label { font-size: 14px; line-height: 1.3; }
         .work-inner-figma .body16 { font-size: 16px; line-height: 1.3; }
@@ -481,9 +481,12 @@
 
       <div style="position:absolute;left:116px;top:1493px;width:244px;display:flex;flex-direction:column;gap:16px">
         <p class="body16" style="color:#1e1e1e">( Services )</p>
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <p class="body16" style="text-transform:uppercase">AI &amp; PRODUCT</p>
-          <p class="body16" style="text-transform:uppercase">training analytics</p>
+        <div class="services-piped" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;text-transform:uppercase">
+          <p class="body16">Product</p>
+          <p class="body16 services-piped-sep" aria-hidden="true">|</p>
+          <p class="body16">Performance</p>
+          <p class="body16 services-piped-sep" aria-hidden="true">|</p>
+          <p class="body16">UX</p>
         </div>
       </div>
 
@@ -502,9 +505,12 @@
 
         <div class="mobile-services">
           <p class="mobile-services-kicker">( Services )</p>
-          <div class="mobile-services-list">
-            <p>AI &amp; PRODUCT</p>
-            <p>training analytics</p>
+          <div class="mobile-services-list mobile-services-list--piped">
+            <p>Product</p>
+            <p class="mobile-services-sep" aria-hidden="true">|</p>
+            <p>Performance</p>
+            <p class="mobile-services-sep" aria-hidden="true">|</p>
+            <p>UX</p>
           </div>
         </div>
 
