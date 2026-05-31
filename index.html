@@ -5,56 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="I simplify complex journeys, uncover high-impact opportunities, and deliver measurable improvements for users and businesses. Senior UX and AI-accelerated delivery."
+      content="Senior UX designer in Manchester. Work-first portfolio: Lucille London, KINETIK, Distrelec EMEA — AI-accelerated research, prototyping, and delivery."
     />
     <title>Ged Devine</title>
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <meta property="og:title" content="Ged Devine · Senior UX" />
-    <meta property="og:description" content="I simplify complex journeys and deliver measurable improvements for users and businesses. AI-accelerated research, prototyping, and delivery." />
+    <meta property="og:description" content="I reduce friction across products, teams, and delivery. Selected UX case studies." />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("portfolio-theme") !== "light") {
+            document.documentElement.classList.add("theme-preload-dark");
+          }
+        } catch (e) {
+          document.documentElement.classList.add("theme-preload-dark");
+        }
+      })();
+    </script>
+    <style id="portfolio-theme-preload">
+      html.theme-preload-dark {
+        background: #1e1e1e;
+        color: #f3f3f3;
+      }
+    </style>
+    <link rel="stylesheet" href="css/styles.css?v=home-work-mobile-v1" />
   </head>
-  <body class="page home-page">
+  <body class="page home-page home-combined">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="shell header-row">
-        <a class="logo" href="index.html">Ged Devine</a>
-        <nav class="nav-primary" aria-label="Primary">
-          <a href="work.html">Work</a>
-          <a href="about.html">About</a>
-        </nav>
-        <div class="header-tools">
-          <a class="btn-contact" href="contact.html">Contact</a>
-        </div>
-        <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
-          </svg>
-        </button>
-      </div>
-      <div class="shell nav-drawer" id="nav-drawer" data-nav-mobile>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
-        <div class="drawer-tools">
-          <a class="btn-contact" href="contact.html">Contact</a>
-        </div>
-      </div>
-    </header>
 
-    <main id="main">
-      <section class="shell hero-home" aria-labelledby="home-hero-heading">
-        <h1 id="home-hero-heading" class="headline-display">
-          I simplify complex journeys, uncover high-impact opportunities, and deliver measurable improvements for users and businesses.
+    <div class="home-figma-layout">
+      <header class="site-header home-figma-header">
+        <div class="shell header-row">
+          <a class="logo" href="index.html">Ged Devine</a>
+          <nav class="nav-primary" aria-label="Primary">
+            <a href="#work" data-home-work-link>Work</a>
+          </nav>
+          <div class="header-tools">
+            <a class="btn-contact btn-contact--email" href="mailto:hello@geddevine.com">hello@geddevine.com</a>
+          </div>
+          <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="shell nav-drawer" id="nav-drawer" data-nav-mobile>
+          <a href="#work" data-home-work-link>Work</a>
+          <div class="drawer-tools">
+            <a class="btn-contact btn-contact--email" href="mailto:hello@geddevine.com">hello@geddevine.com</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="home-figma-frame">
+      <main id="main" class="home-figma-canvas">
+        <p class="home-status">
+          <span class="home-status-dot" aria-hidden="true"></span>
+          <span class="home-status-label">Open to new opportunities</span>
+        </p>
+        <h1 id="home-hero-heading" class="home-hero-title">
+          I reduce friction.<br aria-hidden="true" />
+          Products, teams, delivery.
         </h1>
-      </section>
 
-    </main>
+        <div class="home-clients" aria-label="Client logos">
+          <span class="home-client-divider home-client-divider--0" aria-hidden="true"></span>
+          <img class="home-client-logo home-client-logo--vmo2" src="img/home-clients/vmo2.svg?v=vector" alt="Virgin Media O2" width="65" height="31" decoding="async" />
+          <span class="home-client-divider home-client-divider--1" aria-hidden="true"></span>
+          <img class="home-client-logo home-client-logo--distrelec" src="img/home-clients/distrelec.svg?v=2" alt="Distrelec" width="97" height="20" decoding="async" />
+          <span class="home-client-divider home-client-divider--2" aria-hidden="true"></span>
+          <img class="home-client-logo home-client-logo--jd" src="img/home-clients/jd.svg" alt="JD" width="29" height="29" decoding="async" />
+          <span class="home-client-divider home-client-divider--3" aria-hidden="true"></span>
+          <img class="home-client-logo home-client-logo--booking" src="img/home-clients/booking.svg" alt="Booking.com" width="95" height="16" decoding="async" />
+          <span class="home-client-divider home-client-divider--4" aria-hidden="true"></span>
+          <img class="home-client-logo home-client-logo--aldermore" src="img/home-clients/aldermore.svg" alt="Aldermore" width="85" height="12" decoding="async" />
+          <span class="home-client-divider home-client-divider--5" aria-hidden="true"></span>
+          <img class="home-client-logo home-client-logo--footasylum" src="img/home-clients/footasylum.svg?v=balance" alt="Footasylum" width="119" height="14" decoding="async" />
+          <span class="home-client-divider home-client-divider--6" aria-hidden="true"></span>
+        </div>
+
+        <section id="work" class="home-work" aria-labelledby="work-index-heading">
+          <h2 id="work-index-heading" class="home-work-title">WORK</h2>
+
+          <div class="home-work-carousel" data-home-work-carousel aria-label="Case studies">
+            <div class="home-work-track">
+              <article class="home-work-card" data-work-slug="lucille">
+                <a href="/work/lucille-london/" class="home-work-card-hit" aria-label="Open Lucille London case study">
+                  <div class="home-work-card-media">
+                    <img src="img/Lucille-main.png" alt="Lucille London case study preview" width="893" height="539" draggable="false" />
+                  </div>
+                </a>
+              </article>
+              <article class="home-work-card" data-work-slug="kinetik">
+                <a href="/work/kinetik/" class="home-work-card-hit" aria-label="Open KINETIK case study">
+                  <div class="home-work-card-media">
+                    <video autoplay muted playsinline loop preload="metadata" aria-label="Kinetik splash animation preview">
+                      <source src="video/splash.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </a>
+              </article>
+              <article class="home-work-card" data-work-slug="distrelec">
+                <a href="/work/distrelec/" class="home-work-card-hit" aria-label="Open Distrelec case study">
+                  <div class="home-work-card-media">
+                    <img src="img/distrelec-intro.png" alt="Distrelec industrial manufacturing hero." width="893" height="539" draggable="false" />
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+
+          <div class="home-work-detail" data-home-work-detail aria-live="polite">
+            <h3 class="home-work-detail-title">
+              <span class="home-work-detail-title__line" data-work-detail-title></span>
+              <span class="home-work-detail-title__line home-work-detail-title__line--optional" data-work-detail-title-sub hidden></span>
+            </h3>
+            <p class="home-work-detail-p home-work-detail-p--1" data-work-detail-p1></p>
+            <p class="home-work-detail-p home-work-detail-p--2" data-work-detail-p2></p>
+            <div class="home-work-detail-industry">
+              <span class="home-work-detail-label">INDUSTRY</span>
+              <span class="home-work-detail-value" data-work-detail-industry></span>
+            </div>
+            <div class="home-work-detail-tags" data-work-detail-tags aria-label="Services"></div>
+          </div>
+        </section>
+
+        <section class="home-contact" aria-labelledby="home-contact-heading">
+          <p id="home-contact-heading" class="home-contact-eyebrow">Let&rsquo;s work together</p>
+          <a class="home-contact-email" href="mailto:hello@geddevine.com">hello@geddevine.com</a>
+          <p class="home-contact-copy">
+            Got a project in mind and need some design help? Reach out and let&rsquo;s discuss!
+          </p>
+        </section>
+      </main>
+      </div>
+    </div>
+
+    <div class="home-scroll-fade" aria-hidden="true">
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__gradient"></div>
+    </div>
 
     <footer class="site-footer">
       <div class="shell footer-inner">
@@ -65,6 +166,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=home-work-carousel-v19"></script>
   </body>
 </html>

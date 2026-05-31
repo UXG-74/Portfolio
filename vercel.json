@@ -5,6 +5,8 @@
     { "source": "/case-study-03.html", "destination": "/work/distrelec/", "permanent": true },
     { "source": "/work/northline-care", "destination": "/work/distrelec/", "permanent": true },
     { "source": "/work/northline-care/", "destination": "/work/distrelec/", "permanent": true },
-    { "source": "/case-study.html", "destination": "/work/lucille-london/", "permanent": true }
+    { "source": "/case-study.html", "destination": "/work/lucille-london/", "permanent": true },
+    { "source": "/about.html", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/", "permanent": true }
   ]
 }

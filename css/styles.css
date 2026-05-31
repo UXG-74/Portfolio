@@ -194,6 +194,13 @@ main {
   opacity: 0.9;
 }
 
+.btn-contact--email {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 @media (max-width: 640px) {
   .btn-contact {
     min-height: 2.3rem;
@@ -460,6 +467,12 @@ body.nav-open {
 .home-page .site-footer {
   border-top: 0;
   border-bottom: 0;
+}
+
+/* Combined home keeps keylines off; scroll-fade sits above footer */
+.home-combined.home-page .site-footer {
+  position: relative;
+  z-index: 50;
 }
 
 /* About-only: remove keyline separators */
@@ -1457,6 +1470,927 @@ body.theme-dark .work-inner-figma [style*="background:#f3f3f3"] {
 
 body.theme-dark .work-inner-figma [style*="color:#f2f2f2"] {
   color: #f3f3f3 !important;
+}
+
+/*  -  Combined home + work (Figma 189:43, heykuba-style bottom fade)  -  */
+
+/* Figma Home page (189:43) — exact 1440px frame positions; light default matches About */
+.home-combined {
+  --figma-w: 1440;
+  --home-muted: #82837f;
+  background: var(--white);
+  color: var(--black);
+}
+
+.home-figma-layout {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.home-figma-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 1709px;
+}
+
+.home-combined .site-header,
+.home-combined .site-footer,
+.home-combined .nav-drawer {
+  border: 0;
+  background: var(--white);
+}
+
+.home-combined .home-figma-header {
+  position: absolute;
+  inset: 0 auto auto 0;
+  z-index: 60;
+  width: 100%;
+  background: transparent;
+}
+
+.home-combined .logo {
+  color: var(--black);
+}
+
+.home-combined .logo:hover {
+  opacity: 0.85;
+}
+
+.home-combined .nav-primary a {
+  color: var(--black);
+}
+
+.home-combined .nav-primary a:hover,
+.home-combined .nav-primary a.is-active {
+  border-bottom-color: var(--black);
+}
+
+.home-combined .menu-toggle {
+  color: var(--black);
+}
+
+.home-combined .theme-toggle {
+  color: var(--black);
+}
+
+.home-combined .site-footer {
+  border-top: 0 !important;
+  margin-top: 0;
+  color: var(--black);
+}
+
+.home-combined .site-footer a {
+  color: var(--black);
+}
+
+.home-combined .site-footer a:hover {
+  opacity: 0.85;
+}
+
+/* Dark home: inverted header CTA (same pattern as other dark pages) */
+body.home-combined.theme-dark .btn-contact {
+  background: #f3f3f3;
+  color: #1e1e1e;
+}
+
+body.home-combined.theme-dark .btn-contact:hover {
+  opacity: 0.9;
+}
+
+body.home-combined.theme-dark .logo:hover,
+body.home-combined.theme-dark .site-footer a:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.home-figma-canvas {
+  position: relative;
+  width: 100%;
+  min-height: 1709px;
+}
+
+.home-status {
+  position: absolute;
+  left: 46px;
+  top: 105px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 0;
+  border-radius: 60px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: #07ff1b;
+}
+
+.home-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #07ff1b;
+  flex-shrink: 0;
+}
+
+.home-hero-title {
+  position: absolute;
+  left: 46px;
+  top: 146px;
+  margin: 0;
+  width: 739px;
+  max-width: 739px;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--black);
+}
+
+.home-clients {
+  position: absolute;
+  left: 49px;
+  top: 349px;
+  width: 1050px;
+  height: 33px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+/* Figma row 189:449 — per-logo frames + optical alignment (x-height / cap height) */
+.home-client-logo {
+  position: absolute;
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+body.home-combined:not(.theme-dark) .home-client-logo {
+  filter: brightness(0) saturate(100%);
+}
+
+.home-client-logo--vmo2 {
+  left: 55px;
+  top: 2px;
+  width: 65px;
+  height: 31px;
+  object-position: center 54%;
+}
+
+.home-client-logo--distrelec {
+  left: 214px;
+  top: 7px;
+  width: 97px;
+  height: 20px;
+  object-position: left 48%;
+}
+
+.home-client-logo--jd {
+  left: 423px;
+  top: 0;
+  width: 29px;
+  height: 29px;
+  object-position: center 54%;
+}
+
+.home-client-logo--booking {
+  left: 565px;
+  top: 8px;
+  width: 95.22px;
+  height: 16.16px;
+  object-position: left 46%;
+}
+
+.home-client-logo--aldermore {
+  left: 745px;
+  /* Figma frame y is bottom edge (371); top = 371 − 12.448 − row 349 ≈ 9.55px */
+  top: 9.55px;
+  width: 85px;
+  height: 12.448px;
+  object-position: left center;
+}
+
+.home-client-logo--footasylum {
+  left: 903px;
+  top: 9px;
+  width: 118.66px;
+  height: 14.278px;
+  object-position: left 50%;
+}
+
+.home-client-divider {
+  position: absolute;
+  top: 1px;
+  width: 1px;
+  height: 31px;
+  background: #82837f;
+  opacity: 0.55;
+}
+
+.home-client-divider--0 {
+  left: 0;
+}
+
+.home-client-divider--1 {
+  left: 175px;
+}
+
+.home-client-divider--2 {
+  left: 350px;
+}
+
+.home-client-divider--3 {
+  left: 525px;
+}
+
+.home-client-divider--4 {
+  left: 700px;
+}
+
+.home-client-divider--5 {
+  left: 875px;
+}
+
+.home-client-divider--6 {
+  left: 1050px;
+}
+
+.home-work {
+  position: static;
+  padding: 0;
+  margin: 0;
+}
+
+.home-work-title {
+  position: absolute;
+  left: 46px;
+  top: 451px;
+  margin: 0;
+  width: 725px;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--black);
+}
+
+.home-work-carousel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 561px;
+  height: 636px;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.home-work-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.home-work-carousel.is-dragging {
+  cursor: grabbing;
+}
+
+.home-work-track {
+  position: relative;
+  height: 636px;
+  margin: 0;
+  padding: 0;
+  will-change: transform;
+}
+
+.home-work-carousel.is-dragging .home-work-track,
+.home-work-carousel.is-snapping .home-work-track {
+  will-change: transform;
+}
+
+.home-work-card {
+  position: absolute;
+  margin: 0;
+  top: calc(48px * (1 - var(--focus, 0)));
+  width: calc(893px + 238px * var(--focus, 0));
+  height: calc(539px + 97px * var(--focus, 0));
+  backface-visibility: hidden;
+}
+
+.home-work-card-hit {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  /* Supporting = 32px; main (--focus → 1) stays square */
+  border-radius: calc(32px * (1 - var(--focus, 0)));
+}
+
+.home-work-card-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0b0f14;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.home-work-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #1e1e1e;
+  opacity: calc(var(--work-dim, 1) * 0.8);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.home-work-carousel.is-dragging .home-work-card,
+.home-work-carousel.is-snapping .home-work-card {
+  transition: none;
+}
+
+.home-work-carousel.is-dragging .home-work-card-media::after {
+  transition: none;
+}
+
+.home-work-card-media img,
+.home-work-card-media video {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.home-work-card[data-work-slug="kinetik"] .home-work-card-media video {
+  object-position: right center;
+}
+
+.home-work-detail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1221px;
+  min-height: 120px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.home-work-detail-title {
+  position: absolute;
+  left: 166px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  width: 374px;
+  max-width: 374px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--black);
+}
+
+.home-work-detail-title__line {
+  display: block;
+}
+
+/* Figma 189:536 — avoid wrap after “fitness” on KINETIK only */
+.home-work-detail[data-active-slug="kinetik"] .home-work-detail-title__line:first-child {
+  white-space: nowrap;
+}
+
+.home-work-detail-p {
+  position: absolute;
+  left: 798px;
+  margin: 0;
+  width: 309px;
+  max-width: 309px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.home-work-detail-p--1 {
+  top: 0;
+}
+
+.home-work-detail-p--2 {
+  top: 54px;
+}
+
+.home-work-detail-industry {
+  position: absolute;
+  left: 1156px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Figma 189:539 y=1221, 189:538 y=1237 → 16px between layer tops, ~4px after label cap height */
+  gap: calc(16px - 9px * 1.4);
+  margin: 0;
+}
+
+.home-work-detail-label {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--home-muted);
+}
+
+.home-work-detail-value {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.home-work-detail-tags {
+  position: absolute;
+  left: 166px;
+  top: 61px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+}
+
+.home-work-detail-tags span {
+  padding: 8px 10px;
+  border-radius: 2px;
+  background: #ebebeb;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: normal;
+}
+
+body.home-combined.theme-dark .home-work-detail-tags span {
+  background: linear-gradient(180deg, #353535 0%, #171717 100%);
+  color: var(--home-muted);
+}
+
+/* Figma 189:234 / 189:144 / 189:233 — tops at 1502 / 1540 / 1587 (38px & 47px between layer tops) */
+.home-contact {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1502px;
+  height: 143px;
+  margin: 0;
+  padding: 0;
+}
+
+.home-contact-eyebrow {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 453px;
+  max-width: calc(100% - 48px);
+  margin: 0;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--home-muted);
+}
+
+.home-contact-email {
+  position: absolute;
+  left: 50%;
+  top: 38px;
+  width: 433px;
+  max-width: calc(100% - 48px);
+  margin: 0;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.home-contact-email:hover {
+  opacity: 0.85;
+}
+
+body.home-combined.theme-dark .home-contact-email:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.home-contact-copy {
+  position: absolute;
+  left: 50%;
+  top: 85px;
+  width: 338px;
+  max-width: calc(100% - 48px);
+  margin: 0;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--home-muted);
+}
+
+@media (max-width: 1439px) {
+  .home-figma-frame {
+    width: 1440px;
+    max-width: none;
+    transform: scale(calc(100vw / 1440));
+    transform-origin: top left;
+  }
+
+  .home-combined {
+    overflow-x: hidden;
+    overflow-y: visible;
+    min-height: calc(1709px * (100vw / 1440));
+  }
+}
+
+@media (max-width: 899px) {
+  .home-combined .home-figma-header {
+    position: sticky;
+    background: var(--white);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-figma-frame {
+    width: 100%;
+    transform: none;
+    min-height: auto;
+  }
+
+  .home-figma-canvas {
+    min-height: auto;
+    padding:
+      clamp(3rem, 11vw, 4rem)
+      max(20px, env(safe-area-inset-right, 0px))
+      clamp(4rem, 12vw, 5rem)
+      max(20px, env(safe-area-inset-left, 0px));
+  }
+
+  .home-status,
+  .home-hero-title,
+  .home-clients,
+  .home-client-logo,
+  .home-client-divider,
+  .home-work-title,
+  .home-work-carousel,
+  .home-work-detail,
+  .home-work-detail-title,
+  .home-work-detail-p,
+  .home-work-detail-industry,
+  .home-work-detail-tags,
+  .home-contact,
+  .home-contact-eyebrow,
+  .home-contact-email,
+  .home-contact-copy {
+    position: static;
+    width: auto;
+    max-width: none;
+    left: auto;
+    top: auto;
+    transform: none;
+  }
+
+  .home-status {
+    margin-bottom: 12px;
+  }
+
+  .home-hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.625rem);
+    margin-bottom: 24px;
+  }
+
+  .home-clients {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 28px;
+  }
+
+  .home-client-logo,
+  .home-client-divider {
+    position: static;
+    left: auto;
+    top: auto;
+  }
+
+  .home-client-divider {
+    display: none;
+  }
+
+  .home-work-title {
+    font-size: clamp(3rem, 14vw, 5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .home-work {
+    margin-top: 8px;
+  }
+
+  .home-work-carousel {
+    --home-work-mobile-gutter: max(20px, env(safe-area-inset-left, 0px));
+    height: auto;
+    margin: 0 calc(-1 * var(--home-work-mobile-gutter)) 28px;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--home-work-mobile-gutter);
+    touch-action: pan-x;
+    scrollbar-width: none;
+    cursor: default;
+  }
+
+  .home-work-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-work-track {
+    display: flex;
+    align-items: stretch;
+    gap: clamp(14px, 4.2vw, 20px);
+    width: max-content;
+    height: auto;
+    padding: 4px var(--home-work-mobile-gutter) 16px;
+    transform: none !important;
+  }
+
+  .home-work-card {
+    position: static;
+    flex: 0 0 min(82vw, 368px);
+    top: auto;
+    width: auto;
+    height: auto;
+    transition: none;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .home-work-card-hit {
+    aspect-ratio: 893 / 539;
+    border-radius: 32px;
+    box-shadow:
+      0 2px 8px rgb(0 0 0 / 0.04),
+      0 14px 40px rgb(0 0 0 / 0.1);
+    transition:
+      box-shadow 0.35s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  body.home-combined:not(.theme-dark) .home-work-card-hit {
+    box-shadow:
+      0 2px 10px rgb(0 0 0 / 0.05),
+      0 18px 44px rgb(0 0 0 / 0.12);
+  }
+
+  body.home-combined.theme-dark .home-work-card-hit {
+    box-shadow:
+      0 4px 16px rgb(0 0 0 / 0.35),
+      0 20px 52px rgb(0 0 0 / 0.55);
+  }
+
+  .home-work-card.is-mobile-active .home-work-card-hit {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow:
+      0 4px 14px rgb(0 0 0 / 0.08),
+      0 22px 48px rgb(0 0 0 / 0.14);
+  }
+
+  body.home-combined.theme-dark .home-work-card.is-mobile-active .home-work-card-hit {
+    box-shadow:
+      0 6px 20px rgb(0 0 0 / 0.45),
+      0 26px 56px rgb(0 0 0 / 0.62);
+  }
+
+  .home-work-card-media::after {
+    background: #1e1e1e;
+    opacity: 0.8;
+    transition: opacity 0.35s ease;
+  }
+
+  .home-work-card.is-mobile-active .home-work-card-media::after {
+    opacity: 0;
+  }
+
+  .home-work-detail {
+    display: grid;
+    gap: 14px 20px;
+    height: auto;
+    margin-top: 4px;
+    padding-bottom: 8px;
+  }
+
+  .home-work-detail-title {
+    grid-column: 1 / -1;
+    font-size: clamp(1.125rem, 4.6vw, 1.375rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .home-work-detail[data-active-slug="kinetik"] .home-work-detail-title__line:first-child {
+    white-space: normal;
+  }
+
+  .home-work-detail-p {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--black);
+  }
+
+  .home-work-detail-p--1,
+  .home-work-detail-p--2 {
+    grid-column: 1 / -1;
+  }
+
+  .home-work-detail-industry {
+    grid-column: 1;
+    gap: 6px;
+  }
+
+  .home-work-detail-label {
+    font-size: 0.625rem;
+  }
+
+  .home-work-detail-value {
+    font-size: 0.8125rem;
+  }
+
+  .home-work-detail-tags {
+    grid-column: 1 / -1;
+    position: static;
+    margin-top: 2px;
+    gap: 6px;
+  }
+
+  .home-work-detail-tags span {
+    padding: 9px 12px;
+    font-size: 0.625rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-work-card-hit {
+      transition: none;
+    }
+
+    .home-work-card.is-mobile-active .home-work-card-hit {
+      transform: none;
+    }
+  }
+
+  .home-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 48px;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .home-contact-eyebrow,
+  .home-contact-email,
+  .home-contact-copy {
+    position: static;
+    transform: none;
+    width: auto;
+    max-width: 22rem;
+  }
+
+  .home-contact-email {
+    margin-top: 20px;
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+
+  .home-contact-copy {
+    margin-top: 12px;
+    max-width: 21.125rem;
+  }
+}
+
+/*
+ * Bottom progressive blur — heykuba.com pattern.
+ * Masks run to bottom (strong at viewport edge); lightest blur fades to nothing at top.
+ * https://preetsuthar.me/writing/progressive-blur
+ */
+.home-scroll-fade {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 25%;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.home-scroll-fade__layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-scroll-fade__layer:nth-child(1) {
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 0%, #000 50%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 0%, #000 50%);
+}
+
+.home-scroll-fade__layer:nth-child(2) {
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 0%, #000 60%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 0%, #000 60%);
+}
+
+.home-scroll-fade__layer:nth-child(3) {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 15%, #000 72%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 15%, #000 72%);
+}
+
+.home-scroll-fade__layer:nth-child(4) {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 30%, #000 85%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 30%, #000 85%);
+}
+
+.home-scroll-fade__layer:nth-child(5) {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 55%, #000 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 55%, #000 100%);
+}
+
+.home-scroll-fade__gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, var(--white), rgb(243 243 243 / 0));
+}
+
+body.home-combined.theme-dark .home-scroll-fade__gradient {
+  background: linear-gradient(to top, #1e1e1e, rgb(30 30 30 / 0));
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .home-scroll-fade__layer {
+    display: none;
+  }
+
+  .home-scroll-fade__gradient {
+    background: linear-gradient(to top, var(--white), rgb(243 243 243 / 0));
+  }
+
+  body.home-combined.theme-dark .home-scroll-fade__gradient {
+    background: linear-gradient(to top, #1e1e1e, rgb(30 30 30 / 0));
+  }
 }
 
 body.theme-dark .work-inner-figma .cta {
