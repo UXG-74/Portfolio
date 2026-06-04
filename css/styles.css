@@ -1814,10 +1814,10 @@ body.home-combined:not(.theme-dark) .home-client-logo {
   -webkit-user-select: none;
 }
 
-/* Figma 525:31 / 525:33 — 44×44 SVG at y=781 (220 inside carousel) */
+/* Figma 525:31 / 525:33 — 44×44 SVG, vertically centered on slide */
 .home-work-nav {
   position: absolute;
-  top: 220px;
+  top: 100px;
   z-index: 70;
   display: flex;
   align-items: center;
@@ -2341,7 +2341,7 @@ body.home-combined.theme-dark.home-about-anchor .home-about-footer a:hover {
 
   .home-work-nav {
     top: auto;
-    bottom: 12px;
+    bottom: 132px;
     width: 56px;
     height: 56px;
     transform: none;
