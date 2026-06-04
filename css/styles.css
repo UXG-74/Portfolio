@@ -2645,6 +2645,12 @@ body.theme-dark .work-inner-figma .cta {
   color: #1e1e1e !important;
 }
 
+/* Case-study inner pages: section headline line height */
+body.case-figma-page .work-inner-figma .h3,
+body.case-figma-page .work-inner-mobile .mobile-h {
+  line-height: 1.4;
+}
+
 /* Case-study inner: pull the Figma canvas up so the project title band sits closer to the nav. */
 body.case-figma-page #main {
   padding-top: 0;

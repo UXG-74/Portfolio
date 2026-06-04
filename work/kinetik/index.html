@@ -33,7 +33,7 @@
       .work-inner-figma .label { font: 500 16px/1.3 Inter, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
       .work-inner-figma .h1 { font: 900 90px/1.2 Inter, system-ui, sans-serif; letter-spacing: -0.01em; }
       .work-inner-figma .h2 { font: 500 48px/1.2 Inter, system-ui, sans-serif; }
-      .work-inner-figma .h3 { font: 500 46px/1.2 Inter, system-ui, sans-serif; }
+      .work-inner-figma .h3 { font: 500 46px/1.4 Inter, system-ui, sans-serif; }
       .work-inner-figma .body24 { font: 400 24px/1.3 Inter, system-ui, sans-serif; }
       .work-inner-figma .body-sm { font: 400 16px/1.3 Inter, system-ui, sans-serif; }
       .work-inner-figma .hero-image-wrap img,
@@ -175,11 +175,14 @@
       }
       .work-inner-mobile .mobile-h {
         margin-bottom: 12px;
-        font: 500 22px/1.2 Inter, system-ui, sans-serif;
+        font: 500 22px/1.4 Inter, system-ui, sans-serif;
       }
       .work-inner-mobile .mobile-body p {
         margin-bottom: 12px;
         font: 400 16px/1.3 Inter, system-ui, sans-serif;
+      }
+      .work-inner-mobile .mobile-body p[data-kinetik-constraint] {
+        margin-bottom: 32px;
       }
       .work-inner-mobile .mobile-body p:last-child { margin-bottom: 0; }
       .work-inner-mobile .mobile-cta-band {
@@ -254,7 +257,7 @@
         .work-inner-figma .label { font-size: 14px; line-height: 1.3; }
         .work-inner-figma .body16 { font-size: 16px; line-height: 1.3; }
         .work-inner-figma .h2,
-        .work-inner-figma .h3 { font-size: 22px; line-height: 1.2; }
+        .work-inner-figma .h3 { font-size: 22px; line-height: 1.4; }
         .work-inner-figma .body24,
         .work-inner-figma .body-sm { font-size: 16px; line-height: 1.3; }
         .work-inner-figma .figma-site-cta {
@@ -365,12 +368,12 @@
         <p class="h3">KINETIK is a fitness experience built for ambition — no gap between splash promise and dashboard proof. Goals, streaks, shared achievements, and progress clarity were designed together, then sharpened with AI until every touchpoint felt fast, social, and earned.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
           <p class="body24">Kinetik sits where wearable brands connect aspiration with readable data. The work called for stronger journey traction across real training weeks and tighter IA inside the product shell. Stakes were clear: hero clarity, confident thumb ergonomics, and consistency across onboarding, diagnostics, leaderboard, pairing, and recovery — credibility at every step.</p>
-          <p class="body24">The constraint was deliberate: use AI as the primary creative accelerator — models to compress research and sharpen narrative, generative passes for mood and variants, Cursor with Claude Code for flows and microcopy — so quality came from iteration, not volume.</p>
+          <p class="body24" data-kinetik-constraint>The constraint was deliberate: use AI as the primary creative accelerator — models to compress research and sharpen narrative, generative passes for mood and variants, Cursor with Claude Code for flows and microcopy — so quality came from iteration, not volume.</p>
         </div>
       </div>
 
-      <div style="position:absolute;left:352px;top:2409px;width:735px;display:flex;flex-direction:column;gap:16px">
-        <p class="body24">Fitness software is judged in milliseconds — hierarchy, restraint, and spacing either read as confidence, or as noise. Every module had to earn its place: hero promise, proof in product detail, quiet states and failure paths, and dashboards that answer what matters right now.</p>
+      <div data-kinetik-gap-block style="position:absolute;left:352px;top:2409px;width:735px;display:flex;flex-direction:column;gap:16px">
+        <p class="body24" data-kinetik-fitness-lead>Fitness software is judged in milliseconds — hierarchy, restraint, and spacing either read as confidence, or as noise. Every module had to earn its place: hero promise, proof in product detail, quiet states and failure paths, and dashboards that answer what matters right now.</p>
         <p class="body24">The stack was the studio: snapshot variants, prompt loops, microcopy drafts — all AI-native. Discipline lived in direction — which routes shipped, which metaphors held, what still reads as intentional when someone opens the app before their first rep.</p>
         <p class="body24">The outcome is a coherent product story in layouts and handover: one voice (&quot;KINETIK&quot;), journeys from landing through daily ritual, and interaction patterns that respect hesitation in high-stakes analytics — without the experience reading like a campaign poster wrapped around an empty shell.</p>
       </div>
@@ -518,8 +521,8 @@
           <p class="mobile-h">KINETIK is a fitness experience built for ambition — no gap between splash promise and dashboard proof. Goals, streaks, shared achievements, and progress clarity were designed together, then sharpened with AI until every touchpoint felt fast, social, and earned.</p>
           <div class="mobile-body">
             <p>Kinetik sits where wearable brands connect aspiration with readable data. The work called for stronger journey traction across real training weeks and tighter IA inside the product shell. Stakes were clear: hero clarity, confident thumb ergonomics, and consistency across onboarding, diagnostics, leaderboard, pairing, and recovery — credibility at every step.</p>
-            <p>The constraint was deliberate: use AI as the primary creative accelerator — models to compress research and sharpen narrative, generative passes for mood and variants, Cursor with Claude Code for flows and microcopy — so quality came from iteration, not volume.</p>
-            <p>Fitness software is judged in milliseconds — hierarchy, restraint, and spacing either read as confidence, or as noise. Every module had to earn its place: hero promise, proof in product detail, quiet states and failure paths, and dashboards that answer what matters right now.</p>
+            <p data-kinetik-constraint>The constraint was deliberate: use AI as the primary creative accelerator — models to compress research and sharpen narrative, generative passes for mood and variants, Cursor with Claude Code for flows and microcopy — so quality came from iteration, not volume.</p>
+            <p data-kinetik-fitness-lead>Fitness software is judged in milliseconds — hierarchy, restraint, and spacing either read as confidence, or as noise. Every module had to earn its place: hero promise, proof in product detail, quiet states and failure paths, and dashboards that answer what matters right now.</p>
             <p>The stack was the studio: snapshot variants, prompt loops, microcopy drafts — all AI-native. Discipline lived in direction — which routes shipped, which metaphors held, what still reads as intentional when someone opens the app before their first rep.</p>
             <p>The outcome is a coherent product story in layouts and handover: one voice (&quot;KINETIK&quot;), journeys from landing through daily ritual, and interaction patterns that respect hesitation in high-stakes analytics — without the experience reading like a campaign poster wrapped around an empty shell.</p>
           </div>
@@ -662,6 +665,17 @@
     </footer>
     <script>
       (function () {
+        function layoutKinetikConstraintGap(frame, scale) {
+          var constraint = frame.querySelector("[data-kinetik-constraint]");
+          var gapBlock = frame.querySelector("[data-kinetik-gap-block]");
+          if (!constraint || !gapBlock) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var constraintRect = constraint.getBoundingClientRect();
+          gapBlock.style.top =
+            (constraintRect.bottom - frameRect.top) / s + 80 + "px";
+        }
+
         function resizeFigmaFrame() {
           var wrap = document.querySelector(".work-inner-wrap");
           var frame = document.querySelector(".work-inner-figma");
@@ -671,6 +685,7 @@
           var scale = Math.min(1, wrap.clientWidth / baseW);
           frame.style.transform = "scale(" + scale + ")";
           wrap.style.height = baseH * scale + "px";
+          layoutKinetikConstraintGap(frame, scale);
           var ctas = frame.querySelectorAll(".figma-site-cta");
           var inverse = scale > 0 ? 1 / scale : 1;
           ctas.forEach(function (cta) {
@@ -683,6 +698,9 @@
           document.addEventListener("DOMContentLoaded", resizeFigmaFrame);
         } else {
           resizeFigmaFrame();
+        }
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(resizeFigmaFrame);
         }
       })();
     </script>
