@@ -180,6 +180,36 @@
       .work-inner-mobile [data-kinetik-marketing-hero-mobile] {
         margin-top: 0;
       }
+      .work-inner-mobile [data-kinetik-overview-block] {
+        margin-bottom: 0;
+      }
+      .work-inner-mobile [data-kinetik-overview-screens-mobile] {
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
+      .work-inner-mobile [data-kinetik-challenge-block] {
+        margin-bottom: 24px;
+      }
+      .work-inner-mobile [data-kinetik-speed-block] {
+        margin-bottom: 24px;
+      }
+      .work-inner-mobile [data-kinetik-speed-media-mobile] {
+        margin-top: 0;
+        margin-bottom: 0;
+        gap: 0;
+      }
+      .work-inner-mobile [data-kinetik-analytic-wireframe-mobile] {
+        margin-bottom: 24px;
+      }
+      .work-inner-mobile [data-kinetik-launch-block] {
+        margin-top: 0;
+        margin-bottom: 24px;
+      }
+      .work-inner-mobile [data-kinetik-launch-media-mobile] {
+        margin-top: 0;
+        margin-bottom: 24px;
+        gap: 0;
+      }
       .work-inner-mobile .mobile-kicker {
         margin-bottom: 0;
         text-transform: uppercase;
@@ -411,21 +441,21 @@
 
       <div data-kinetik-overview style="position:absolute;left:592px;top:4052px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">OVERVIEW</p>
-        <p class="h3">Design language that carries from story to telemetry.</p>
+        <p class="h3" data-kinetik-overview-h>Design language that carries from story to telemetry.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
           <p class="body24">Kinetik serves two audiences inside one product: fluent analysts and newcomers who feel effort before they read a chart. The brief wasn&apos;t “more hype” — it was to make trust and momentum sit in the same screen.</p>
           <p class="body24">Strategy, UX, and storytelling moved as one system — challenged, revised, and refined until the voice could repeat without sounding rehearsed. The goal was cohesion: the promise in the hero, proof in KPI detail, calm orientation through onboarding, and reassurance exactly where confidence dips.</p>
         </div>
       </div>
-      <div style="position:absolute;left:969px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/kinetik-pricing-overview.png?v=pricing-454" alt="Kinetik pricing page showing plan cards and subscription options." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:496px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/kinetik-training.png?v=training-454" alt="Kinetik training page showing progress metrics and athlete-focused performance data." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:23px;top:4700px;width:454px;height:320px;overflow:hidden;background:#0b0f18"><img src="/img/kinetik-features.png?v=features-454" alt="Kinetik features page showing performance cards and athlete-focused messaging." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div class="video-slot" style="left:0;top:4150px;width:490px;height:355.5px">
+      <div data-kinetik-overview-screen style="position:absolute;left:969px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/kinetik-pricing-overview.png?v=pricing-454" alt="Kinetik pricing page showing plan cards and subscription options." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-overview-screen style="position:absolute;left:496px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/kinetik-training.png?v=training-454" alt="Kinetik training page showing progress metrics and athlete-focused performance data." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-overview-screen style="position:absolute;left:23px;top:4700px;width:454px;height:320px;overflow:hidden;background:#0b0f18"><img src="/img/kinetik-features.png?v=features-454" alt="Kinetik features page showing performance cards and athlete-focused messaging." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div class="video-slot" data-kinetik-overview-media style="left:0;top:4150px;width:490px;height:355.5px">
         <video autoplay muted playsinline loop preload="metadata" aria-hidden="true">
           <source src="/video/splash.mp4" type="video/mp4" />
         </video>
       </div>
-      <div style="position:absolute;left:672px;top:5146px;width:620px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-challenge style="position:absolute;left:672px;top:5146px;width:620px;display:flex;flex-direction:column;gap:32px">
         <p class="label">THE CHALLENGE</p>
         <p class="h3" style="width:601px">A considered fitness product has to earn trust now.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -434,7 +464,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:211px;top:5917px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-speed style="position:absolute;left:211px;top:5917px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">SPEED &amp; PRECISION</p>
         <p class="h3">Instrumentation with clarity, before focus slips.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -443,7 +473,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:343px;top:7979px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-launch style="position:absolute;left:343px;top:7979px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">THE LAUNCH</p>
         <p class="h3">Hardware realities, calm onboarding, repeat visits.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -452,7 +482,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:115px;top:9290px;width:580px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-shift data-kinetik-origin-top="9290" style="position:absolute;left:115px;top:9290px;width:580px;display:flex;flex-direction:column;gap:32px">
         <p class="label">COLOUR PALETTE</p>
         <p class="h3">Navy-steady. Emerald-electric — with Sky, Sunrise, and Pulse.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -461,7 +491,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:745px;top:9422px;width:580px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-shift data-kinetik-origin-top="9422" style="position:absolute;left:745px;top:9422px;width:580px;display:flex;flex-direction:column;gap:32px">
         <p class="label">WORDMARK</p>
         <p class="h3">Typographic velocity over decorative badges.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -470,7 +500,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:671px;top:11441px;width:620px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-shift data-kinetik-origin-top="11441" style="position:absolute;left:671px;top:11441px;width:620px;display:flex;flex-direction:column;gap:32px">
         <p class="label">OUTCOMES</p>
         <p class="h3" style="width:601px">Fewer narratives, sharper comprehension.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -479,7 +509,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:117px;top:12136px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-shift data-kinetik-origin-top="12136" style="position:absolute;left:117px;top:12136px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">COLLABORATION</p>
         <p class="h3">Documentation that mirrors the live promise.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -488,7 +518,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:326px;top:13477px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-shift data-kinetik-origin-top="13477" style="position:absolute;left:326px;top:13477px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">CONCLUSION</p>
         <p class="h3">What this proves.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -497,17 +527,17 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:42px;top:6509px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-community.png" alt="Kinetik Community: leaderboard and See where you rank marketing screen." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:7284px;width:565px;height:396px;overflow:hidden"><img src="/img/kinetik-outcomes.png" alt="Kinetik outcomes graphic summarizing research themes and prioritized UX decisions." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:607px;top:7284px;width:773px;height:600px;overflow:hidden"><img src="/img/kinetik-analytic-wireframe.png" alt="Kinetik analytics wireframe with progress, workout, and goals annotations." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:8595px;width:773px;height:541px;overflow:hidden"><img src="/img/kinetik-onboarding.png" alt="Kinetik onboarding screens on two iPhone mockups." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:815px;top:8595px;width:565px;height:396px;overflow:hidden"><img src="/img/kinetik-notification-wireframe.png" alt="Kinetik notification wireframe with visual hierarchy, in-app notifications, and biometric data annotations." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:10069px;width:669px;height:500px;overflow:hidden"><img src="/img/kinetik-logo.png" alt="KINETIK logo on a dark navy gradient background." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:711px;top:10070px;width:669px;height:500px;overflow:hidden"><img src="/img/kinetik-typography.png" alt="KINETIK typography specimen showing Cal Sans letterforms and text samples." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:10569px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-colour-ramp.png" alt="KINETIK colour ramp showing primary and accent colour scales." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="/img/kinetik-outcomes.png?v=outcomes-phones" alt="Kinetik outcomes app screens showing weekly progress rings and BodyCheck guidance." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden;background:#0b0f18"><img src="/img/kinetik-dev-mode.png" alt="Kinetik website design shown in Figma Dev Mode." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;max-width:none" /></div>
-      <div style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="/img/kinetik-wireframes.png?v=wireframes" alt="Kinetik workout wireframes showing overview, active workout, and weekly summary screens." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-speed-media style="position:absolute;left:42px;top:6509px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-community.png" alt="Kinetik Community: leaderboard and See where you rank marketing screen." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-outcomes-row style="position:absolute;left:42px;top:7284px;width:565px;height:396px;overflow:hidden"><img src="/img/kinetik-outcomes.png" alt="Kinetik outcomes graphic summarizing research themes and prioritized UX decisions." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-outcomes-row style="position:absolute;left:607px;top:7284px;width:773px;height:600px;overflow:hidden"><img src="/img/kinetik-analytic-wireframe.png" alt="Kinetik analytics wireframe with progress, workout, and goals annotations." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-launch-onboarding style="position:absolute;left:42px;top:8595px;width:773px;height:541px;overflow:hidden"><img src="/img/kinetik-onboarding.png" alt="Kinetik onboarding screens on two iPhone mockups." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-launch-media style="position:absolute;left:815px;top:8595px;width:565px;height:396px;overflow:hidden"><img src="/img/kinetik-notification-wireframe.png" alt="Kinetik notification wireframe with visual hierarchy, in-app notifications, and biometric data annotations." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-shift data-kinetik-origin-top="10069" style="position:absolute;left:42px;top:10069px;width:669px;height:500px;overflow:hidden"><img src="/img/kinetik-logo.png" alt="KINETIK logo on a dark navy gradient background." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-shift data-kinetik-origin-top="10070" style="position:absolute;left:711px;top:10070px;width:669px;height:500px;overflow:hidden"><img src="/img/kinetik-typography.png" alt="KINETIK typography specimen showing Cal Sans letterforms and text samples." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-shift data-kinetik-origin-top="10569" style="position:absolute;left:42px;top:10569px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-colour-ramp.png" alt="KINETIK colour ramp showing primary and accent colour scales." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-shift data-kinetik-origin-top="11441" style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="/img/kinetik-outcomes.png?v=outcomes-phones" alt="Kinetik outcomes app screens showing weekly progress rings and BodyCheck guidance." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-shift data-kinetik-origin-top="12136" style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden;background:#0b0f18"><img src="/img/kinetik-dev-mode.png" alt="Kinetik website design shown in Figma Dev Mode." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;max-width:none" /></div>
+      <div data-kinetik-shift data-kinetik-origin-top="12721" style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="/img/kinetik-wireframes.png?v=wireframes" alt="Kinetik workout wireframes showing overview, active workout, and weekly summary screens." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
 
       <div style="position:absolute;left:116px;top:1493px;width:244px;display:flex;flex-direction:column;gap:16px">
         <p class="body16" style="color:#1e1e1e">( Services )</p>
@@ -564,7 +594,7 @@
           <a class="btn-contact btn-contact--email" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer">See the site</a>
         </div>
 
-        <div class="mobile-block">
+        <div class="mobile-block" data-kinetik-overview-block>
           <p class="mobile-kicker">OVERVIEW</p>
           <p class="mobile-h">Design language that carries from story to telemetry.</p>
           <div class="mobile-body">
@@ -573,13 +603,13 @@
           </div>
         </div>
 
-        <div class="mobile-stack">
+        <div class="mobile-stack" data-kinetik-overview-screens-mobile>
           <div class="mobile-image"><img src="/img/kinetik-features.png?v=features-454" alt="Kinetik features page showing performance cards and athlete-focused messaging." /></div>
           <div class="mobile-image"><img src="/img/kinetik-training.png?v=training-454" alt="Kinetik training page showing progress metrics and athlete-focused performance data." /></div>
           <div class="mobile-image"><img src="/img/kinetik-pricing-overview.png?v=pricing-454" alt="Kinetik pricing page showing plan cards and subscription options." /></div>
         </div>
 
-        <div class="mobile-block">
+        <div class="mobile-block" data-kinetik-challenge-block>
           <p class="mobile-kicker">THE CHALLENGE</p>
           <p class="mobile-h">A considered fitness product has to earn trust now.</p>
           <div class="mobile-body">
@@ -588,7 +618,7 @@
           </div>
         </div>
 
-        <div class="mobile-block">
+        <div class="mobile-block" data-kinetik-speed-block>
           <p class="mobile-kicker">SPEED &amp; PRECISION</p>
           <p class="mobile-h">Instrumentation with clarity, before focus slips.</p>
           <div class="mobile-body">
@@ -597,13 +627,13 @@
           </div>
         </div>
 
-        <div class="mobile-stack">
+        <div class="mobile-stack" data-kinetik-speed-media-mobile>
           <div class="mobile-image"><img src="/img/kinetik-community.png" alt="Kinetik Community: leaderboard and See where you rank marketing screen." /></div>
           <div class="mobile-image"><img src="/img/kinetik-outcomes.png" alt="Kinetik outcomes graphic summarizing research themes and prioritized UX decisions." /></div>
-          <div class="mobile-image"><img src="/img/kinetik-analytic-wireframe.png" alt="Kinetik analytics wireframe with progress, workout, and goals annotations." /></div>
+          <div class="mobile-image" data-kinetik-analytic-wireframe-mobile><img src="/img/kinetik-analytic-wireframe.png" alt="Kinetik analytics wireframe with progress, workout, and goals annotations." /></div>
         </div>
 
-        <div class="mobile-block">
+        <div class="mobile-block" data-kinetik-launch-block>
           <p class="mobile-kicker">THE LAUNCH</p>
           <p class="mobile-h">Hardware realities, calm onboarding, repeat visits.</p>
           <div class="mobile-body">
@@ -612,7 +642,7 @@
           </div>
         </div>
 
-        <div class="mobile-stack">
+        <div class="mobile-stack" data-kinetik-launch-media-mobile>
           <div class="mobile-image"><img src="/img/kinetik-onboarding.png" alt="Kinetik onboarding screens on two iPhone mockups." /></div>
           <div class="mobile-image"><img src="/img/kinetik-notification-wireframe.png" alt="Kinetik notification wireframe with visual hierarchy, in-app notifications, and biometric data annotations." /></div>
         </div>
@@ -734,6 +764,140 @@
           }
         }
 
+        function layoutKinetikOverviewMediaAlign(frame, scale) {
+          var headline = frame.querySelector("[data-kinetik-overview-h]");
+          var media = frame.querySelector("[data-kinetik-overview-media]");
+          if (!headline || !media) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var headlineRect = headline.getBoundingClientRect();
+          media.style.top =
+            (headlineRect.top - frameRect.top) / s + "px";
+        }
+
+        function layoutKinetikOverviewScreensGap(frame, scale) {
+          var overview = frame.querySelector("[data-kinetik-overview]");
+          var media = frame.querySelector("[data-kinetik-overview-media]");
+          var screens = frame.querySelectorAll("[data-kinetik-overview-screen]");
+          if (!overview || !screens.length) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var sectionBottom = overview.getBoundingClientRect().bottom;
+          if (media) {
+            var mediaBottom = media.getBoundingClientRect().bottom;
+            if (mediaBottom > sectionBottom) sectionBottom = mediaBottom;
+          }
+          var rowTop =
+            (sectionBottom - frameRect.top) / s + 80 + "px";
+          screens.forEach(function (screen) {
+            screen.style.top = rowTop;
+          });
+        }
+
+        function layoutKinetikChallengeGap(frame, scale) {
+          var screens = frame.querySelectorAll("[data-kinetik-overview-screen]");
+          var challenge = frame.querySelector("[data-kinetik-challenge]");
+          if (!challenge || !screens.length) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var rowBottom = 0;
+          screens.forEach(function (screen) {
+            var bottom = screen.getBoundingClientRect().bottom;
+            if (bottom > rowBottom) rowBottom = bottom;
+          });
+          challenge.style.top =
+            (rowBottom - frameRect.top) / s + 80 + "px";
+        }
+
+        function layoutKinetikSpeedGap(frame, scale) {
+          var challenge = frame.querySelector("[data-kinetik-challenge]");
+          var speed = frame.querySelector("[data-kinetik-speed]");
+          if (!challenge || !speed) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var challengeRect = challenge.getBoundingClientRect();
+          speed.style.top =
+            (challengeRect.bottom - frameRect.top) / s + 80 + "px";
+        }
+
+        function layoutKinetikSpeedMediaGap(frame, scale) {
+          var speed = frame.querySelector("[data-kinetik-speed]");
+          var media = frame.querySelector("[data-kinetik-speed-media]");
+          if (!speed || !media) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var speedRect = speed.getBoundingClientRect();
+          media.style.top =
+            (speedRect.bottom - frameRect.top) / s + 80 + "px";
+        }
+
+        function layoutKinetikOutcomesRowGap(frame, scale) {
+          var media = frame.querySelector("[data-kinetik-speed-media]");
+          var row = frame.querySelectorAll("[data-kinetik-outcomes-row]");
+          if (!media || !row.length) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var mediaRect = media.getBoundingClientRect();
+          var rowTop =
+            (mediaRect.bottom - frameRect.top) / s + "px";
+          row.forEach(function (el) {
+            el.style.top = rowTop;
+          });
+        }
+
+        function layoutKinetikShiftPostLaunch(frame, anchorTopPx) {
+          var paletteOrigin = 9290;
+          var shift = anchorTopPx - paletteOrigin;
+          frame.querySelectorAll("[data-kinetik-shift]").forEach(function (el) {
+            var origin = parseFloat(
+              el.getAttribute("data-kinetik-origin-top"),
+              10
+            );
+            if (!isFinite(origin)) return;
+            el.style.top =
+              (shift > 0 ? origin + shift : origin) + "px";
+          });
+          return Math.max(0, shift);
+        }
+
+        function layoutKinetikLaunchSection(frame, scale) {
+          var row = frame.querySelectorAll("[data-kinetik-outcomes-row]");
+          var launch = frame.querySelector("[data-kinetik-launch]");
+          var onboarding = frame.querySelector("[data-kinetik-launch-onboarding]");
+          var launchMedia = frame.querySelector("[data-kinetik-launch-media]");
+          if (!launch || !row.length) return 0;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var rowBottom = 0;
+          row.forEach(function (el) {
+            var bottom = el.getBoundingClientRect().bottom;
+            if (bottom > rowBottom) rowBottom = bottom;
+          });
+          launch.style.top =
+            (rowBottom - frameRect.top) / s + 80 + "px";
+          if (!onboarding && !launchMedia) return 0;
+          var launchRect = launch.getBoundingClientRect();
+          var assetsTop =
+            (launchRect.bottom - frameRect.top) / s + 80 + "px";
+          if (onboarding) onboarding.style.top = assetsTop;
+          if (launchMedia) {
+            launchMedia.style.top = assetsTop;
+            launchMedia.style.left = "815px";
+          }
+          var sectionBottom = launch.getBoundingClientRect().bottom;
+          if (onboarding) {
+            var ob = onboarding.getBoundingClientRect().bottom;
+            if (ob > sectionBottom) sectionBottom = ob;
+          }
+          if (launchMedia) {
+            var mb = launchMedia.getBoundingClientRect().bottom;
+            if (mb > sectionBottom) sectionBottom = mb;
+          }
+          var anchorTopPx =
+            (sectionBottom - frameRect.top) / s + 80;
+          return layoutKinetikShiftPostLaunch(frame, anchorTopPx);
+        }
+
         function resizeFigmaFrame() {
           var wrap = document.querySelector(".work-inner-wrap");
           var frame = document.querySelector(".work-inner-figma");
@@ -746,6 +910,14 @@
           layoutKinetikConstraintGap(frame, scale);
           layoutKinetikHeroSpacing(frame, scale);
           layoutKinetikCtaSpacing(frame, scale);
+          layoutKinetikOverviewMediaAlign(frame, scale);
+          layoutKinetikOverviewScreensGap(frame, scale);
+          layoutKinetikChallengeGap(frame, scale);
+          layoutKinetikSpeedGap(frame, scale);
+          layoutKinetikSpeedMediaGap(frame, scale);
+          layoutKinetikOutcomesRowGap(frame, scale);
+          var launchExtra = layoutKinetikLaunchSection(frame, scale);
+          wrap.style.height = (baseH + launchExtra) * scale + "px";
           var ctas = frame.querySelectorAll(".figma-site-cta");
           var inverse = scale > 0 ? 1 / scale : 1;
           ctas.forEach(function (cta) {
