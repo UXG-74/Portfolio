@@ -27,6 +27,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Home uses JS section anchors; avoid native smooth fighting programmatic scroll */
+html:has(body.home-combined) {
+  scroll-behavior: auto;
+}
+
 body {
   margin: 0;
   font-family: var(--font);
@@ -703,6 +708,12 @@ body.nav-open {
 #about-copy-heading,
 #contact-heading {
   scroll-margin-top: var(--anchor-lead-offset);
+}
+
+/* Home WORK / ABOUT nav: heading lands 66px below viewport top (matches main.js) */
+body.home-combined #work-index-heading,
+body.home-combined #home-about-heading {
+  scroll-margin-top: 66px;
 }
 
 .btn-ghost-pill {
@@ -1478,8 +1489,23 @@ body.theme-dark .work-inner-figma [style*="color:#f2f2f2"] {
 .home-combined {
   --figma-w: 1440;
   --home-muted: #82837f;
+  /* About band (1709) + footer; still enough scroll for WORK anchor on MacBook Pro */
+  --home-about-end: 1709px;
+  --home-canvas-min-height: max(
+    var(--home-about-end),
+    calc(1370px + max(982px, 100vh))
+  );
   background: var(--white);
   color: var(--black);
+}
+
+@supports (height: 100dvh) {
+  .home-combined {
+    --home-canvas-min-height: max(
+      var(--home-about-end),
+      calc(1370px + max(982px, 100dvh))
+    );
+  }
 }
 
 .home-figma-layout {
@@ -1494,7 +1520,7 @@ body.theme-dark .work-inner-figma [style*="color:#f2f2f2"] {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  min-height: 1709px;
+  min-height: var(--home-canvas-min-height);
 }
 
 .home-combined .site-header,
@@ -1570,7 +1596,7 @@ body.home-combined.theme-dark .site-footer a:hover {
 .home-figma-canvas {
   position: relative;
   width: 100%;
-  min-height: 1709px;
+  min-height: var(--home-canvas-min-height);
 }
 
 .home-status {
@@ -1586,7 +1612,28 @@ body.home-combined.theme-dark .site-footer a:hover {
   font-size: 12px;
   font-weight: 500;
   line-height: normal;
-  color: #07ff1b;
+  color: #f2f2f2;
+}
+
+body.home-combined:not(.theme-dark) .home-status {
+  color: #1e1e1e;
+}
+
+@keyframes home-status-dot-blink {
+  0%,
+  88%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(7 255 27 / 0.55);
+  }
+
+  92%,
+  96% {
+    opacity: 0;
+    transform: scale(0.9);
+    box-shadow: none;
+  }
 }
 
 .home-status-dot {
@@ -1595,6 +1642,14 @@ body.home-combined.theme-dark .site-footer a:hover {
   border-radius: 50%;
   background: #07ff1b;
   flex-shrink: 0;
+  transform-origin: center;
+  animation: home-status-dot-blink 1.1s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-status-dot {
+    animation: none;
+  }
 }
 
 .home-hero-title {
@@ -1729,17 +1784,22 @@ body.home-combined:not(.theme-dark) .home-client-logo {
   margin: 0;
 }
 
-.home-work-title {
-  position: absolute;
-  left: 46px;
-  top: 451px;
+/* WORK + ABOUT headings share one scale (Figma 194:13 / 522:6) */
+.home-section-title {
   margin: 0;
   width: 725px;
+  max-width: calc(100% - 92px);
   font-size: 80px;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: 0;
   color: var(--black);
+}
+
+.home-work-title {
+  position: absolute;
+  left: 46px;
+  top: 451px;
 }
 
 .home-work-carousel {
@@ -1749,8 +1809,7 @@ body.home-combined:not(.theme-dark) .home-client-logo {
   top: 561px;
   height: 636px;
   overflow: hidden;
-  cursor: grab;
-  touch-action: pan-y;
+  touch-action: manipulation;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -1783,18 +1842,27 @@ body.home-combined:not(.theme-dark) .home-client-logo {
   width: calc(893px + 238px * var(--focus, 0));
   height: calc(539px + 97px * var(--focus, 0));
   backface-visibility: hidden;
+  pointer-events: auto;
 }
 
 .home-work-card-hit {
   display: block;
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   border: 0;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   /* Supporting = 32px; main (--focus → 1) stays square */
   border-radius: calc(32px * (1 - var(--focus, 0)));
+}
+
+.home-work-carousel.is-dragging .home-work-card-hit {
+  cursor: grabbing;
 }
 
 .home-work-card-media {
@@ -1871,6 +1939,24 @@ body.home-combined:not(.theme-dark) .home-client-logo {
   font-weight: 400;
   line-height: 1.3;
   color: var(--black);
+}
+
+.home-work-detail-title-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-work-detail-title-link:hover {
+  opacity: 0.85;
+}
+
+body.home-combined.theme-dark .home-work-detail-title-link:hover {
+  opacity: 1;
+  color: #fff;
 }
 
 .home-work-detail-title__line {
@@ -1959,70 +2045,117 @@ body.home-combined.theme-dark .home-work-detail-tags span {
   color: var(--home-muted);
 }
 
-/* Figma 189:234 / 189:144 / 189:233 — tops at 1502 / 1540 / 1587 (38px & 47px between layer tops) */
-.home-contact {
+/* Figma 522:6 / 523:8 / 523:14 / 523:13 — ABOUT block replaces former contact band */
+.home-about {
   position: absolute;
   left: 0;
   right: 0;
-  top: 1502px;
-  height: 143px;
+  top: 1436px;
+  height: 273px;
   margin: 0;
   padding: 0;
 }
 
-.home-contact-eyebrow {
+.home-about-title {
   position: absolute;
-  left: 50%;
+  left: 46px;
   top: 0;
-  width: 453px;
-  max-width: calc(100% - 48px);
+}
+
+.home-about-bio {
+  position: absolute;
+  left: 166px;
+  top: 117px;
+  width: 370px;
+  max-width: calc(100% - 212px);
   margin: 0;
-  transform: translateX(-50%);
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.3;
-  text-align: center;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+/* Same column + rhythm as .home-work-detail-p (798px / 309px, 54px gap) */
+.home-about-cta-lead {
+  position: absolute;
+  left: 798px;
+  top: 117px;
+  width: 309px;
+  max-width: 309px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
   color: var(--home-muted);
 }
 
-.home-contact-email {
+.home-about-cta-actions {
   position: absolute;
-  left: 50%;
-  top: 38px;
-  width: 433px;
-  max-width: calc(100% - 48px);
+  left: 798px;
+  top: 153px;
+  width: 309px;
+  max-width: 309px;
   margin: 0;
-  transform: translateX(-50%);
-  font-size: 24px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.3;
-  text-align: center;
-  color: var(--black);
-  text-decoration: none;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--home-muted);
 }
 
-.home-contact-email:hover {
+.home-about-cta-actions a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+.home-about-cta-actions a:hover {
   opacity: 0.85;
 }
 
-body.home-combined.theme-dark .home-contact-email:hover {
+body.home-combined.theme-dark .home-about-cta-actions a:hover {
   opacity: 1;
   color: #fff;
 }
 
-.home-contact-copy {
+/* Default: footer in ABOUT band (in flow on mobile); fixed to viewport bottom when About is anchored */
+.home-about-footer {
   position: absolute;
-  left: 50%;
-  top: 85px;
-  width: 338px;
-  max-width: calc(100% - 48px);
+  left: 0;
+  right: 0;
+  top: 200px;
+  z-index: 55;
   margin: 0;
-  transform: translateX(-50%);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.3;
-  text-align: center;
-  color: var(--home-muted);
+  padding-block: clamp(1rem, 2vw, 1.5rem);
+  border-top: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.home-combined.home-about-anchor .home-about-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  visibility: visible;
+  pointer-events: auto;
+  padding-block: clamp(1.25rem, 2.5vw, 2rem);
+  padding-bottom: max(clamp(1.25rem, 2.5vw, 2rem), env(safe-area-inset-bottom, 0px));
+  background: var(--white);
+  color: var(--black);
+}
+
+body.home-combined.theme-dark.home-about-anchor .home-about-footer {
+  background: #1e1e1e;
+  color: #f3f3f3;
+}
+
+body.home-combined.theme-dark .home-about-footer a:hover,
+body.home-combined.theme-dark.home-about-anchor .home-about-footer a:hover {
+  opacity: 1;
+  color: #fff;
 }
 
 @media (max-width: 1439px) {
@@ -2036,7 +2169,7 @@ body.home-combined.theme-dark .home-contact-email:hover {
   .home-combined {
     overflow-x: hidden;
     overflow-y: visible;
-    min-height: calc(1709px * (100vw / 1440));
+    min-height: calc(var(--home-canvas-min-height) * (100vw / 1440));
   }
 }
 
@@ -2068,17 +2201,17 @@ body.home-combined.theme-dark .home-contact-email:hover {
   .home-clients,
   .home-client-logo,
   .home-client-divider,
-  .home-work-title,
+  .home-section-title,
   .home-work-carousel,
   .home-work-detail,
   .home-work-detail-title,
   .home-work-detail-p,
   .home-work-detail-industry,
   .home-work-detail-tags,
-  .home-contact,
-  .home-contact-eyebrow,
-  .home-contact-email,
-  .home-contact-copy {
+  .home-about,
+  .home-about-bio,
+  .home-about-cta-lead,
+  .home-about-cta-actions {
     position: static;
     width: auto;
     max-width: none;
@@ -2118,10 +2251,13 @@ body.home-combined.theme-dark .home-contact-email:hover {
     display: none;
   }
 
-  .home-work-title {
+  .home-section-title {
     font-size: clamp(3rem, 14vw, 5rem);
     letter-spacing: -0.02em;
     line-height: 1.05;
+  }
+
+  .home-work-title {
     margin-bottom: 20px;
   }
 
@@ -2280,33 +2416,57 @@ body.home-combined.theme-dark .home-contact-email:hover {
     }
   }
 
-  .home-contact {
+  .home-about {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     height: auto;
     margin-top: 48px;
     padding-top: 0;
-    text-align: center;
+    padding-bottom: 0.5rem;
+    gap: 16px;
   }
 
-  .home-contact-eyebrow,
-  .home-contact-email,
-  .home-contact-copy {
+  .home-about-title {
+    margin-bottom: 4px;
+  }
+
+  .home-about-bio {
+    max-width: 23.125rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .home-about-cta-lead,
+  .home-about-cta-actions {
+    text-align: left;
+    max-width: none;
+  }
+
+  .home-about-cta-actions {
+    margin-top: 0;
+  }
+
+  .home-about-footer {
     position: static;
-    transform: none;
-    width: auto;
-    max-width: 22rem;
+    order: 10;
+    margin-top: 0.5rem;
+    padding-block: clamp(1rem, 3vw, 1.25rem);
+    visibility: visible;
+    pointer-events: auto;
   }
 
-  .home-contact-email {
-    margin-top: 20px;
-    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  body.home-combined.home-about-anchor .home-about-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+    background: var(--white);
   }
 
-  .home-contact-copy {
-    margin-top: 12px;
-    max-width: 21.125rem;
+  body.home-combined.theme-dark.home-about-anchor .home-about-footer {
+    background: #1e1e1e;
   }
 }
 
@@ -2324,6 +2484,12 @@ body.home-combined.theme-dark .home-contact-email:hover {
   height: 25%;
   z-index: 40;
   pointer-events: none;
+}
+
+/* Don't obscure ABOUT footer links when anchored */
+body.home-combined.home-about-anchor .home-scroll-fade {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .home-scroll-fade__layer {
@@ -2398,22 +2564,23 @@ body.theme-dark .work-inner-figma .cta {
   color: #1e1e1e !important;
 }
 
-/* Case-study inner: pull the Figma canvas up so the project title band sits closer to the Work-index anchor line. */
+/* Case-study inner: pull the Figma canvas up so the project title band sits closer to the nav. */
 body.case-figma-page #main {
   padding-top: 0;
 }
 
 body.case-figma-page .work-inner-wrap {
-  margin-top: clamp(-2.75rem, -6vw, -0.75rem);
+  margin-top: calc(clamp(-2.75rem, -6vw, -0.75rem) - 80px);
 }
 
 @media (max-width: 768px) {
   body.case-figma-page .work-inner-wrap {
-    margin-top: 0;
+    margin-top: -80px;
   }
 
   /* Overrides per-page inline .work-inner-mobile padding; top inset halved vs prior for ~50% less space under nav. */
   body.case-figma-page .work-inner-mobile {
+    margin-top: -80px;
     padding: calc(max(var(--inner-lead-pad-top), env(safe-area-inset-top, 0px)) * 0.5) 30px 56px;
   }
 
@@ -2422,10 +2589,10 @@ body.case-figma-page .work-inner-wrap {
   }
 }
 
-/* Inner routes only (not Work index): desktop  -  ~50% less space between nav and lead title. */
+/* Inner routes only (not Work index): desktop — nav to lead title, plus 80px lift. */
 @media (min-width: 769px) {
   body.case-figma-page .work-inner-wrap {
-    margin-top: clamp(-4.125rem, -9vw, -1.125rem);
+    margin-top: calc(clamp(-4.125rem, -9vw, -1.125rem) - 80px);
   }
 }
 

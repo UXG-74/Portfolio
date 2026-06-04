@@ -35,7 +35,7 @@
         color: #f3f3f3;
       }
     </style>
-    <link rel="stylesheet" href="css/styles.css?v=home-work-mobile-v1" />
+    <link rel="stylesheet" href="css/styles.css?v=home-status-blink-v3" />
   </head>
   <body class="page home-page home-combined">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -46,6 +46,7 @@
           <a class="logo" href="index.html">Ged Devine</a>
           <nav class="nav-primary" aria-label="Primary">
             <a href="#work" data-home-work-link>Work</a>
+            <a href="#about" data-home-about-link>About</a>
           </nav>
           <div class="header-tools">
             <a class="btn-contact btn-contact--email" href="mailto:hello@geddevine.com">hello@geddevine.com</a>
@@ -58,6 +59,7 @@
         </div>
         <div class="shell nav-drawer" id="nav-drawer" data-nav-mobile>
           <a href="#work" data-home-work-link>Work</a>
+          <a href="#about" data-home-about-link>About</a>
           <div class="drawer-tools">
             <a class="btn-contact btn-contact--email" href="mailto:hello@geddevine.com">hello@geddevine.com</a>
           </div>
@@ -92,7 +94,7 @@
         </div>
 
         <section id="work" class="home-work" aria-labelledby="work-index-heading">
-          <h2 id="work-index-heading" class="home-work-title">WORK</h2>
+          <h2 id="work-index-heading" class="home-work-title home-section-title">WORK</h2>
 
           <div class="home-work-carousel" data-home-work-carousel aria-label="Case studies">
             <div class="home-work-track">
@@ -124,8 +126,10 @@
 
           <div class="home-work-detail" data-home-work-detail aria-live="polite">
             <h3 class="home-work-detail-title">
-              <span class="home-work-detail-title__line" data-work-detail-title></span>
-              <span class="home-work-detail-title__line home-work-detail-title__line--optional" data-work-detail-title-sub hidden></span>
+              <a class="home-work-detail-title-link" href="/work/kinetik/" data-work-detail-link>
+                <span class="home-work-detail-title__line" data-work-detail-title></span>
+                <span class="home-work-detail-title__line home-work-detail-title__line--optional" data-work-detail-title-sub hidden></span>
+              </a>
             </h3>
             <p class="home-work-detail-p home-work-detail-p--1" data-work-detail-p1></p>
             <p class="home-work-detail-p home-work-detail-p--2" data-work-detail-p2></p>
@@ -137,12 +141,25 @@
           </div>
         </section>
 
-        <section class="home-contact" aria-labelledby="home-contact-heading">
-          <p id="home-contact-heading" class="home-contact-eyebrow">Let&rsquo;s work together</p>
-          <a class="home-contact-email" href="mailto:hello@geddevine.com">hello@geddevine.com</a>
-          <p class="home-contact-copy">
-            Got a project in mind and need some design help? Reach out and let&rsquo;s discuss!
+        <section id="about" class="home-about" aria-labelledby="home-about-heading">
+          <h2 id="home-about-heading" class="home-about-title home-section-title">ABOUT</h2>
+          <p class="home-about-bio">
+            UX Designer. Manchester. I&rsquo;ve worked across eCommerce, fintech, and telecoms — with teams that ship and with teams that needed to. Currently open to Senior and Lead opportunities.
           </p>
+          <p class="home-about-cta-lead">Looking for the right team to join.</p>
+          <p class="home-about-cta-actions">
+            <a href="mailto:hello@geddevine.com">Send a message</a>
+            <span aria-hidden="true"> or </span>
+            <a href="https://calendly.com/geddevine/30min" target="_blank" rel="noopener noreferrer">book a 30-min intro call →</a>
+          </p>
+          <footer class="site-footer home-about-footer">
+            <div class="shell footer-inner">
+              <p>© 2026</p>
+              <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ged-devine-08369213b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </footer>
         </section>
       </main>
       </div>
@@ -157,15 +174,6 @@
       <div class="home-scroll-fade__gradient"></div>
     </div>
 
-    <footer class="site-footer">
-      <div class="shell footer-inner">
-        <p>© 2026</p>
-        <div class="footer-links">
-          <a href="contact.html">Get in touch</a>
-          <a href="https://www.linkedin.com/in/ged-devine-08369213b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
-    </footer>
-    <script src="js/main.js?v=home-work-carousel-v19"></script>
+    <script src="js/main.js?v=home-work-card-links-v1"></script>
   </body>
 </html>

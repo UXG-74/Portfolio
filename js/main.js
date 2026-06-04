@@ -70,13 +70,22 @@
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 
-  function smoothScrollTo(targetY, duration, onComplete) {
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function smoothScrollTo(targetY, duration, onComplete, easeFn) {
     var startY = getScrollY();
     var distance = targetY - startY;
-    if (Math.abs(distance) < 1) return;
+    var ease = easeFn || easeInOutCubic;
+    if (Math.abs(distance) < 1) {
+      if (typeof onComplete === "function") onComplete();
+      return;
+    }
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setScrollY(targetY);
+      if (typeof onComplete === "function") onComplete();
       return;
     }
 
@@ -87,7 +96,7 @@
     function step(now) {
       var elapsed = now - startTime;
       var progress = Math.min(elapsed / duration, 1);
-      setScrollY(startY + distance * easeInOutCubic(progress));
+      setScrollY(startY + distance * ease(progress));
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
@@ -106,46 +115,115 @@
     var workHeading = document.getElementById("work-index-heading");
     if (!workHeading) return;
 
-    var WORK_ANCHOR_TOP = 66;
+    var aboutHeading = document.getElementById("home-about-heading");
+    var SECTION_ANCHOR_TOP = 66;
     var scrollAnimating = false;
+    var scrollNavIntent = null;
 
-    function getWorkScrollTarget() {
-      return getScrollY() + (workHeading.getBoundingClientRect().top - WORK_ANCHOR_TOP);
+    function getSectionScrollTarget(heading) {
+      return getScrollY() + (heading.getBoundingClientRect().top - SECTION_ANCHOR_TOP);
     }
 
-    function snapWorkToAnchor() {
-      var delta = workHeading.getBoundingClientRect().top - WORK_ANCHOR_TOP;
+    function getWorkScrollTarget() {
+      return getSectionScrollTarget(workHeading);
+    }
+
+    function getAboutScrollTarget() {
+      return aboutHeading ? getSectionScrollTarget(aboutHeading) : Infinity;
+    }
+
+    function snapSectionToAnchor(heading) {
+      var delta = heading.getBoundingClientRect().top - SECTION_ANCHOR_TOP;
       if (Math.abs(delta) > 0.25) setScrollY(getScrollY() - delta);
     }
 
-    function setWorkNavActive(active) {
-      document.querySelectorAll("[data-home-work-link]").forEach(function (link) {
+    function finishAboutScroll() {
+      finishSectionScroll(aboutHeading);
+    }
+
+    function setHomeNavActive(selector, active) {
+      document.querySelectorAll(selector).forEach(function (link) {
         link.classList.toggle("is-active", active);
         if (active) link.setAttribute("aria-current", "page");
         else link.removeAttribute("aria-current");
       });
+    }
+
+    function setWorkNavActive(active) {
+      setHomeNavActive("[data-home-work-link]", active);
       document.body.classList.toggle("home-work-view", active);
+    }
+
+    function setAboutNavActive(active) {
+      setHomeNavActive("[data-home-about-link]", active);
+      document.body.classList.toggle("home-about-anchor", active);
+    }
+
+    function finishSectionScroll(heading, onDone) {
+      snapSectionToAnchor(heading);
+      scrollAnimating = false;
+      scrollNavIntent = null;
+      if (typeof onDone === "function") onDone();
     }
 
     function scrollToWork() {
       var targetY = getWorkScrollTarget();
+      scrollNavIntent = "work";
       scrollAnimating = true;
-      smoothScrollTo(targetY, 980, function () {
-        snapWorkToAnchor();
-        scrollAnimating = false;
-      });
+      setAboutNavActive(false);
       setWorkNavActive(true);
       if (history.replaceState) history.replaceState(null, "", "#work");
+      smoothScrollTo(targetY, 980, function () {
+        finishSectionScroll(workHeading);
+      });
+    }
+
+    function scrollToAbout() {
+      if (!aboutHeading) return;
+
+      var targetY = getAboutScrollTarget();
+      var workTarget = getWorkScrollTarget();
+      var currentY = getScrollY();
+      var scrollDownPastWork =
+        targetY > currentY + 8 && currentY < workTarget - 32;
+      var aboutEase = scrollDownPastWork ? easeOutCubic : easeInOutCubic;
+
+      scrollNavIntent = "about";
+      scrollAnimating = true;
+      setWorkNavActive(false);
+      setAboutNavActive(true);
+      if (history.replaceState) history.replaceState(null, "", "#about");
+
+      smoothScrollTo(targetY, 980, finishAboutScroll, aboutEase);
     }
 
     function syncNavFromScroll() {
-      if (scrollAnimating) return;
+      if (scrollAnimating || scrollNavIntent) {
+        if (scrollNavIntent === "about") {
+          setAboutNavActive(true);
+          setWorkNavActive(false);
+        } else if (scrollNavIntent === "work") {
+          setWorkNavActive(true);
+          setAboutNavActive(false);
+        }
+        return;
+      }
 
-      var target = getWorkScrollTarget();
-      var isWorkView = getScrollY() >= target - 24;
+      var workTarget = getWorkScrollTarget();
+      var aboutTarget = getAboutScrollTarget();
+      var isAboutView = aboutHeading && getScrollY() >= aboutTarget - 24;
+      var isWorkView = !isAboutView && getScrollY() >= workTarget - 24;
+
+      setAboutNavActive(isAboutView);
       setWorkNavActive(isWorkView);
 
-      if (!isWorkView && getScrollY() < 48 && location.hash === "#work" && history.replaceState) {
+      if (
+        !isWorkView &&
+        !isAboutView &&
+        getScrollY() < 48 &&
+        (location.hash === "#work" || location.hash === "#about") &&
+        history.replaceState
+      ) {
         history.replaceState(null, "", window.location.pathname + window.location.search);
       }
     }
@@ -153,10 +231,18 @@
     document.addEventListener(
       "click",
       function (event) {
-        var link = event.target.closest("[data-home-work-link]");
-        if (!link) return;
+        var workLink = event.target.closest("[data-home-work-link]");
+        if (workLink) {
+          event.preventDefault();
+          scrollToWork();
+          if (setMenuOpen) setMenuOpen(false);
+          return;
+        }
+
+        var aboutLink = event.target.closest("[data-home-about-link]");
+        if (!aboutLink) return;
         event.preventDefault();
-        scrollToWork();
+        scrollToAbout();
         if (setMenuOpen) setMenuOpen(false);
       },
       true
@@ -172,16 +258,49 @@
       });
     });
 
-    if (location.hash === "#work") {
+    function runInitialHashScroll() {
+      if (location.hash === "#work") {
+        scrollToWork();
+        return;
+      }
+      if (location.hash === "#about") {
+        scrollToAbout();
+      }
+    }
+
+    function primeHashScroll() {
+      if (location.hash !== "#work" && location.hash !== "#about") return;
       setScrollY(0);
       if (history.replaceState) {
         history.replaceState(null, "", window.location.pathname + window.location.search);
       }
-      window.setTimeout(function () {
-        scrollToWork();
-      }, 80);
+      window.setTimeout(runInitialHashScroll, 80);
+      window.addEventListener("load", function onLoad() {
+        window.removeEventListener("load", onLoad);
+        runInitialHashScroll();
+      });
+    }
+
+    window.addEventListener("hashchange", function () {
+      if (location.hash === "#work") scrollToWork();
+      else if (location.hash === "#about") scrollToAbout();
+    });
+
+    var resizeTicking = false;
+    window.addEventListener("resize", function () {
+      if (resizeTicking) return;
+      resizeTicking = true;
+      requestAnimationFrame(function () {
+        resizeTicking = false;
+        syncNavFromScroll();
+      });
+    });
+
+    if (location.hash === "#work" || location.hash === "#about") {
+      primeHashScroll();
     } else {
       setWorkNavActive(false);
+      setAboutNavActive(false);
     }
   }
 
@@ -214,7 +333,7 @@
 
     mobileNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function (event) {
-        if (link.hasAttribute("data-home-work-link")) return;
+        if (link.hasAttribute("data-home-work-link") || link.hasAttribute("data-home-about-link")) return;
 
         var href = link.getAttribute("href");
         var isHash = href && href.charAt(0) === "#";
@@ -242,6 +361,7 @@
   var HOME_WORK_STUDIES = [
     {
       slug: "lucille",
+      href: "/work/lucille-london/",
       title: "LUCILLE LONDON - Luxury brand and storefront built entirely with AI",
       titleSub: "",
       p1: "AI-led creative shaped a luxury brand, storefront, and identity from a standing start.",
@@ -252,6 +372,7 @@
     },
     {
       slug: "kinetik",
+      href: "/work/kinetik/",
       title: "KINETIK - Brand and fitness experience",
       titleSub: "built for ambition",
       p1: "AI-directed UX was shaped to surface genuine demand and build credibility before launch.",
@@ -262,6 +383,7 @@
     },
     {
       slug: "distrelec",
+      href: "/work/distrelec/",
       title: "DISTRELEC - Registration UX built on evidence, not assumption",
       titleSub: "",
       p1: "Evidence-led research exposed where 79% of users abandoned - before a single field was redesigned.",
@@ -288,6 +410,7 @@
     var study = HOME_WORK_STUDIES[studyIndex];
     if (!study) return;
 
+    var titleLinkEl = detail.querySelector("[data-work-detail-link]");
     var titleEl = detail.querySelector("[data-work-detail-title]");
     var titleSubEl = detail.querySelector("[data-work-detail-title-sub]");
     var p1El = detail.querySelector("[data-work-detail-p1]");
@@ -295,6 +418,10 @@
     var industryEl = detail.querySelector("[data-work-detail-industry]");
     var tagsEl = detail.querySelector("[data-work-detail-tags]");
 
+    if (titleLinkEl && study.href) {
+      titleLinkEl.href = study.href;
+      titleLinkEl.setAttribute("aria-label", "Open " + study.title.split(" - ")[0] + " case study");
+    }
     if (titleEl) titleEl.textContent = study.title;
     if (titleSubEl) {
       if (study.titleSub) {
@@ -445,10 +572,12 @@
       card.setAttribute("data-set-slot", String(index % REAL_COUNT));
     });
     var isDragging = false;
+    var dragPending = false;
     var dragMoved = false;
     var dragStartX = 0;
     var dragStartScroll = 0;
     var pointerId = null;
+    var DRAG_THRESHOLD_PX = 6;
     var velocity = 0;
     var velocitySamples = [];
     var rafId = 0;
@@ -604,7 +733,22 @@
         card.style.setProperty("--focus", String(focus));
         card.style.setProperty("--work-dim", String(Math.max(0, 1 - focus)));
         card.classList.toggle("is-focused", focus > 0.55);
+        card.style.zIndex = String(10 + Math.round(focus * 30));
+        card.style.pointerEvents = "auto";
       });
+    }
+
+    function cardHitFromEvent(event) {
+      var hit = event.target.closest(".home-work-card-hit");
+      if (hit) return hit;
+      if (typeof document.elementsFromPoint !== "function") return null;
+      var stack = document.elementsFromPoint(event.clientX, event.clientY);
+      for (var i = 0; i < stack.length; i++) {
+        if (!stack[i].closest) continue;
+        hit = stack[i].closest(".home-work-card-hit");
+        if (hit) return hit;
+      }
+      return null;
     }
 
     function nearestSlot(scroll) {
@@ -696,14 +840,10 @@
       updateVisuals();
     }
 
-    function onPointerDown(event) {
-      if (event.pointerType === "mouse" && event.button !== 0) return;
+    function beginDrag(event) {
       isDragging = true;
-      dragMoved = false;
-      dragStartX = event.clientX;
-      pendingClientX = event.clientX;
-      dragStartScroll = virtualScroll;
-      pointerId = event.pointerId;
+      dragPending = false;
+      dragMoved = true;
       velocity = 0;
       velocitySamples = [];
       cancelAnimationFrame(rafId);
@@ -711,20 +851,55 @@
       isAnimating = false;
       carousel.classList.remove("is-snapping");
       carousel.classList.add("is-dragging");
-      carousel.setPointerCapture(event.pointerId);
-      event.preventDefault();
+      try {
+        carousel.setPointerCapture(event.pointerId);
+      } catch (e) {
+        // No-op.
+      }
+    }
+
+    function onPointerDown(event) {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      dragPending = true;
+      isDragging = false;
+      dragMoved = false;
+      dragStartX = event.clientX;
+      pendingClientX = event.clientX;
+      dragStartScroll = virtualScroll;
+      pointerId = event.pointerId;
     }
 
     function onPointerMove(event) {
-      if (!isDragging || event.pointerId !== pointerId) return;
+      if (event.pointerId !== pointerId) return;
+
+      if (dragPending && !isDragging) {
+        var scale = scrollScale();
+        if (Math.abs(event.clientX - dragStartX) / scale >= DRAG_THRESHOLD_PX) {
+          beginDrag(event);
+        } else {
+          return;
+        }
+      }
+
+      if (!isDragging) return;
       pendingClientX = event.clientX;
       recordVelocity(event.clientX, scrollScale());
       if (!dragRafId) dragRafId = requestAnimationFrame(applyDragFrame);
     }
 
     function onPointerUp(event) {
-      if (!isDragging || event.pointerId !== pointerId) return;
+      if (event.pointerId !== pointerId) return;
+
+      if (dragPending && !isDragging) {
+        dragPending = false;
+        pointerId = null;
+        return;
+      }
+
+      if (!isDragging) return;
+
       isDragging = false;
+      dragPending = false;
       carousel.classList.remove("is-dragging");
       try {
         carousel.releasePointerCapture(event.pointerId);
@@ -747,7 +922,17 @@
         if (dragMoved) {
           event.preventDefault();
           event.stopPropagation();
+          dragMoved = false;
+          return;
         }
+
+        var hit = cardHitFromEvent(event);
+        if (!hit || !hit.href) return;
+
+        if (event.target.closest(".home-work-card-hit")) return;
+
+        event.preventDefault();
+        window.location.assign(hit.href);
       },
       true
     );
