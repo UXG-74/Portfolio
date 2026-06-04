@@ -171,44 +171,26 @@
         text-transform: uppercase;
         font: 400 16px/1.3 Inter, system-ui, sans-serif;
       }
-      .work-inner-mobile .mobile-block {
+      .work-inner-mobile > .mobile-hero,
+      .work-inner-mobile > .mobile-services,
+      .work-inner-mobile > .mobile-block,
+      .work-inner-mobile > .mobile-image,
+      .work-inner-mobile > .mobile-stack,
+      .work-inner-mobile > .mobile-cta-band {
         margin-bottom: 24px;
       }
-      .work-inner-mobile [data-kinetik-lead-block] {
-        margin-bottom: 24px;
-      }
-      .work-inner-mobile [data-kinetik-marketing-hero-mobile] {
-        margin-top: 0;
+      .work-inner-mobile > :last-child {
+        margin-bottom: 0;
       }
       .work-inner-mobile [data-kinetik-overview-block] {
         margin-bottom: 0;
       }
-      .work-inner-mobile [data-kinetik-overview-screens-mobile] {
-        margin-top: 24px;
-        margin-bottom: 24px;
-      }
-      .work-inner-mobile [data-kinetik-challenge-block] {
-        margin-bottom: 24px;
-      }
-      .work-inner-mobile [data-kinetik-speed-block] {
-        margin-bottom: 24px;
-      }
-      .work-inner-mobile [data-kinetik-speed-media-mobile] {
-        margin-top: 0;
-        margin-bottom: 0;
-        gap: 0;
-      }
-      .work-inner-mobile [data-kinetik-analytic-wireframe-mobile] {
-        margin-bottom: 24px;
-      }
-      .work-inner-mobile [data-kinetik-launch-block] {
-        margin-top: 0;
-        margin-bottom: 24px;
-      }
+      .work-inner-mobile [data-kinetik-speed-media-mobile],
       .work-inner-mobile [data-kinetik-launch-media-mobile] {
-        margin-top: 0;
-        margin-bottom: 24px;
         gap: 0;
+      }
+      .work-inner-figma [data-kinetik-marketing-hero] ~ [data-kinetik-marketing-hero] {
+        display: none;
       }
       .work-inner-mobile .mobile-kicker {
         margin-bottom: 0;
@@ -388,23 +370,7 @@
     <main id="main">
       <div class="work-inner-wrap">
       <section class="work-inner-figma">
-      <div style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-conclusion.png" alt="Kinetik live site and app screens: splash, account, dashboard, workout, and weekly rings." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:-47px;top:189px;width:1540px;height:5645px;background:#f3f3f3"></div>
-      <div data-kinetik-marketing-hero style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/kinetik-hero.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:0;top:173px;width:1175px;height:209px;background:#f3f3f3"></div>
-
-      <div class="hero-image-wrap" style="position:absolute;left:23px;top:504px;width:1400px;height:780px;overflow:hidden">
-        <video autoplay muted playsinline loop preload="metadata" aria-label="Kinetik splash animation">
-          <source src="/video/splash.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div style="position:absolute;left:56px;top:278px;width:1278px;display:flex;flex-direction:column;line-height:1.2">
-        <p class="h1">KINETIK</p>
-        <p class="h2">Disruptor fitness experience.</p>
-      </div>
-
-<div style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-conclusion.png" alt="Kinetik live site and app screens: splash, account, dashboard, workout, and weekly rings." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-conclusion-image data-kinetik-shift data-kinetik-origin-top="13976" style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-conclusion.png" alt="Kinetik live site and app screens: splash, account, dashboard, workout, and weekly rings." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:-47px;top:189px;width:1540px;height:5645px;background:#f3f3f3"></div>
       <div data-kinetik-marketing-hero style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/kinetik-hero.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:0;top:173px;width:1175px;height:209px;background:#f3f3f3"></div>
@@ -500,7 +466,7 @@
         </div>
       </div>
 
-      <div data-kinetik-shift data-kinetik-origin-top="11441" style="position:absolute;left:671px;top:11441px;width:620px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-outcomes-copy data-kinetik-shift data-kinetik-origin-top="11441" style="position:absolute;left:671px;top:11441px;width:620px;display:flex;flex-direction:column;gap:32px">
         <p class="label">OUTCOMES</p>
         <p class="h3" style="width:601px">Fewer narratives, sharper comprehension.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -509,7 +475,7 @@
         </div>
       </div>
 
-      <div data-kinetik-shift data-kinetik-origin-top="12136" style="position:absolute;left:117px;top:12136px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-collaboration data-kinetik-shift data-kinetik-origin-top="12136" style="position:absolute;left:117px;top:12136px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">COLLABORATION</p>
         <p class="h3">Documentation that mirrors the live promise.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -518,7 +484,7 @@
         </div>
       </div>
 
-      <div data-kinetik-shift data-kinetik-origin-top="13477" style="position:absolute;left:326px;top:13477px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-conclusion data-kinetik-shift data-kinetik-origin-top="13477" style="position:absolute;left:326px;top:13477px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">CONCLUSION</p>
         <p class="h3">What this proves.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -535,9 +501,9 @@
       <div data-kinetik-shift data-kinetik-origin-top="10069" style="position:absolute;left:42px;top:10069px;width:669px;height:500px;overflow:hidden"><img src="/img/kinetik-logo.png" alt="KINETIK logo on a dark navy gradient background." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div data-kinetik-shift data-kinetik-origin-top="10070" style="position:absolute;left:711px;top:10070px;width:669px;height:500px;overflow:hidden"><img src="/img/kinetik-typography.png" alt="KINETIK typography specimen showing Cal Sans letterforms and text samples." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div data-kinetik-shift data-kinetik-origin-top="10569" style="position:absolute;left:42px;top:10569px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-colour-ramp.png" alt="KINETIK colour ramp showing primary and accent colour scales." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div data-kinetik-shift data-kinetik-origin-top="11441" style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="/img/kinetik-outcomes.png?v=outcomes-phones" alt="Kinetik outcomes app screens showing weekly progress rings and BodyCheck guidance." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div data-kinetik-shift data-kinetik-origin-top="12136" style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden;background:#0b0f18"><img src="/img/kinetik-dev-mode.png" alt="Kinetik website design shown in Figma Dev Mode." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;max-width:none" /></div>
-      <div data-kinetik-shift data-kinetik-origin-top="12721" style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="/img/kinetik-wireframes.png?v=wireframes" alt="Kinetik workout wireframes showing overview, active workout, and weekly summary screens." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-outcomes-phones data-kinetik-shift data-kinetik-origin-top="11441" style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="/img/kinetik-outcomes.png?v=outcomes-phones" alt="Kinetik outcomes app screens showing weekly progress rings and BodyCheck guidance." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-dev-mode data-kinetik-shift data-kinetik-origin-top="12136" style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden;background:#0b0f18"><img src="/img/kinetik-dev-mode.png" alt="Kinetik website design shown in Figma Dev Mode." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;max-width:none" /></div>
+      <div data-kinetik-wireframes data-kinetik-shift data-kinetik-origin-top="12721" style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="/img/kinetik-wireframes.png?v=wireframes" alt="Kinetik workout wireframes showing overview, active workout, and weekly summary screens." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
 
       <div style="position:absolute;left:116px;top:1493px;width:244px;display:flex;flex-direction:column;gap:16px">
         <p class="body16" style="color:#1e1e1e">( Services )</p>
@@ -630,7 +596,7 @@
         <div class="mobile-stack" data-kinetik-speed-media-mobile>
           <div class="mobile-image"><img src="/img/kinetik-community.png" alt="Kinetik Community: leaderboard and See where you rank marketing screen." /></div>
           <div class="mobile-image"><img src="/img/kinetik-outcomes.png" alt="Kinetik outcomes graphic summarizing research themes and prioritized UX decisions." /></div>
-          <div class="mobile-image" data-kinetik-analytic-wireframe-mobile><img src="/img/kinetik-analytic-wireframe.png" alt="Kinetik analytics wireframe with progress, workout, and goals annotations." /></div>
+          <div class="mobile-image"><img src="/img/kinetik-analytic-wireframe.png" alt="Kinetik analytics wireframe with progress, workout, and goals annotations." /></div>
         </div>
 
         <div class="mobile-block" data-kinetik-launch-block>
@@ -680,11 +646,11 @@
           </div>
         </div>
 
-        <div class="mobile-image mobile-image-tall" style="margin-bottom:24px;">
+        <div class="mobile-image mobile-image-tall">
           <img src="/img/kinetik-outcomes.png?v=outcomes-phones" alt="Kinetik outcomes app screens showing weekly progress rings and BodyCheck guidance." />
         </div>
 
-        <div class="mobile-block">
+        <div class="mobile-block" data-kinetik-collaboration-block>
           <p class="mobile-kicker">COLLABORATION</p>
           <p class="mobile-h">Documentation that mirrors the live promise.</p>
           <div class="mobile-body">
@@ -693,7 +659,7 @@
           </div>
         </div>
 
-        <div class="mobile-image" style="margin-bottom:24px;">
+        <div class="mobile-image" data-kinetik-wireframes-mobile>
           <img src="/img/kinetik-wireframes.png?v=wireframes" alt="Kinetik workout wireframes showing overview, active workout, and weekly summary screens." />
         </div>
 
@@ -722,180 +688,164 @@
     </footer>
     <script>
       (function () {
-        function layoutKinetikConstraintGap(frame, scale) {
-          var constraint = frame.querySelector("[data-kinetik-constraint]");
-          var gapBlock = frame.querySelector("[data-kinetik-gap-block]");
-          if (!constraint || !gapBlock) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var constraintRect = constraint.getBoundingClientRect();
-          gapBlock.style.top =
-            (constraintRect.bottom - frameRect.top) / s + 80 + "px";
+        var GAP = 80;
+        var GAP_OUTCOMES_AFTER_COMMUNITY = 0;
+        var PALETTE_ORIGIN = 9290;
+
+        function scaleOf(scale) {
+          return scale > 0 ? scale : 1;
         }
 
-        function layoutKinetikHeroSpacing(frame, scale) {
-          var gapBlock = frame.querySelector("[data-kinetik-gap-block]");
-          var heroes = frame.querySelectorAll("[data-kinetik-marketing-hero]");
-          if (!gapBlock || !heroes.length) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var gapRect = gapBlock.getBoundingClientRect();
-          var heroTop =
-            (gapRect.bottom - frameRect.top) / s + 80 + "px";
-          heroes.forEach(function (hero) {
-            hero.style.top = heroTop;
+        function frameTop(frame) {
+          return frame.getBoundingClientRect().top;
+        }
+
+        function bottomY(frame, scale, el) {
+          if (!el) return 0;
+          return (el.getBoundingClientRect().bottom - frameTop(frame)) / scaleOf(scale);
+        }
+
+        function topBelow(frame, scale, el, gap) {
+          return bottomY(frame, scale, el) + gap;
+        }
+
+        function maxBottomY(frame, scale, nodes) {
+          var max = 0;
+          nodes.forEach(function (el) {
+            if (!el) return;
+            var b = bottomY(frame, scale, el);
+            if (b > max) max = b;
           });
+          return max;
         }
 
-        function layoutKinetikCtaSpacing(frame, scale) {
-          var hero = frame.querySelector("[data-kinetik-marketing-hero]");
-          var band = frame.querySelector("[data-kinetik-cta-band]");
-          var overview = frame.querySelector("[data-kinetik-overview]");
-          if (!hero || !band) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var heroRect = hero.getBoundingClientRect();
-          band.style.top =
-            (heroRect.bottom - frameRect.top) / s + 80 + "px";
-          if (overview) {
-            var bandRect = band.getBoundingClientRect();
-            overview.style.top =
-              (bandRect.bottom - frameRect.top) / s + 80 + "px";
-          }
+        function setTop(el, px) {
+          if (el) el.style.top = px + "px";
         }
 
-        function layoutKinetikOverviewMediaAlign(frame, scale) {
-          var headline = frame.querySelector("[data-kinetik-overview-h]");
-          var media = frame.querySelector("[data-kinetik-overview-media]");
-          if (!headline || !media) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var headlineRect = headline.getBoundingClientRect();
-          media.style.top =
-            (headlineRect.top - frameRect.top) / s + "px";
-        }
-
-        function layoutKinetikOverviewScreensGap(frame, scale) {
-          var overview = frame.querySelector("[data-kinetik-overview]");
-          var media = frame.querySelector("[data-kinetik-overview-media]");
-          var screens = frame.querySelectorAll("[data-kinetik-overview-screen]");
-          if (!overview || !screens.length) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var sectionBottom = overview.getBoundingClientRect().bottom;
-          if (media) {
-            var mediaBottom = media.getBoundingClientRect().bottom;
-            if (mediaBottom > sectionBottom) sectionBottom = mediaBottom;
-          }
-          var rowTop =
-            (sectionBottom - frameRect.top) / s + 80 + "px";
-          screens.forEach(function (screen) {
-            screen.style.top = rowTop;
-          });
-        }
-
-        function layoutKinetikChallengeGap(frame, scale) {
-          var screens = frame.querySelectorAll("[data-kinetik-overview-screen]");
-          var challenge = frame.querySelector("[data-kinetik-challenge]");
-          if (!challenge || !screens.length) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var rowBottom = 0;
-          screens.forEach(function (screen) {
-            var bottom = screen.getBoundingClientRect().bottom;
-            if (bottom > rowBottom) rowBottom = bottom;
-          });
-          challenge.style.top =
-            (rowBottom - frameRect.top) / s + 80 + "px";
-        }
-
-        function layoutKinetikSpeedGap(frame, scale) {
-          var challenge = frame.querySelector("[data-kinetik-challenge]");
-          var speed = frame.querySelector("[data-kinetik-speed]");
-          if (!challenge || !speed) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var challengeRect = challenge.getBoundingClientRect();
-          speed.style.top =
-            (challengeRect.bottom - frameRect.top) / s + 80 + "px";
-        }
-
-        function layoutKinetikSpeedMediaGap(frame, scale) {
-          var speed = frame.querySelector("[data-kinetik-speed]");
-          var media = frame.querySelector("[data-kinetik-speed-media]");
-          if (!speed || !media) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var speedRect = speed.getBoundingClientRect();
-          media.style.top =
-            (speedRect.bottom - frameRect.top) / s + 80 + "px";
-        }
-
-        function layoutKinetikOutcomesRowGap(frame, scale) {
-          var media = frame.querySelector("[data-kinetik-speed-media]");
-          var row = frame.querySelectorAll("[data-kinetik-outcomes-row]");
-          if (!media || !row.length) return;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var mediaRect = media.getBoundingClientRect();
-          var rowTop =
-            (mediaRect.bottom - frameRect.top) / s + "px";
-          row.forEach(function (el) {
-            el.style.top = rowTop;
-          });
-        }
-
-        function layoutKinetikShiftPostLaunch(frame, anchorTopPx) {
-          var paletteOrigin = 9290;
-          var shift = anchorTopPx - paletteOrigin;
+        function shiftByOrigin(frame, shift) {
           frame.querySelectorAll("[data-kinetik-shift]").forEach(function (el) {
             var origin = parseFloat(
               el.getAttribute("data-kinetik-origin-top"),
               10
             );
             if (!isFinite(origin)) return;
-            el.style.top =
-              (shift > 0 ? origin + shift : origin) + "px";
+            el.style.top = (origin + shift) + "px";
           });
-          return Math.max(0, shift);
         }
 
-        function layoutKinetikLaunchSection(frame, scale) {
-          var row = frame.querySelectorAll("[data-kinetik-outcomes-row]");
+        function layoutKinetikPage(frame, scale) {
+          var s = scaleOf(scale);
+
+          var constraint = frame.querySelector("[data-kinetik-constraint]");
+          var gapBlock = frame.querySelector("[data-kinetik-gap-block]");
+          var hero = frame.querySelector("[data-kinetik-marketing-hero]");
+          var band = frame.querySelector("[data-kinetik-cta-band]");
+          var overview = frame.querySelector("[data-kinetik-overview]");
+          var media = frame.querySelector("[data-kinetik-overview-media]");
+          var headline = frame.querySelector("[data-kinetik-overview-h]");
+          var screens = frame.querySelectorAll("[data-kinetik-overview-screen]");
+          var challenge = frame.querySelector("[data-kinetik-challenge]");
+          var speed = frame.querySelector("[data-kinetik-speed]");
+          var speedMedia = frame.querySelector("[data-kinetik-speed-media]");
+          var outcomesRow = frame.querySelectorAll("[data-kinetik-outcomes-row]");
           var launch = frame.querySelector("[data-kinetik-launch]");
           var onboarding = frame.querySelector("[data-kinetik-launch-onboarding]");
           var launchMedia = frame.querySelector("[data-kinetik-launch-media]");
-          if (!launch || !row.length) return 0;
-          var frameRect = frame.getBoundingClientRect();
-          var s = scale > 0 ? scale : 1;
-          var rowBottom = 0;
-          row.forEach(function (el) {
-            var bottom = el.getBoundingClientRect().bottom;
-            if (bottom > rowBottom) rowBottom = bottom;
-          });
-          launch.style.top =
-            (rowBottom - frameRect.top) / s + 80 + "px";
-          if (!onboarding && !launchMedia) return 0;
-          var launchRect = launch.getBoundingClientRect();
-          var assetsTop =
-            (launchRect.bottom - frameRect.top) / s + 80 + "px";
-          if (onboarding) onboarding.style.top = assetsTop;
-          if (launchMedia) {
-            launchMedia.style.top = assetsTop;
-            launchMedia.style.left = "815px";
+          var collaboration = frame.querySelector("[data-kinetik-collaboration]");
+          var devMode = frame.querySelector("[data-kinetik-dev-mode]");
+          var wireframes = frame.querySelector("[data-kinetik-wireframes]");
+          var conclusion = frame.querySelector("[data-kinetik-conclusion]");
+          var conclusionImage = frame.querySelector(
+            "[data-kinetik-conclusion-image]"
+          );
+
+          if (constraint && gapBlock) {
+            setTop(gapBlock, topBelow(frame, s, constraint, GAP));
           }
-          var sectionBottom = launch.getBoundingClientRect().bottom;
-          if (onboarding) {
-            var ob = onboarding.getBoundingClientRect().bottom;
-            if (ob > sectionBottom) sectionBottom = ob;
+          if (gapBlock && hero) {
+            setTop(hero, topBelow(frame, s, gapBlock, GAP));
           }
-          if (launchMedia) {
-            var mb = launchMedia.getBoundingClientRect().bottom;
-            if (mb > sectionBottom) sectionBottom = mb;
+          if (hero && band) {
+            setTop(band, topBelow(frame, s, hero, GAP));
           }
-          var anchorTopPx =
-            (sectionBottom - frameRect.top) / s + 80;
-          return layoutKinetikShiftPostLaunch(frame, anchorTopPx);
+          if (band && overview) {
+            setTop(overview, topBelow(frame, s, band, GAP));
+          }
+          if (headline && media) {
+            setTop(media, (headline.getBoundingClientRect().top - frameTop(frame)) / s);
+          }
+          if (overview && screens.length) {
+            var overviewBottom = maxBottomY(frame, s, [overview, media]);
+            var screenTop = overviewBottom + GAP;
+            screens.forEach(function (screen) {
+              setTop(screen, screenTop);
+            });
+          }
+          if (challenge && screens.length) {
+            var screenBottom = 0;
+            screens.forEach(function (screen) {
+              var b = bottomY(frame, s, screen);
+              if (b > screenBottom) screenBottom = b;
+            });
+            setTop(challenge, screenBottom + GAP);
+          }
+          if (speed && challenge) {
+            setTop(speed, topBelow(frame, s, challenge, GAP));
+          }
+          if (speedMedia && speed) {
+            setTop(speedMedia, topBelow(frame, s, speed, GAP));
+          }
+          if (speedMedia && outcomesRow.length) {
+            var rowTop = topBelow(frame, s, speedMedia, GAP_OUTCOMES_AFTER_COMMUNITY);
+            outcomesRow.forEach(function (el) {
+              setTop(el, rowTop);
+            });
+          }
+          if (launch && outcomesRow.length) {
+            var outcomesBottom = 0;
+            outcomesRow.forEach(function (el) {
+              var b = bottomY(frame, s, el);
+              if (b > outcomesBottom) outcomesBottom = b;
+            });
+            setTop(launch, outcomesBottom + GAP);
+          }
+          if (onboarding || launchMedia) {
+            var assetsTop = launch
+              ? topBelow(frame, s, launch, GAP)
+              : bottomY(frame, s, outcomesRow[0]) + GAP;
+            if (onboarding) setTop(onboarding, assetsTop);
+            if (launchMedia) {
+              setTop(launchMedia, assetsTop);
+              launchMedia.style.left = "815px";
+            }
+          }
+
+          var launchBottom = maxBottomY(frame, s, [
+            launch,
+            onboarding,
+            launchMedia,
+          ]);
+          var shift = launchBottom + GAP - PALETTE_ORIGIN;
+          if (shift < 0) shift = 0;
+          shiftByOrigin(frame, shift);
+
+          if (wireframes) {
+            var collabBottom = maxBottomY(frame, s, [collaboration, devMode]);
+            setTop(wireframes, collabBottom + GAP);
+          }
+          if (conclusion && wireframes) {
+            setTop(conclusion, topBelow(frame, s, wireframes, GAP));
+          }
+          if (conclusionImage && conclusion) {
+            setTop(conclusionImage, topBelow(frame, s, conclusion, GAP));
+          }
+
+          return maxBottomY(frame, s, [
+            wireframes,
+            conclusion,
+            conclusionImage,
+          ]);
         }
 
         function resizeFigmaFrame() {
@@ -907,19 +857,12 @@
           var scale = Math.min(1, wrap.clientWidth / baseW);
           frame.style.transform = "scale(" + scale + ")";
           wrap.style.height = baseH * scale + "px";
-          layoutKinetikConstraintGap(frame, scale);
-          layoutKinetikHeroSpacing(frame, scale);
-          layoutKinetikCtaSpacing(frame, scale);
-          layoutKinetikOverviewMediaAlign(frame, scale);
-          layoutKinetikOverviewScreensGap(frame, scale);
-          layoutKinetikChallengeGap(frame, scale);
-          layoutKinetikSpeedGap(frame, scale);
-          layoutKinetikSpeedMediaGap(frame, scale);
-          layoutKinetikOutcomesRowGap(frame, scale);
-          var launchExtra = layoutKinetikLaunchSection(frame, scale);
-          wrap.style.height = (baseH + launchExtra) * scale + "px";
+          var pageBottom = layoutKinetikPage(frame, scale);
+          if (pageBottom > baseH) {
+            wrap.style.height = pageBottom * scale + "px";
+          }
           var ctas = frame.querySelectorAll(".figma-site-cta");
-          var inverse = scale > 0 ? 1 / scale : 1;
+          var inverse = scaleOf(scale) > 0 ? 1 / scaleOf(scale) : 1;
           ctas.forEach(function (cta) {
             cta.style.transform = "scale(" + inverse + ")";
           });
