@@ -129,7 +129,7 @@
       }
       .work-inner-mobile {
         display: none;
-        padding: 24px 30px 56px;
+        padding: 24px 30px 0;
       }
       .work-inner-mobile p { margin: 0; }
       .work-inner-mobile .mobile-title {
@@ -678,7 +678,7 @@
           </div>
         </div>
 
-        <div class="mobile-image mobile-image-short">
+        <div class="mobile-image mobile-image-short" data-kinetik-conclusion-image-mobile>
           <img src="/img/kinetik-conclusion.png" alt="Kinetik live site and app screens: splash, account, dashboard, workout, and weekly rings." />
         </div>
       </section>
@@ -696,6 +696,7 @@
       (function () {
         var GAP = 80;
         var GAP_OUTCOMES_AFTER_COMMUNITY = 0;
+        var GAP_BELOW_CONCLUSION_IMAGE = 0;
         var PALETTE_ORIGIN = 9290;
 
         function scaleOf(scale) {
@@ -863,11 +864,16 @@
           var baseH = 14753;
           var scale = Math.min(1, wrap.clientWidth / baseW);
           frame.style.transform = "scale(" + scale + ")";
-          wrap.style.height = baseH * scale + "px";
           var pageBottom = layoutKinetikPage(frame, scale);
-          if (pageBottom > baseH) {
-            wrap.style.height = pageBottom * scale + "px";
+          var conclusionImage = frame.querySelector(
+            "[data-kinetik-conclusion-image]"
+          );
+          if (conclusionImage) {
+            var s = scaleOf(scale);
+            pageBottom =
+              bottomY(frame, s, conclusionImage) + GAP_BELOW_CONCLUSION_IMAGE;
           }
+          wrap.style.height = pageBottom * scale + "px";
           var ctas = frame.querySelectorAll(".figma-site-cta");
           var inverse = scaleOf(scale) > 0 ? 1 / scaleOf(scale) : 1;
           ctas.forEach(function (cta) {
