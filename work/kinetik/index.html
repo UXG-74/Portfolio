@@ -189,6 +189,12 @@
       .work-inner-mobile [data-kinetik-launch-media-mobile] {
         gap: 0;
       }
+      .work-inner-mobile [data-kinetik-launch-media-mobile] {
+        margin-bottom: 0;
+      }
+      .work-inner-mobile [data-kinetik-palette-block] {
+        margin-top: 24px;
+      }
       .work-inner-figma [data-kinetik-marketing-hero] ~ [data-kinetik-marketing-hero] {
         display: none;
       }
@@ -448,7 +454,7 @@
         </div>
       </div>
 
-      <div data-kinetik-shift data-kinetik-origin-top="9290" style="position:absolute;left:115px;top:9290px;width:580px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-palette data-kinetik-shift data-kinetik-origin-top="9290" style="position:absolute;left:115px;top:9290px;width:580px;display:flex;flex-direction:column;gap:32px">
         <p class="label">COLOUR PALETTE</p>
         <p class="h3">Navy-steady. Emerald-electric — with Sky, Sunrise, and Pulse.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -613,7 +619,7 @@
           <div class="mobile-image"><img src="/img/kinetik-notification-wireframe.png" alt="Kinetik notification wireframe with visual hierarchy, in-app notifications, and biometric data annotations." /></div>
         </div>
 
-        <div class="mobile-block">
+        <div class="mobile-block" data-kinetik-palette-block>
           <p class="mobile-kicker">COLOUR PALETTE</p>
           <p class="mobile-h">Navy-steady. Emerald-electric — with Sky, Sunrise, and Pulse.</p>
           <div class="mobile-body">
@@ -723,17 +729,6 @@
           if (el) el.style.top = px + "px";
         }
 
-        function shiftByOrigin(frame, shift) {
-          frame.querySelectorAll("[data-kinetik-shift]").forEach(function (el) {
-            var origin = parseFloat(
-              el.getAttribute("data-kinetik-origin-top"),
-              10
-            );
-            if (!isFinite(origin)) return;
-            el.style.top = (origin + shift) + "px";
-          });
-        }
-
         function layoutKinetikPage(frame, scale) {
           var s = scaleOf(scale);
 
@@ -821,14 +816,26 @@
             }
           }
 
-          var launchBottom = maxBottomY(frame, s, [
-            launch,
+          var palette = frame.querySelector("[data-kinetik-palette]");
+          var launchAssetsBottom = maxBottomY(frame, s, [
             onboarding,
             launchMedia,
           ]);
-          var shift = launchBottom + GAP - PALETTE_ORIGIN;
-          if (shift < 0) shift = 0;
-          shiftByOrigin(frame, shift);
+          var paletteTop =
+            launchAssetsBottom > 0
+              ? launchAssetsBottom + GAP
+              : PALETTE_ORIGIN;
+          if (palette) setTop(palette, paletteTop);
+          var shift = paletteTop - PALETTE_ORIGIN;
+          frame.querySelectorAll("[data-kinetik-shift]").forEach(function (el) {
+            if (el === palette) return;
+            var origin = parseFloat(
+              el.getAttribute("data-kinetik-origin-top"),
+              10
+            );
+            if (!isFinite(origin)) return;
+            el.style.top = (origin + shift) + "px";
+          });
 
           if (wireframes) {
             var collabBottom = maxBottomY(frame, s, [collaboration, devMode]);
