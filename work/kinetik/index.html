@@ -186,13 +186,13 @@
       }
       .work-inner-mobile .mobile-body p:last-child { margin-bottom: 0; }
       .work-inner-mobile .mobile-cta-band {
-        margin: 0 -30px 24px;
-        padding: 18px 30px;
-        background: #1e1e1e;
+        margin: 32px 0;
+        padding: 0;
+        background: transparent;
       }
       .work-inner-mobile .mobile-cta-lead {
         margin: 0 0 10px;
-        color: #f2f2f2;
+        color: #1e1e1e;
         font: 500 16px/1.2 Inter, system-ui, sans-serif;
       }
       .work-inner-mobile .mobile-cta-copy {
@@ -227,7 +227,7 @@
         color: #f3f3f3;
       }
       body.theme-dark .work-inner-mobile .mobile-services-kicker { color: #a5a5a5; }
-      body.theme-dark .work-inner-mobile .mobile-cta-band { background: #2a2a2a; }
+      body.theme-dark .work-inner-mobile .mobile-cta-band { background: transparent; }
       body.theme-dark .work-inner-mobile .mobile-cta-lead { color: #f3f3f3; }
       body.theme-dark .work-inner-mobile .mobile-cta-copy { color: #f3f3f3; }
       @media (max-width: 768px) {
@@ -312,7 +312,12 @@
           <a href="/#about">About</a>
         </nav>
         <div class="header-tools">
-          <a class="btn-contact" href="/contact.html">Contact</a>
+          <a
+            class="btn-contact btn-contact--email"
+            href="https://calendly.com/geddevine/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Book an intro call</a>
         </div>
         <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -324,7 +329,12 @@
         <a href="/index.html#work">Work</a>
         <a href="/#about">About</a>
         <div class="drawer-tools">
-          <a class="btn-contact" href="/contact.html">Contact</a>
+          <a
+            class="btn-contact btn-contact--email"
+            href="https://calendly.com/geddevine/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Book an intro call</a>
         </div>
       </div>
     </header>
@@ -334,7 +344,7 @@
       <section class="work-inner-figma">
       <div style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-conclusion.png" alt="Kinetik live site and app screens: splash, account, dashboard, workout, and weekly rings." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:-47px;top:189px;width:1540px;height:5645px;background:#f3f3f3"></div>
-      <div style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/kinetik-hero.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-marketing-hero style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/kinetik-hero.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:0;top:173px;width:1175px;height:209px;background:#f3f3f3"></div>
 
       <div class="hero-image-wrap" style="position:absolute;left:23px;top:504px;width:1400px;height:780px;overflow:hidden">
@@ -350,7 +360,7 @@
 
 <div style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="/img/kinetik-conclusion.png" alt="Kinetik live site and app screens: splash, account, dashboard, workout, and weekly rings." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:-47px;top:189px;width:1540px;height:5645px;background:#f3f3f3"></div>
-      <div style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/kinetik-hero.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-kinetik-marketing-hero style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/kinetik-hero.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:0;top:173px;width:1175px;height:209px;background:#f3f3f3"></div>
 
       <div class="hero-image-wrap" style="position:absolute;left:23px;top:504px;width:1400px;height:780px;overflow:hidden">
@@ -378,11 +388,12 @@
         <p class="body24">The outcome is a coherent product story in layouts and handover: one voice (&quot;KINETIK&quot;), journeys from landing through daily ritual, and interaction patterns that respect hesitation in high-stakes analytics — without the experience reading like a campaign poster wrapped around an empty shell.</p>
       </div>
 
-      <div style="position:absolute;left:-2px;top:3791px;width:1442px;height:166px;background:#1e1e1e"></div>
-      <p style="position:absolute;left:96px;top:3851px;width:980px;color:#f2f2f2;font-size:38px;line-height:1.2;font-weight:500">Visit the Kinetik website here</p>
-      <a class="btn-contact figma-site-cta" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer" style="position:absolute;left:1172px;top:3854px;">SEE THE SITE</a>
+      <div data-kinetik-cta-band class="kinetik-cta-band" style="position:absolute;left:0;top:3851px;width:1440px;box-sizing:border-box;padding:0 96px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+        <p class="kinetik-cta-lead" style="margin:0;max-width:980px;color:#1e1e1e;font-size:38px;line-height:1.2;font-weight:500">Visit the Kinetik website here</p>
+        <a class="btn-contact btn-contact--email figma-site-cta" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer">See the site</a>
+      </div>
 
-      <div style="position:absolute;left:592px;top:4052px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-kinetik-overview style="position:absolute;left:592px;top:4052px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">OVERVIEW</p>
         <p class="h3">Design language that carries from story to telemetry.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -466,7 +477,7 @@
         <p class="h3">What this proves.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
           <p class="body24">AI accelerates the messy middle — research synthesis, variants, KPI copy drafts, motion studies — but design still owns tone, friction, and truth. Kinetik is a case in disciplined iteration: fewer loud claims, more consistent signals, and a product world that earns return visits because it feels considered.</p>
-          <p class="body24">The live site and extended screens are the artifact — motion, campaign detail, and deeper narrative continue on the Kinetik website via SEE THE SITE above.</p>
+          <p class="body24">The live site and extended screens are the artifact — motion, campaign detail, and deeper narrative continue on the Kinetik website via See the site above.</p>
         </div>
       </div>
 
@@ -528,13 +539,13 @@
           </div>
         </div>
 
-        <div class="mobile-image" style="margin-bottom:24px;">
+        <div class="mobile-image">
           <img src="/img/kinetik-hero.png" alt="" />
         </div>
 
         <div class="mobile-cta-band">
           <p class="mobile-cta-lead">Visit the Kinetik website here</p>
-          <a class="mobile-cta-copy" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer">SEE THE SITE</a>
+          <a class="btn-contact btn-contact--email" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer">See the site</a>
         </div>
 
         <div class="mobile-block">
@@ -645,7 +656,7 @@
           <p class="mobile-h">What this proves.</p>
           <div class="mobile-body">
             <p>AI accelerates the messy middle — research synthesis, variants, KPI copy drafts, motion studies — but design still owns tone, friction, and truth. Kinetik is a case in disciplined iteration: fewer loud claims, more consistent signals, and a product world that earns return visits because it feels considered.</p>
-            <p>The live site and extended screens are the artifact — motion, campaign detail, and deeper narrative continue on the Kinetik website via SEE THE SITE above.</p>
+            <p>The live site and extended screens are the artifact — motion, campaign detail, and deeper narrative continue on the Kinetik website via See the site above.</p>
           </div>
         </div>
 
@@ -676,6 +687,23 @@
             (constraintRect.bottom - frameRect.top) / s + 80 + "px";
         }
 
+        function layoutKinetikCtaSpacing(frame, scale) {
+          var hero = frame.querySelector("[data-kinetik-marketing-hero]");
+          var band = frame.querySelector("[data-kinetik-cta-band]");
+          var overview = frame.querySelector("[data-kinetik-overview]");
+          if (!hero || !band) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var heroRect = hero.getBoundingClientRect();
+          band.style.top =
+            (heroRect.bottom - frameRect.top) / s + 80 + "px";
+          if (overview) {
+            var bandRect = band.getBoundingClientRect();
+            overview.style.top =
+              (bandRect.bottom - frameRect.top) / s + 80 + "px";
+          }
+        }
+
         function resizeFigmaFrame() {
           var wrap = document.querySelector(".work-inner-wrap");
           var frame = document.querySelector(".work-inner-figma");
@@ -686,6 +714,7 @@
           frame.style.transform = "scale(" + scale + ")";
           wrap.style.height = baseH * scale + "px";
           layoutKinetikConstraintGap(frame, scale);
+          layoutKinetikCtaSpacing(frame, scale);
           var ctas = frame.querySelectorAll(".figma-site-cta");
           var inverse = scale > 0 ? 1 / scale : 1;
           ctas.forEach(function (cta) {

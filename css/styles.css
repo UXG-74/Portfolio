@@ -2651,6 +2651,25 @@ body.case-figma-page .work-inner-mobile .mobile-h {
   line-height: 1.4;
 }
 
+/* Case-study See the site — same pill as header Book an intro call */
+body.case-figma-page .work-inner-figma .figma-site-cta {
+  transform-origin: top left;
+  text-decoration: none;
+}
+
+body.case-figma-page .work-inner-mobile .mobile-cta-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+body.case-figma-page .work-inner-mobile .mobile-cta-band .btn-contact {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
 /* Case-study inner: pull the Figma canvas up so the project title band sits closer to the nav. */
 body.case-figma-page #main {
   padding-top: 0;
