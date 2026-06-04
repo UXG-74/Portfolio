@@ -174,6 +174,12 @@
       .work-inner-mobile .mobile-block {
         margin-bottom: 24px;
       }
+      .work-inner-mobile [data-kinetik-lead-block] {
+        margin-bottom: 24px;
+      }
+      .work-inner-mobile [data-kinetik-marketing-hero-mobile] {
+        margin-top: 0;
+      }
       .work-inner-mobile .mobile-kicker {
         margin-bottom: 0;
         text-transform: uppercase;
@@ -538,7 +544,7 @@
           </div>
         </div>
 
-        <div class="mobile-block">
+        <div class="mobile-block" data-kinetik-lead-block>
           <p class="mobile-h">KINETIK is a fitness experience built for ambition — no gap between splash promise and dashboard proof. Goals, streaks, shared achievements, and progress clarity were designed together, then sharpened with AI until every touchpoint felt fast, social, and earned.</p>
           <div class="mobile-body">
             <p>Kinetik sits where wearable brands connect aspiration with readable data. The work called for stronger journey traction across real training weeks and tighter IA inside the product shell. Stakes were clear: hero clarity, confident thumb ergonomics, and consistency across onboarding, diagnostics, leaderboard, pairing, and recovery — credibility at every step.</p>
@@ -549,7 +555,7 @@
           </div>
         </div>
 
-        <div class="mobile-image">
+        <div class="mobile-image" data-kinetik-marketing-hero-mobile>
           <img src="/img/kinetik-hero.png" alt="" />
         </div>
 
@@ -697,6 +703,20 @@
             (constraintRect.bottom - frameRect.top) / s + 80 + "px";
         }
 
+        function layoutKinetikHeroSpacing(frame, scale) {
+          var gapBlock = frame.querySelector("[data-kinetik-gap-block]");
+          var heroes = frame.querySelectorAll("[data-kinetik-marketing-hero]");
+          if (!gapBlock || !heroes.length) return;
+          var frameRect = frame.getBoundingClientRect();
+          var s = scale > 0 ? scale : 1;
+          var gapRect = gapBlock.getBoundingClientRect();
+          var heroTop =
+            (gapRect.bottom - frameRect.top) / s + 80 + "px";
+          heroes.forEach(function (hero) {
+            hero.style.top = heroTop;
+          });
+        }
+
         function layoutKinetikCtaSpacing(frame, scale) {
           var hero = frame.querySelector("[data-kinetik-marketing-hero]");
           var band = frame.querySelector("[data-kinetik-cta-band]");
@@ -724,6 +744,7 @@
           frame.style.transform = "scale(" + scale + ")";
           wrap.style.height = baseH * scale + "px";
           layoutKinetikConstraintGap(frame, scale);
+          layoutKinetikHeroSpacing(frame, scale);
           layoutKinetikCtaSpacing(frame, scale);
           var ctas = frame.querySelectorAll(".figma-site-cta");
           var inverse = scale > 0 ? 1 / scale : 1;
