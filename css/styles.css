@@ -1814,6 +1814,60 @@ body.home-combined:not(.theme-dark) .home-client-logo {
   -webkit-user-select: none;
 }
 
+/* Figma 525:31 / 525:33 — 44×44 SVG at y=781 (220 inside carousel) */
+.home-work-nav {
+  position: absolute;
+  top: 220px;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+}
+
+.home-work-nav__icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.home-work-nav--prev {
+  left: 220px;
+}
+
+.home-work-nav--next {
+  left: 1199px;
+}
+
+.home-work-nav:hover {
+  opacity: 0.75;
+}
+
+.home-work-nav:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 4px;
+}
+
+body.home-combined.theme-dark .home-work-nav:focus-visible {
+  outline-color: #f3f3f3;
+}
+
+.home-work-carousel.is-dragging .home-work-nav {
+  pointer-events: none;
+}
+
 .home-work-carousel::-webkit-scrollbar {
   display: none;
 }
@@ -1849,6 +1903,7 @@ body.home-combined:not(.theme-dark) .home-client-logo {
   display: block;
   position: relative;
   z-index: 1;
+  cursor: pointer;
   width: 100%;
   height: 100%;
   border: 0;
@@ -2267,6 +2322,10 @@ body.home-combined.theme-dark.home-about-anchor .home-about-footer a:hover {
 
   .home-work-carousel {
     --home-work-mobile-gutter: max(20px, env(safe-area-inset-left, 0px));
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
     height: auto;
     margin: 0 calc(-1 * var(--home-work-mobile-gutter)) 28px;
     overflow-x: auto;
@@ -2278,6 +2337,28 @@ body.home-combined.theme-dark.home-about-anchor .home-about-footer a:hover {
     touch-action: pan-x;
     scrollbar-width: none;
     cursor: default;
+  }
+
+  .home-work-nav {
+    top: auto;
+    bottom: 12px;
+    width: 56px;
+    height: 56px;
+    transform: none;
+  }
+
+  .home-work-nav__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .home-work-nav--prev {
+    left: calc(var(--home-work-mobile-gutter) + 2px);
+  }
+
+  .home-work-nav--next {
+    left: auto;
+    right: calc(var(--home-work-mobile-gutter) + 2px);
   }
 
   .home-work-carousel::-webkit-scrollbar {

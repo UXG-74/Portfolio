@@ -35,7 +35,7 @@
         color: #f3f3f3;
       }
     </style>
-    <link rel="stylesheet" href="css/styles.css?v=home-status-blink-v3" />
+    <link rel="stylesheet" href="css/styles.css?v=home-work-arrows-figma-v1" />
   </head>
   <body class="page home-page home-combined">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -49,7 +49,12 @@
             <a href="#about" data-home-about-link>About</a>
           </nav>
           <div class="header-tools">
-            <a class="btn-contact btn-contact--email" href="mailto:hello@geddevine.com">hello@geddevine.com</a>
+            <a
+              class="btn-contact btn-contact--email"
+              href="https://calendly.com/geddevine/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Book an intro call</a>
           </div>
           <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -61,7 +66,12 @@
           <a href="#work" data-home-work-link>Work</a>
           <a href="#about" data-home-about-link>About</a>
           <div class="drawer-tools">
-            <a class="btn-contact btn-contact--email" href="mailto:hello@geddevine.com">hello@geddevine.com</a>
+            <a
+              class="btn-contact btn-contact--email"
+              href="https://calendly.com/geddevine/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Book an intro call</a>
           </div>
         </div>
       </header>
@@ -97,6 +107,36 @@
           <h2 id="work-index-heading" class="home-work-title home-section-title">WORK</h2>
 
           <div class="home-work-carousel" data-home-work-carousel aria-label="Case studies">
+            <button
+              type="button"
+              class="home-work-nav home-work-nav--prev"
+              data-home-work-prev
+              aria-label="Previous case study"
+            >
+              <img
+                class="home-work-nav__icon"
+                src="img/home-work-arrow-prev.svg"
+                width="44"
+                height="44"
+                alt=""
+                decoding="async"
+              />
+            </button>
+            <button
+              type="button"
+              class="home-work-nav home-work-nav--next"
+              data-home-work-next
+              aria-label="Next case study"
+            >
+              <img
+                class="home-work-nav__icon"
+                src="img/home-work-arrow-next.svg"
+                width="44"
+                height="44"
+                alt=""
+                decoding="async"
+              />
+            </button>
             <div class="home-work-track">
               <article class="home-work-card" data-work-slug="lucille">
                 <a href="/work/lucille-london/" class="home-work-card-hit" aria-label="Open Lucille London case study">
@@ -148,8 +188,6 @@
           </p>
           <p class="home-about-cta-lead">Looking for the right team to join.</p>
           <p class="home-about-cta-actions">
-            <a href="mailto:hello@geddevine.com">Send a message</a>
-            <span aria-hidden="true"> or </span>
             <a href="https://calendly.com/geddevine/30min" target="_blank" rel="noopener noreferrer">book a 30-min intro call →</a>
           </p>
           <footer class="site-footer home-about-footer">
@@ -174,6 +212,6 @@
       <div class="home-scroll-fade__gradient"></div>
     </div>
 
-    <script src="js/main.js?v=home-work-card-links-v1"></script>
+    <script src="js/main.js?v=home-work-card-nav-v1"></script>
   </body>
 </html>

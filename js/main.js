@@ -528,6 +528,69 @@
         pickCenterCard();
       }
     });
+
+    var WORK_SLUG_ORDER = ["lucille", "kinetik", "distrelec"];
+    var prevBtn = carousel.querySelector("[data-home-work-prev]");
+    var nextBtn = carousel.querySelector("[data-home-work-next]");
+
+    function scrollToSlug(slug) {
+      var card = carousel.querySelector('.home-work-card[data-work-slug="' + slug + '"]');
+      if (!card) return;
+      card.scrollIntoView({
+        inline: "center",
+        block: "nearest",
+        behavior: reducedMotion ? "auto" : "smooth",
+      });
+      activateFromCard(card);
+    }
+
+    function stepMobile(delta) {
+      var idx = WORK_SLUG_ORDER.indexOf(activeSlug);
+      if (idx < 0) idx = 0;
+      var nextIdx = (idx + delta + WORK_SLUG_ORDER.length) % WORK_SLUG_ORDER.length;
+      scrollToSlug(WORK_SLUG_ORDER[nextIdx]);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        stepMobile(-1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        stepMobile(1);
+      });
+    }
+
+    carousel.addEventListener(
+      "click",
+      function (event) {
+        if (event.target.closest(".home-work-nav")) return;
+
+        var hit = event.target.closest(".home-work-card-hit");
+        if (!hit || !hit.href) return;
+
+        var card = hit.closest(".home-work-card");
+        if (!card) return;
+
+        if (!card.classList.contains("is-mobile-active")) {
+          event.preventDefault();
+          event.stopPropagation();
+          scrollToSlug(card.getAttribute("data-work-slug"));
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.assign(hit.href);
+      },
+      true
+    );
   }
 
   function initHomeWorkCarousel() {
@@ -804,6 +867,40 @@
       animateScrollTo(snapScroll(nearestSlot(getScroll())), reducedMotion ? 0 : 640, null);
     }
 
+    function goToSlot(targetSlot) {
+      if (isDragging || isAnimating) return;
+      velocity = 0;
+      velocitySamples = [];
+      animateScrollTo(snapScroll(targetSlot), reducedMotion ? 0 : 640, null);
+    }
+
+    function stepSlot(delta) {
+      var current = nearestSlot(getScroll());
+      var target = (current + delta + REAL_COUNT) % REAL_COUNT;
+      goToSlot(target);
+    }
+
+    var prevBtn = carousel.querySelector("[data-home-work-prev]");
+    var nextBtn = carousel.querySelector("[data-home-work-next]");
+
+    function onNavClick(event, delta) {
+      event.preventDefault();
+      event.stopPropagation();
+      stepSlot(delta);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function (event) {
+        onNavClick(event, -1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function (event) {
+        onNavClick(event, 1);
+      });
+    }
+
     function recordVelocity(clientX, scale) {
       var now = performance.now();
       velocitySamples.push({ x: clientX, t: now });
@@ -859,6 +956,7 @@
     }
 
     function onPointerDown(event) {
+      if (event.target.closest(".home-work-nav")) return;
       if (event.pointerType === "mouse" && event.button !== 0) return;
       dragPending = true;
       isDragging = false;
@@ -919,6 +1017,8 @@
     carousel.addEventListener(
       "click",
       function (event) {
+        if (event.target.closest(".home-work-nav")) return;
+
         if (dragMoved) {
           event.preventDefault();
           event.stopPropagation();
@@ -929,9 +1029,21 @@
         var hit = cardHitFromEvent(event);
         if (!hit || !hit.href) return;
 
-        if (event.target.closest(".home-work-card-hit")) return;
+        var card = hit.closest(".home-work-card");
+        if (!card) return;
+
+        if (!card.classList.contains("is-focused")) {
+          var slot = studyIndexFromSlug(card.getAttribute("data-work-slug"));
+          if (slot >= 0) {
+            event.preventDefault();
+            event.stopPropagation();
+            goToSlot(slot);
+          }
+          return;
+        }
 
         event.preventDefault();
+        event.stopPropagation();
         window.location.assign(hit.href);
       },
       true
