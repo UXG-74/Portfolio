@@ -35,7 +35,7 @@
         color: #f3f3f3;
       }
     </style>
-    <link rel="stylesheet" href="css/styles.css?v=home-work-arrows-y-v1" />
+    <link rel="stylesheet" href="css/styles.css?v=home-mobile-about-behind-blur-v1" />
   </head>
   <body class="page home-page home-combined">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -57,8 +57,9 @@
             >Book an intro call</a>
           </div>
           <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+            <svg class="menu-toggle__icon" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+              <rect y="1" width="16" height="2.5" rx="1.25" fill="currentColor" />
+              <rect y="8.5" width="16" height="2.5" rx="1.25" fill="currentColor" />
             </svg>
           </button>
         </div>
@@ -88,25 +89,37 @@
         </h1>
 
         <div class="home-clients" aria-label="Client logos">
-          <span class="home-client-divider home-client-divider--0" aria-hidden="true"></span>
-          <img class="home-client-logo home-client-logo--vmo2" src="img/home-clients/vmo2.svg?v=vector" alt="Virgin Media O2" width="65" height="31" decoding="async" />
-          <span class="home-client-divider home-client-divider--1" aria-hidden="true"></span>
-          <img class="home-client-logo home-client-logo--distrelec" src="img/home-clients/distrelec.svg?v=2" alt="Distrelec" width="97" height="20" decoding="async" />
-          <span class="home-client-divider home-client-divider--2" aria-hidden="true"></span>
-          <img class="home-client-logo home-client-logo--jd" src="img/home-clients/jd.svg" alt="JD" width="29" height="29" decoding="async" />
-          <span class="home-client-divider home-client-divider--3" aria-hidden="true"></span>
-          <img class="home-client-logo home-client-logo--booking" src="img/home-clients/booking.svg" alt="Booking.com" width="95" height="16" decoding="async" />
-          <span class="home-client-divider home-client-divider--4" aria-hidden="true"></span>
-          <img class="home-client-logo home-client-logo--aldermore" src="img/home-clients/aldermore.svg" alt="Aldermore" width="85" height="12" decoding="async" />
-          <span class="home-client-divider home-client-divider--5" aria-hidden="true"></span>
-          <img class="home-client-logo home-client-logo--footasylum" src="img/home-clients/footasylum.svg?v=balance" alt="Footasylum" width="119" height="14" decoding="async" />
+          <div class="home-client-cell">
+            <span class="home-client-divider home-client-divider--0" aria-hidden="true"></span>
+            <img class="home-client-logo home-client-logo--vmo2" src="img/home-clients/vmo2.svg?v=vector" alt="Virgin Media O2" width="47" height="23" decoding="async" />
+          </div>
+          <div class="home-client-cell">
+            <span class="home-client-divider home-client-divider--1" aria-hidden="true"></span>
+            <img class="home-client-logo home-client-logo--distrelec" src="img/home-clients/distrelec.svg?v=2" alt="Distrelec" width="69" height="15" decoding="async" />
+          </div>
+          <div class="home-client-cell">
+            <span class="home-client-divider home-client-divider--2" aria-hidden="true"></span>
+            <img class="home-client-logo home-client-logo--jd" src="img/home-clients/jd.svg" alt="JD" width="21" height="21" decoding="async" />
+          </div>
+          <div class="home-client-cell">
+            <span class="home-client-divider home-client-divider--3" aria-hidden="true"></span>
+            <img class="home-client-logo home-client-logo--booking" src="img/home-clients/booking.svg" alt="Booking.com" width="69" height="12" decoding="async" />
+          </div>
+          <div class="home-client-cell">
+            <span class="home-client-divider home-client-divider--4" aria-hidden="true"></span>
+            <img class="home-client-logo home-client-logo--aldermore" src="img/home-clients/aldermore.svg" alt="Aldermore" width="62" height="9" decoding="async" />
+          </div>
+          <div class="home-client-cell">
+            <span class="home-client-divider home-client-divider--5" aria-hidden="true"></span>
+            <img class="home-client-logo home-client-logo--footasylum" src="img/home-clients/footasylum.svg?v=wordmark" alt="Footasylum" width="86" height="10" decoding="async" />
+          </div>
           <span class="home-client-divider home-client-divider--6" aria-hidden="true"></span>
         </div>
 
         <section id="work" class="home-work" aria-labelledby="work-index-heading">
           <h2 id="work-index-heading" class="home-work-title home-section-title">WORK</h2>
 
-          <div class="home-work-carousel" data-home-work-carousel aria-label="Case studies">
+          <div class="home-work-carousel-shell">
             <button
               type="button"
               class="home-work-nav home-work-nav--prev"
@@ -116,8 +129,8 @@
               <img
                 class="home-work-nav__icon"
                 src="img/home-work-arrow-prev.svg"
-                width="44"
-                height="44"
+                width="24"
+                height="24"
                 alt=""
                 decoding="async"
               />
@@ -131,12 +144,13 @@
               <img
                 class="home-work-nav__icon"
                 src="img/home-work-arrow-next.svg"
-                width="44"
-                height="44"
+                width="24"
+                height="24"
                 alt=""
                 decoding="async"
               />
             </button>
+            <div class="home-work-carousel" data-home-work-carousel aria-label="Case studies">
             <div class="home-work-track">
               <article class="home-work-card" data-work-slug="lucille">
                 <a href="/work/lucille-london/" class="home-work-card-hit" aria-label="Open Lucille London case study">
@@ -161,6 +175,7 @@
                   </div>
                 </a>
               </article>
+            </div>
             </div>
           </div>
 
@@ -214,6 +229,6 @@
       <div class="home-scroll-fade__gradient"></div>
     </div>
 
-    <script src="js/main.js?v=home-work-card-nav-v1"></script>
+    <script src="js/main.js?v=home-mobile-about-above-blur-v1"></script>
   </body>
 </html>

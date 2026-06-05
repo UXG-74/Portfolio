@@ -8,8 +8,8 @@
     <title>Kinetik · Ged Devine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/styles.css?v=copy-rewrite-v1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css?v=case-study-full-scroll-v1" />
 <style>
       .work-inner-wrap {
         position: relative;
@@ -198,18 +198,8 @@
       .work-inner-figma [data-kinetik-marketing-hero] ~ [data-kinetik-marketing-hero] {
         display: none;
       }
-      .work-inner-mobile .mobile-kicker {
-        margin-bottom: 0;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        font: 500 14px/1.3 Inter, system-ui, sans-serif;
-      }
-      .work-inner-mobile .mobile-kicker + .mobile-h {
-        margin-top: -8px;
-      }
       .work-inner-mobile .mobile-h {
         margin-bottom: 12px;
-        font: 500 32px/1.4 Inter, system-ui, sans-serif;
       }
       .work-inner-mobile .mobile-body p {
         margin-bottom: 12px;
@@ -354,8 +344,9 @@
           >Book an intro call</a>
         </div>
         <button type="button" class="menu-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+          <svg class="menu-toggle__icon" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+            <rect y="1" width="16" height="2.5" rx="1.25" fill="currentColor" />
+            <rect y="8.5" width="16" height="2.5" rx="1.25" fill="currentColor" />
           </svg>
         </button>
       </div>
@@ -511,14 +502,12 @@
       <div data-kinetik-dev-mode data-kinetik-shift data-kinetik-origin-top="12136" style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden;background:#0b0f18"><img src="/img/kinetik-dev-mode.png" alt="Kinetik website design shown in Figma Dev Mode." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;max-width:none" /></div>
       <div data-kinetik-wireframes data-kinetik-shift data-kinetik-origin-top="12721" style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="/img/kinetik-wireframes.png?v=wireframes" alt="Kinetik workout wireframes showing overview, active workout, and weekly summary screens." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
 
-      <div style="position:absolute;left:116px;top:1493px;width:244px;display:flex;flex-direction:column;gap:16px">
+      <div style="position:absolute;left:116px;top:1493px;display:flex;flex-direction:column;gap:16px">
         <p class="body16" style="color:#1e1e1e">( Services )</p>
-        <div class="services-piped" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;text-transform:uppercase">
-          <p class="body16">Product</p>
-          <p class="body16 services-piped-sep" aria-hidden="true">|</p>
-          <p class="body16">Performance</p>
-          <p class="body16 services-piped-sep" aria-hidden="true">|</p>
-          <p class="body16">UX</p>
+        <div class="case-study-tags" aria-label="Services">
+          <span>product</span>
+          <span>performance</span>
+          <span>ux</span>
         </div>
       </div>
 
@@ -537,12 +526,10 @@
 
         <div class="mobile-services">
           <p class="mobile-services-kicker">( Services )</p>
-          <div class="mobile-services-list mobile-services-list--piped">
-            <p>Product</p>
-            <p class="mobile-services-sep" aria-hidden="true">|</p>
-            <p>Performance</p>
-            <p class="mobile-services-sep" aria-hidden="true">|</p>
-            <p>UX</p>
+          <div class="case-study-tags" aria-label="Services">
+            <span>product</span>
+            <span>performance</span>
+            <span>ux</span>
           </div>
         </div>
 
@@ -684,7 +671,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer home-about-footer">
       <div class="shell footer-inner">
         <p>© 2026</p>
         <div class="footer-links">
@@ -692,6 +679,16 @@
         </div>
       </div>
     </footer>
+
+    <div class="home-scroll-fade" aria-hidden="true">
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__layer"></div>
+      <div class="home-scroll-fade__gradient"></div>
+    </div>
+
     <script>
       (function () {
         var GAP = 80;

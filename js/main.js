@@ -197,6 +197,21 @@
       smoothScrollTo(targetY, 980, finishAboutScroll, aboutEase);
     }
 
+    function syncScrollFade() {
+      var aboutSection = document.getElementById("about");
+      if (!aboutSection) return;
+
+      /* Desktop only: hide fade once About enters the fade band */
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.body.classList.remove("home-about-fade-off");
+        return;
+      }
+
+      var fadeZoneTop = window.innerHeight * 0.75;
+      var aboutTop = aboutSection.getBoundingClientRect().top;
+      document.body.classList.toggle("home-about-fade-off", aboutTop < fadeZoneTop);
+    }
+
     function syncNavFromScroll() {
       if (scrollAnimating || scrollNavIntent) {
         if (scrollNavIntent === "about") {
@@ -206,6 +221,7 @@
           setWorkNavActive(true);
           setAboutNavActive(false);
         }
+        syncScrollFade();
         return;
       }
 
@@ -216,6 +232,7 @@
 
       setAboutNavActive(isAboutView);
       setWorkNavActive(isWorkView);
+      syncScrollFade();
 
       if (
         !isWorkView &&
@@ -302,6 +319,8 @@
       setWorkNavActive(false);
       setAboutNavActive(false);
     }
+
+    syncScrollFade();
   }
 
   injectThemeToggles();
@@ -470,8 +489,14 @@
     );
     if (!cards.length) return;
 
+    var MOBILE_ANIM_MS = 640;
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var detailState = { currentStudyIndex: -1, currentVideoSlot: -1 };
     var activeSlug = "";
+    var isArrowAnimating = false;
+    var scrollIdleTimer = 0;
+    var mobileAnimId = 0;
+    var mobileAnimRaf = 0;
 
     function setActiveCard(slug) {
       if (slug === activeSlug) return;
@@ -487,6 +512,14 @@
       renderHomeWorkDetail(detail, index, detailState);
       syncHomeWorkVideos(cards, index, detailState);
       setActiveCard(card.getAttribute("data-work-slug"));
+    }
+
+    function centerScrollLeftForCard(card) {
+      var maxScroll = Math.max(0, carousel.scrollWidth - carousel.clientWidth);
+      var cardLeft = card.offsetLeft;
+      var cardWidth = card.offsetWidth;
+      var target = cardLeft + cardWidth * 0.5 - carousel.clientWidth * 0.5;
+      return Math.max(0, Math.min(target, maxScroll));
     }
 
     function pickCenterCard() {
@@ -506,14 +539,69 @@
       if (best) activateFromCard(best);
     }
 
+    function finishMobileArrowAnimation() {
+      isArrowAnimating = false;
+      carousel.classList.remove("is-snapping");
+      if (mobileAnimRaf) {
+        cancelAnimationFrame(mobileAnimRaf);
+        mobileAnimRaf = 0;
+      }
+    }
+
+    function animateMobileToCard(card) {
+      if (!card) return;
+      mobileAnimId += 1;
+      var animId = mobileAnimId;
+      isArrowAnimating = true;
+      carousel.classList.add("is-snapping");
+      activateFromCard(card);
+
+      if (reducedMotion) {
+        carousel.scrollLeft = centerScrollLeftForCard(card);
+        finishMobileArrowAnimation();
+        return;
+      }
+
+      var startScroll = carousel.scrollLeft;
+      var startTime = performance.now();
+
+      function step(now) {
+        if (animId !== mobileAnimId) return;
+
+        var target = centerScrollLeftForCard(card);
+        var t = Math.min(1, (now - startTime) / MOBILE_ANIM_MS);
+        var eased = 1 - Math.pow(1 - t, 3);
+        carousel.scrollLeft = startScroll + (target - startScroll) * eased;
+
+        if (t < 1) {
+          mobileAnimRaf = requestAnimationFrame(step);
+          return;
+        }
+
+        carousel.scrollLeft = centerScrollLeftForCard(card);
+        finishMobileArrowAnimation();
+      }
+
+      mobileAnimRaf = requestAnimationFrame(step);
+    }
+
     var scrollTick = 0;
     carousel.addEventListener(
       "scroll",
       function () {
+        if (!isArrowAnimating) {
+          carousel.classList.add("is-mobile-scrolling");
+          if (scrollIdleTimer) window.clearTimeout(scrollIdleTimer);
+          scrollIdleTimer = window.setTimeout(function () {
+            carousel.classList.remove("is-mobile-scrolling");
+            scrollIdleTimer = 0;
+          }, 120);
+        }
+
         if (scrollTick) return;
         scrollTick = requestAnimationFrame(function () {
           scrollTick = 0;
-          pickCenterCard();
+          if (!isArrowAnimating) pickCenterCard();
         });
       },
       { passive: true }
@@ -524,31 +612,39 @@
 
     requestAnimationFrame(function () {
       if (defaultCard) {
-        defaultCard.scrollIntoView({ inline: "center", block: "nearest", behavior: "auto" });
-        pickCenterCard();
+        activateFromCard(defaultCard);
+        carousel.scrollLeft = centerScrollLeftForCard(defaultCard);
       }
     });
 
     var WORK_SLUG_ORDER = ["lucille", "kinetik", "distrelec"];
-    var prevBtn = carousel.querySelector("[data-home-work-prev]");
-    var nextBtn = carousel.querySelector("[data-home-work-next]");
+    var carouselShell = carousel.closest(".home-work-carousel-shell");
+    var prevBtn = carouselShell
+      ? carouselShell.querySelector("[data-home-work-prev]")
+      : carousel.querySelector("[data-home-work-prev]");
+    var nextBtn = carouselShell
+      ? carouselShell.querySelector("[data-home-work-next]")
+      : carousel.querySelector("[data-home-work-next]");
 
-    function scrollToSlug(slug) {
+    function scrollToSlug(slug, options) {
+      var animate = !options || options.animate !== false;
       var card = carousel.querySelector('.home-work-card[data-work-slug="' + slug + '"]');
       if (!card) return;
-      card.scrollIntoView({
-        inline: "center",
-        block: "nearest",
-        behavior: reducedMotion ? "auto" : "smooth",
-      });
+
+      if (animate) {
+        animateMobileToCard(card);
+        return;
+      }
+
       activateFromCard(card);
+      carousel.scrollLeft = centerScrollLeftForCard(card);
     }
 
     function stepMobile(delta) {
       var idx = WORK_SLUG_ORDER.indexOf(activeSlug);
       if (idx < 0) idx = 0;
       var nextIdx = (idx + delta + WORK_SLUG_ORDER.length) % WORK_SLUG_ORDER.length;
-      scrollToSlug(WORK_SLUG_ORDER[nextIdx]);
+      scrollToSlug(WORK_SLUG_ORDER[nextIdx], { animate: true });
     }
 
     if (prevBtn) {
@@ -880,8 +976,13 @@
       goToSlot(target);
     }
 
-    var prevBtn = carousel.querySelector("[data-home-work-prev]");
-    var nextBtn = carousel.querySelector("[data-home-work-next]");
+    var carouselShell = carousel.closest(".home-work-carousel-shell");
+    var prevBtn = carouselShell
+      ? carouselShell.querySelector("[data-home-work-prev]")
+      : carousel.querySelector("[data-home-work-prev]");
+    var nextBtn = carouselShell
+      ? carouselShell.querySelector("[data-home-work-next]")
+      : carousel.querySelector("[data-home-work-next]");
 
     function onNavClick(event, delta) {
       event.preventDefault();
