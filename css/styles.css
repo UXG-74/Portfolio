@@ -1361,7 +1361,7 @@ body.theme-dark .work-study-thumb--kinetik {
 
 @media (max-width: 768px) {
   :root {
-    --gutter: 32px;
+    --gutter: 30px;
   }
 
   .site-footer {
@@ -2318,7 +2318,7 @@ body.home-combined.theme-dark .home-about-cta-actions a:hover {
   .home-combined .home-figma-header .menu-toggle {
     position: absolute;
     top: calc(103 * var(--home-mobile-scale));
-    right: calc(32 * var(--home-mobile-scale));
+    right: calc(30 * var(--home-mobile-scale));
     width: calc(16 * var(--home-mobile-scale));
     height: calc(12 * var(--home-mobile-scale));
     min-width: 0;
@@ -2356,12 +2356,11 @@ body.home-combined.theme-dark .home-about-cta-actions a:hover {
 
   .home-figma-canvas {
     --home-mobile-scale: calc(100vw / 402);
-    --home-mobile-inset: max(32px, env(safe-area-inset-left, 0px));
-    --home-mobile-inset-sm: max(30px, env(safe-area-inset-left, 0px));
+    --home-mobile-inset: max(30px, env(safe-area-inset-left, 0px));
     min-height: auto;
     padding:
       calc(61 * var(--home-mobile-scale))
-      max(32px, env(safe-area-inset-right, 0px))
+      max(30px, env(safe-area-inset-right, 0px))
       max(40px, env(safe-area-inset-bottom, 0px))
       var(--home-mobile-inset);
   }
@@ -2889,8 +2888,8 @@ body.home-combined.theme-dark .home-about-cta-actions a:hover {
 
   .home-combined.home-page .site-footer.home-about-footer {
     padding-inline:
-      max(32px, env(safe-area-inset-left, 0px))
-      max(32px, env(safe-area-inset-right, 0px));
+      max(30px, env(safe-area-inset-left, 0px))
+      max(30px, env(safe-area-inset-right, 0px));
     padding-bottom: max(16px, env(safe-area-inset-bottom, 0px));
   }
 }
@@ -3079,7 +3078,7 @@ body.case-figma-page .work-inner-figma .h3 {
   .page:not(.home-combined) .site-header .menu-toggle {
     position: absolute;
     top: calc(103 * var(--home-mobile-scale));
-    right: calc(32 * var(--home-mobile-scale));
+    right: calc(30 * var(--home-mobile-scale));
     width: calc(16 * var(--home-mobile-scale));
     height: calc(12 * var(--home-mobile-scale));
     min-width: 0;
