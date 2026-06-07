@@ -164,22 +164,6 @@
         font: 400 16px/1.3 Inter, system-ui, sans-serif;
       }
       .work-inner-mobile .mobile-body p:last-child { margin-bottom: 0; }
-      .work-inner-mobile .mobile-cta-band {
-        margin: 0 -30px 24px;
-        padding: 18px 30px;
-        background: #1e1e1e;
-      }
-      .work-inner-mobile .mobile-cta-lead {
-        margin: 0 0 12px;
-        color: #f2f2f2;
-        font: 500 18px/1.25 Inter, system-ui, sans-serif;
-      }
-      .work-inner-mobile .mobile-cta-copy {
-        color: #f2f2f2;
-        font: 500 16px/1.2 Inter, system-ui, sans-serif;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
       .work-inner-mobile .mobile-stack {
         display: grid;
         grid-template-columns: 1fr;
@@ -198,9 +182,6 @@
         color: #f3f3f3;
       }
       body.theme-dark .work-inner-mobile .mobile-services-kicker { color: #a5a5a5; }
-      body.theme-dark .work-inner-mobile .mobile-cta-band { background: #2a2a2a; }
-      body.theme-dark .work-inner-mobile .mobile-cta-lead { color: #f3f3f3; }
-      body.theme-dark .work-inner-mobile .mobile-cta-copy { color: #f3f3f3; }
       @media (max-width: 768px) {
         .work-inner-wrap { display: none; }
         .work-inner-mobile { display: block; }
@@ -295,9 +276,9 @@
     <main id="main">
       <div class="work-inner-wrap">
       <section class="work-inner-figma">
-      <div style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-conclusion.png?v=reg-mockups" alt="Distrelec responsive registration on MacBook and iPhone showing country, customer type, and validated form fields." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-conclusion-media style="position:absolute;left:51px;top:13976px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-conclusion.png?v=reg-mockups" alt="Distrelec responsive registration on MacBook and iPhone showing country, customer type, and validated form fields." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:-47px;top:189px;width:1540px;height:5645px;background:#f3f3f3"></div>
-      <div style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/distrelec-user-flow.png?v=user-flow4" alt="Registration user-flow diagram mapping email lookup, B2B/B2C paths, validation, and account outcomes." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-user-flow style="position:absolute;left:0;top:3035px;width:1158px;height:661px;overflow:hidden"><img src="/img/distrelec-user-flow.png?v=user-flow4" alt="Registration user-flow diagram mapping email lookup, B2B/B2C paths, validation, and account outcomes." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
       <div style="position:absolute;left:0;top:173px;width:1175px;height:209px;background:#f3f3f3"></div>
 
       <div class="hero-image-wrap" style="position:absolute;left:23px;top:504px;width:1400px;height:780px;overflow:hidden">
@@ -311,7 +292,7 @@
         <p class="h2">Registration built on evidence.</p>
       </div>
 
-      <div style="position:absolute;left:589px;top:1431px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-lead-primary style="position:absolute;left:589px;top:1431px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="h3">Distrelec runs components, tools, and infrastructure across six regions. Duplicate accounts skewed order history and drove up support load. I led registration UX from evidence — replay first, tested changes next — before anything was committed to the roadmap.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
           <p class="body24">Shipped programme work: live constraints, not a deck. The test was whether registration could read as credible when research, UI, copy, and build moved through one disciplined pipeline. The bar held — calm on first read, then consistent through navigation, onboarding, and reassurance (invoices, contracts, returns) without trust snapping or the flow sounding like a retrofit.</p>
@@ -319,17 +300,13 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:352px;top:2472px;width:735px;display:flex;flex-direction:column;gap:16px">
+      <div data-distrelec-lead-followup style="position:absolute;left:352px;top:2472px;width:735px;display:flex;flex-direction:column;gap:16px">
         <p class="body24">Industrial e-commerce is judged in milliseconds: field order, spacing, and error copy either read as control — or noise. Every block had to earn its place: headline promise, territory capture, states that behave like a desk handoff, and rows that carry proof without theatre.</p>
         <p class="body24">The working stack was replay, prototype, and script — evidence first, then design calls: which failure repeated, which route shipped, what still reads as intentional when someone files a ticket after hours.</p>
         <p class="body24">What shipped is one coherent path on a live URL: a single voice for Distrelec, a registration thread from first entry to active account, and patterns that respect caution in slow buys — without the journey feeling like varnish.</p>
       </div>
 
-      <div style="position:absolute;left:-2px;top:3791px;width:1442px;height:166px;background:#1e1e1e"></div>
-      <p style="position:absolute;left:96px;top:3851px;width:980px;color:#f2f2f2;font-size:38px;line-height:1.2;font-weight:500">Visit the Distrelec website here</p>
-      <a class="btn-contact btn-contact--email figma-site-cta" href="https://www.distrelec.ch/en/" target="_blank" rel="noopener noreferrer" style="position:absolute;left:1172px;top:3854px;">See the site</a>
-
-      <div style="position:absolute;left:592px;top:4052px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-overview-copy style="position:absolute;left:592px;top:4052px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">OVERVIEW</p>
         <p class="h3">Clarity before chrome.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -337,11 +314,11 @@
           <p class="body24">Strategy, UX, and UI moved in one lane — reviewed with stakeholders, revised against tickets and transcripts — so the voice could repeat without sounding canned. Same signal at landing, through the steps, and at service handoff. No ornament. Only accountable steps.</p>
         </div>
       </div>
-      <div style="position:absolute;left:969px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/Engineers.png?v=overview" alt="Built for Engineers hero: technician in a workshop with Tektronix and Keithley bench instruments messaging and shop calls to action." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;max-width:none" /></div>
-      <div style="position:absolute;left:496px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/3M.png?v=overview" alt="3M hero banner: Earth from space at night with 3M Multi-Technology Company messaging and Shop the range call to action." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;max-width:none" /></div>
-      <div style="position:absolute;left:23px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/Tektronix.png?v=overview" alt="Tektronix hero banner: engineer welding inside an industrial pipe with Built for Engineers messaging and shop calls to action." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;max-width:none" /></div>
-      <div style="position:absolute;left:0;top:4150px;width:490px;height:355.5px;overflow:hidden"><img src="/img/Tektronix.png?v=overview" alt="Tektronix hero banner: engineer welding inside an industrial pipe with Built for Engineers messaging and shop calls to action." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:672px;top:5146px;width:620px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-overview-card style="position:absolute;left:969px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/Engineers.png?v=overview" alt="Built for Engineers hero: technician in a workshop with Tektronix and Keithley bench instruments messaging and shop calls to action." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;max-width:none" /></div>
+      <div data-distrelec-overview-card style="position:absolute;left:496px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/3M.png?v=overview" alt="3M hero banner: Earth from space at night with 3M Multi-Technology Company messaging and Shop the range call to action." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;max-width:none" /></div>
+      <div data-distrelec-overview-card style="position:absolute;left:23px;top:4700px;width:454px;height:320px;overflow:hidden"><img src="/img/Tektronix.png?v=overview" alt="Tektronix hero banner: engineer welding inside an industrial pipe with Built for Engineers messaging and shop calls to action." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;max-width:none" /></div>
+      <div data-distrelec-overview-hero style="position:absolute;left:0;top:4150px;width:490px;height:355.5px;overflow:hidden"><img src="/img/Tektronix.png?v=overview" alt="Tektronix hero banner: engineer welding inside an industrial pipe with Built for Engineers messaging and shop calls to action." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-challenge style="position:absolute;left:672px;top:5146px;width:620px;display:flex;flex-direction:column;gap:32px">
         <p class="label">THE CHALLENGE</p>
         <p class="h3" style="width:601px">A B2B registration surface has to read as audit-ready.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -350,7 +327,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:211px;top:5917px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-reassurance style="position:absolute;left:211px;top:5917px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">REASSURANCE UX</p>
         <p class="h3">Proof is part of the product.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -359,7 +336,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:343px;top:7979px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-launch style="position:absolute;left:343px;top:7979px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">THE LAUNCH</p>
         <p class="h3">Launch when the path matches the warehouse.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -368,7 +345,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:115px;top:9290px;width:580px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-colour-palette style="position:absolute;left:115px;top:9290px;width:580px;display:flex;flex-direction:column;gap:32px">
         <p class="label">COLOUR PALETTE</p>
         <p class="h3">Neutral surfaces, deliberate state colour.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -377,7 +354,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:745px;top:9422px;width:580px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-wordmark style="position:absolute;left:745px;top:9422px;width:580px;display:flex;flex-direction:column;gap:32px">
         <p class="label">WORDMARK</p>
         <p class="h3">Type that stays out of the SKU's way.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -386,7 +363,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:671px;top:11441px;width:620px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-campaign style="position:absolute;left:671px;top:11441px;width:620px;display:flex;flex-direction:column;gap:32px">
         <p class="label">CAMPAIGN</p>
         <p class="h3" style="width:601px">Programme rhythm, not promotion noise.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -395,7 +372,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:117px;top:12136px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-post-register style="position:absolute;left:117px;top:12136px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">POST-REGISTER</p>
         <p class="h3">After the form is still the product.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -404,7 +381,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:326px;top:13477px;width:735px;display:flex;flex-direction:column;gap:32px">
+      <div data-distrelec-conclusion style="position:absolute;left:326px;top:13477px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">CONCLUSION</p>
         <p class="h3">What this proves.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
@@ -413,17 +390,17 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:42px;top:6509px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-wireframes.png?v=wireframes" alt="Distrelec mobile registration wireframes highlighting in-page tab login and country selector placement." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:7284px;width:565px;height:396px;overflow:hidden"><img src="/img/distrelec-user-testing.png?v=user-testing" alt="Four moderated usability sessions with participants reviewing the Distrelec registration flow." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:607px;top:7284px;width:773px;height:600px;overflow:hidden"><img src="/img/distrelec-painpoint.png?v=painpoint" alt="Distrelec checkout pain points: disabled purchase button and repeated payment logo interactions." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:8595px;width:773px;height:541px;overflow:hidden"><img src="/img/distrelec-launch-funnel.png?v=launch-funnel" alt="GA4 registration journey funnel by device category showing checkout steps, drop-off, and purchase completion." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:815px;top:8595px;width:565px;height:396px;overflow:hidden"><img src="/img/distrelec-abandonment-stats.png?v=abandonment" alt="79% registration abandonment stat for Distrelec unique visits in 2023." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:10069px;width:669px;height:500px;overflow:hidden"><img src="/img/distrelec-logo.png?v=logo" alt="Distrelec wordmark with Part of RS Group lockup on a dark background." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:711px;top:10070px;width:669px;height:500px;overflow:hidden"><img src="/img/distrelec-montserrat.png?v=montserrat" alt="Montserrat typography specimen showing character set and weight scale." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:42px;top:10569px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-colour-ramp.png?v=colour-ramp" alt="Distrelec colour ramp showing primary and accent colour scales." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="/img/distrelec-campaign.svg?v=register" alt="Distrelec mobile registration wireframe showing country selection, customer type, and validated email field." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden"><img src="https://www.figma.com/api/mcp/asset/1445a586-6c05-4a8a-9748-cf71163073ce" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
-      <div style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="/img/distrelec-signposting.png?v=signposting" alt="Three Distrelec mobile screens showing inline validation, registration signposting, and region selection." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-wireframes style="position:absolute;left:42px;top:6509px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-wireframes.png?v=wireframes" alt="Distrelec mobile registration wireframes highlighting in-page tab login and country selector placement." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-user-testing-desktop style="position:absolute;left:42px;top:7284px;width:565px;height:396px;overflow:hidden"><img src="/img/distrelec-user-testing.png?v=user-testing" alt="Four moderated usability sessions with participants reviewing the Distrelec registration flow." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-painpoint style="position:absolute;left:607px;top:7284px;width:773px;height:600px;overflow:hidden"><img src="/img/distrelec-painpoint.png?v=painpoint" alt="Distrelec checkout pain points: disabled purchase button and repeated payment logo interactions." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-launch-funnel style="position:absolute;left:42px;top:8595px;width:773px;height:541px;overflow:hidden"><img src="/img/distrelec-launch-funnel.png?v=launch-funnel" alt="GA4 registration journey funnel by device category showing checkout steps, drop-off, and purchase completion." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-abandonment-stats style="position:absolute;left:815px;top:8595px;width:565px;height:396px;overflow:hidden"><img src="/img/distrelec-abandonment-stats.png?v=abandonment" alt="79% registration abandonment stat for Distrelec unique visits in 2023." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-logo style="position:absolute;left:42px;top:10069px;width:669px;height:500px;overflow:hidden"><img src="/img/distrelec-logo.png?v=logo" alt="Distrelec wordmark with Part of RS Group lockup on a dark background." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-montserrat style="position:absolute;left:711px;top:10070px;width:669px;height:500px;overflow:hidden"><img src="/img/distrelec-montserrat.png?v=montserrat" alt="Montserrat typography specimen showing character set and weight scale." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-colour-ramp style="position:absolute;left:42px;top:10569px;width:1338px;height:777px;overflow:hidden"><img src="/img/distrelec-colour-ramp.png?v=colour-ramp" alt="Distrelec colour ramp showing primary and accent colour scales." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-campaign-media style="position:absolute;left:41px;top:11441px;width:565px;height:572px;overflow:hidden"><img src="/img/distrelec-campaign.svg?v=register" alt="Distrelec mobile registration wireframe showing country selection, customer type, and validated email field." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-post-register-media style="position:absolute;left:949px;top:12136px;width:491px;height:355.5px;overflow:hidden"><img src="/img/distrelec-user-testing-mobile.png?v=post-register" alt="Two moderated Distrelec registration usability sessions showing company name search and tax number lookup flows." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
+      <div data-distrelec-signposting style="position:absolute;left:0;top:12721px;width:949px;height:661px;overflow:hidden"><img src="/img/distrelec-signposting.png?v=signposting" alt="Three Distrelec mobile screens showing inline validation, registration signposting, and region selection." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none" /></div>
 
       <div style="position:absolute;left:116px;top:1493px;display:flex;flex-direction:column;gap:16px">
         <p class="body16" style="color:#1e1e1e">( Services )</p>
@@ -469,11 +446,6 @@
 
         <div class="mobile-image" style="margin-bottom:24px;">
           <img src="/img/distrelec-user-flow.png?v=user-flow4" alt="Registration user-flow diagram mapping email lookup, B2B/B2C paths, validation, and account outcomes." />
-        </div>
-
-        <div class="mobile-cta-band">
-          <p class="mobile-cta-lead">Visit the Distrelec website here</p>
-          <a class="btn-contact btn-contact--email" href="https://www.distrelec.ch/en/" target="_blank" rel="noopener noreferrer">See the site</a>
         </div>
 
         <div class="mobile-image" style="margin-bottom:24px;">
@@ -579,7 +551,7 @@
         </div>
 
         <div class="mobile-stack">
-          <div class="mobile-image"><img src="https://www.figma.com/api/mcp/asset/1445a586-6c05-4a8a-9748-cf71163073ce" alt="" /></div>
+          <div class="mobile-image"><img src="/img/distrelec-user-testing-mobile.png?v=post-register" alt="Two moderated Distrelec registration usability sessions showing company name search and tax number lookup flows." /></div>
           <div class="mobile-image"><img src="/img/distrelec-signposting.png?v=signposting" alt="Three Distrelec mobile screens showing inline validation, registration signposting, and region selection." /></div>
         </div>
 
@@ -618,15 +590,225 @@
 
     <script>
       (function () {
+        var LEAD_FOLLOWUP_GAP = 90;
+        var USER_FLOW_GAP = 90;
+        var OVERVIEW_GAP = 90;
+        var OVERVIEW_HERO_OFFSET = 98;
+        var OVERVIEW_CARDS_GAP = 90;
+        var CHALLENGE_GAP = 90;
+        var REASSURANCE_GAP = 90;
+        var WIREFRAMES_GAP = 90;
+        var LAUNCH_GAP = 90;
+        var LAUNCH_MEDIA_GAP = 90;
+        var PALETTE_GAP = 90;
+        var WORDMARK_OFFSET = 132;
+        var BRAND_MEDIA_GAP = 90;
+        var MONTserrat_OFFSET = 1;
+        var COLOUR_RAMP_GAP = 0;
+        var CAMPAIGN_GAP = 90;
+        var POST_REGISTER_GAP = 90;
+        var SIGNPOSTING_GAP = 90;
+        var CONCLUSION_GAP = 90;
+        var CONCLUSION_MEDIA_GAP = 90;
+        var DEFAULT_FRAME_HEIGHT = 14659;
+
+        function frameTop(frame) {
+          return frame.getBoundingClientRect().top;
+        }
+
+        function bottomY(frame, scale, el) {
+          if (!el) return 0;
+          return (el.getBoundingClientRect().bottom - frameTop(frame)) / scale;
+        }
+
+        function maxBottomY(frame, scale, elements) {
+          var max = 0;
+          elements.forEach(function (el) {
+            if (!el) return;
+            var bottom = bottomY(frame, scale, el);
+            if (bottom > max) max = bottom;
+          });
+          return max;
+        }
+
+        function layoutDistrelecLeadGap(frame, scale) {
+          if (window.matchMedia('(max-width: 768px)').matches) return 0;
+
+          var leadPrimary = frame.querySelector('[data-distrelec-lead-primary]');
+          var leadFollowup = frame.querySelector('[data-distrelec-lead-followup]');
+          if (!leadPrimary || !leadFollowup) return DEFAULT_FRAME_HEIGHT;
+
+          leadFollowup.style.top = bottomY(frame, scale, leadPrimary) + LEAD_FOLLOWUP_GAP + 'px';
+
+          var userFlow = frame.querySelector('[data-distrelec-user-flow]');
+          if (userFlow) {
+            userFlow.style.top = bottomY(frame, scale, leadFollowup) + USER_FLOW_GAP + 'px';
+          }
+
+          var overviewCopy = frame.querySelector('[data-distrelec-overview-copy]');
+          var overviewHero = frame.querySelector('[data-distrelec-overview-hero]');
+          if (userFlow && overviewCopy) {
+            var overviewTop = bottomY(frame, scale, userFlow) + OVERVIEW_GAP;
+            overviewCopy.style.top = overviewTop + 'px';
+            if (overviewHero) {
+              overviewHero.style.top = overviewTop + OVERVIEW_HERO_OFFSET + 'px';
+            }
+          }
+
+          var overviewCards = frame.querySelectorAll('[data-distrelec-overview-card]');
+          if (overviewCards.length && overviewCopy) {
+            var cardsTop =
+              maxBottomY(frame, scale, [overviewCopy, overviewHero]) + OVERVIEW_CARDS_GAP;
+            overviewCards.forEach(function (card) {
+              card.style.top = cardsTop + 'px';
+            });
+          }
+
+          var challenge = frame.querySelector('[data-distrelec-challenge]');
+          if (challenge && overviewCards.length) {
+            challenge.style.top =
+              maxBottomY(frame, scale, Array.prototype.slice.call(overviewCards)) +
+              CHALLENGE_GAP +
+              'px';
+          }
+
+          var reassurance = frame.querySelector('[data-distrelec-reassurance]');
+          if (reassurance && challenge) {
+            reassurance.style.top = bottomY(frame, scale, challenge) + REASSURANCE_GAP + 'px';
+          }
+
+          var wireframes = frame.querySelector('[data-distrelec-wireframes]');
+          if (wireframes && reassurance) {
+            wireframes.style.top = bottomY(frame, scale, reassurance) + WIREFRAMES_GAP + 'px';
+          }
+
+          var userTestingDesktop = frame.querySelector('[data-distrelec-user-testing-desktop]');
+          var painpoint = frame.querySelector('[data-distrelec-painpoint]');
+          if (wireframes) {
+            var mediaRowTop = bottomY(frame, scale, wireframes);
+            if (userTestingDesktop) userTestingDesktop.style.top = mediaRowTop + 'px';
+            if (painpoint) painpoint.style.top = mediaRowTop + 'px';
+          }
+
+          var launch = frame.querySelector('[data-distrelec-launch]');
+          var launchFunnel = frame.querySelector('[data-distrelec-launch-funnel]');
+          var abandonmentStats = frame.querySelector('[data-distrelec-abandonment-stats]');
+          var launchMediaBottom = 0;
+          if (launch) {
+            var launchTop =
+              maxBottomY(frame, scale, [userTestingDesktop, painpoint]) + LAUNCH_GAP;
+            launch.style.top = launchTop + 'px';
+            var launchMediaTop = launchTop + launch.offsetHeight + LAUNCH_MEDIA_GAP;
+            if (launchFunnel) launchFunnel.style.top = launchMediaTop + 'px';
+            if (abandonmentStats) abandonmentStats.style.top = launchMediaTop + 'px';
+            launchMediaBottom =
+              launchMediaTop +
+              Math.max(
+                launchFunnel ? launchFunnel.offsetHeight : 0,
+                abandonmentStats ? abandonmentStats.offsetHeight : 0
+              );
+          }
+
+          var colourPalette = frame.querySelector('[data-distrelec-colour-palette]');
+          var wordmark = frame.querySelector('[data-distrelec-wordmark]');
+          var paletteTop = 0;
+          if (launchMediaBottom) {
+            paletteTop = launchMediaBottom + PALETTE_GAP;
+            if (colourPalette) colourPalette.style.top = paletteTop + 'px';
+            if (wordmark) wordmark.style.top = paletteTop + WORDMARK_OFFSET + 'px';
+          }
+
+          var logo = frame.querySelector('[data-distrelec-logo]');
+          var montserrat = frame.querySelector('[data-distrelec-montserrat]');
+          var colourRamp = frame.querySelector('[data-distrelec-colour-ramp]');
+          var brandMediaTop = 0;
+          if (paletteTop && (colourPalette || wordmark)) {
+            var brandSectionBottom = Math.max(
+              colourPalette ? paletteTop + colourPalette.offsetHeight : 0,
+              wordmark ? paletteTop + WORDMARK_OFFSET + wordmark.offsetHeight : 0
+            );
+            brandMediaTop = brandSectionBottom + BRAND_MEDIA_GAP;
+            if (logo) logo.style.top = brandMediaTop + 'px';
+            if (montserrat) montserrat.style.top = brandMediaTop + MONTserrat_OFFSET + 'px';
+          }
+
+          var colourRampTop = 0;
+          if (brandMediaTop && colourRamp) {
+            var brandMediaBottom = Math.max(
+              logo ? brandMediaTop + logo.offsetHeight : 0,
+              montserrat ? brandMediaTop + MONTserrat_OFFSET + montserrat.offsetHeight : 0
+            );
+            colourRampTop = brandMediaBottom + COLOUR_RAMP_GAP;
+            colourRamp.style.top = colourRampTop + 'px';
+          }
+
+          var campaign = frame.querySelector('[data-distrelec-campaign]');
+          var campaignMedia = frame.querySelector('[data-distrelec-campaign-media]');
+          var campaignTop = 0;
+          if (colourRampTop && colourRamp) {
+            campaignTop = colourRampTop + colourRamp.offsetHeight + CAMPAIGN_GAP;
+            if (campaign) campaign.style.top = campaignTop + 'px';
+            if (campaignMedia) campaignMedia.style.top = campaignTop + 'px';
+          }
+
+          var postRegister = frame.querySelector('[data-distrelec-post-register]');
+          var postRegisterMedia = frame.querySelector('[data-distrelec-post-register-media]');
+          var postRegisterTop = 0;
+          if (campaignTop) {
+            var campaignBottom = Math.max(
+              campaign ? campaignTop + campaign.offsetHeight : 0,
+              campaignMedia ? campaignTop + campaignMedia.offsetHeight : 0
+            );
+            postRegisterTop = campaignBottom + POST_REGISTER_GAP;
+            if (postRegister) postRegister.style.top = postRegisterTop + 'px';
+            if (postRegisterMedia) postRegisterMedia.style.top = postRegisterTop + 'px';
+          }
+
+          var signposting = frame.querySelector('[data-distrelec-signposting]');
+          var signpostingTop = 0;
+          if (postRegisterTop) {
+            var postRegisterBottom = Math.max(
+              postRegister ? postRegisterTop + postRegister.offsetHeight : 0,
+              postRegisterMedia ? postRegisterTop + postRegisterMedia.offsetHeight : 0
+            );
+            if (signposting) {
+              signpostingTop = postRegisterBottom + SIGNPOSTING_GAP;
+              signposting.style.top = signpostingTop + 'px';
+            }
+          }
+
+          var conclusion = frame.querySelector('[data-distrelec-conclusion]');
+          var conclusionMedia = frame.querySelector('[data-distrelec-conclusion-media]');
+          var conclusionTop = 0;
+          if (signpostingTop && signposting) {
+            conclusionTop = signpostingTop + signposting.offsetHeight + CONCLUSION_GAP;
+            if (conclusion) conclusion.style.top = conclusionTop + 'px';
+          }
+
+          var pageBottom = DEFAULT_FRAME_HEIGHT;
+          if (conclusionTop && conclusion) {
+            var conclusionMediaTop = conclusionTop + conclusion.offsetHeight + CONCLUSION_MEDIA_GAP;
+            if (conclusionMedia) conclusionMedia.style.top = conclusionMediaTop + 'px';
+            pageBottom = conclusionMediaTop + (conclusionMedia ? conclusionMedia.offsetHeight : 0);
+          } else if (signpostingTop && signposting) {
+            pageBottom = signpostingTop + signposting.offsetHeight;
+          }
+
+          return pageBottom;
+        }
+
         function resizeFigmaFrame() {
           var wrap = document.querySelector('.work-inner-wrap');
           var frame = document.querySelector('.work-inner-figma');
           if (!wrap || !frame) return;
           var baseW = 1440;
-          var baseH = 14659;
           var scale = Math.min(1, wrap.clientWidth / baseW);
+          if (scale <= 0) scale = 1;
           frame.style.transform = 'scale(' + scale + ')';
-          wrap.style.height = baseH * scale + 'px';
+
+          var frameHeight = layoutDistrelecLeadGap(frame, scale) || DEFAULT_FRAME_HEIGHT;
+          frame.style.height = frameHeight + 'px';
+          wrap.style.height = frameHeight * scale + 'px';
 
           var ctas = frame.querySelectorAll('.figma-site-cta');
           var inverse = scale > 0 ? 1 / scale : 1;
