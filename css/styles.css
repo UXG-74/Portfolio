@@ -2434,7 +2434,7 @@ body.home-combined.theme-dark .home-about-cta-actions a:hover {
     --logo-col2: 117;
     --logo-col3: 105;
     --logo-scale: calc(100vw / var(--figma-frame));
-    --logo-line: rgb(130 131 127 / 0.55);
+    --logo-line: rgb(130 131 127 / 0.72);
     --logo-grid-h: calc((var(--logo-row-h) * 2 + var(--logo-row-gap)) * var(--logo-scale));
     display: grid;
     grid-template-columns:
@@ -2455,31 +2455,18 @@ body.home-combined.theme-dark .home-about-cta-actions a:hover {
 
   /*
    * Eight segmented dividers per row (Figma x=0/117/234/339) — 8px gap between rows.
+   * inset box-shadow keeps lines inside the grid on iOS Safari (gradient ::before
+   * right-edge lines were clipped by overflow-x: hidden on .page).
    */
   .home-clients::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: calc(var(--logo-grid-w) * var(--logo-scale));
-    height: var(--logo-grid-h);
-    pointer-events: none;
-    z-index: 1;
-    --logo-row-h-scaled: calc(var(--logo-row-h) * var(--logo-scale));
-    --logo-row-gap-scaled: calc(var(--logo-row-gap) * var(--logo-scale));
-    --logo-row2-top: calc(var(--logo-row-h-scaled) + var(--logo-row-gap-scaled));
-    --logo-grid-w-scaled: calc(var(--logo-grid-w) * var(--logo-scale));
-    --logo-col1-scaled: calc(var(--logo-col1) * var(--logo-scale));
-    --logo-col2-scaled: calc((var(--logo-col1) + var(--logo-col2)) * var(--logo-scale));
-    background:
-      linear-gradient(var(--logo-line), var(--logo-line)) 0 0 / 1px var(--logo-row-h-scaled) no-repeat,
-      linear-gradient(var(--logo-line), var(--logo-line)) var(--logo-col1-scaled) 0 / 1px var(--logo-row-h-scaled) no-repeat,
-      linear-gradient(var(--logo-line), var(--logo-line)) var(--logo-col2-scaled) 0 / 1px var(--logo-row-h-scaled) no-repeat,
-      linear-gradient(var(--logo-line), var(--logo-line)) var(--logo-grid-w-scaled) 0 / 1px var(--logo-row-h-scaled) no-repeat,
-      linear-gradient(var(--logo-line), var(--logo-line)) 0 var(--logo-row2-top) / 1px var(--logo-row-h-scaled) no-repeat,
-      linear-gradient(var(--logo-line), var(--logo-line)) var(--logo-col1-scaled) var(--logo-row2-top) / 1px var(--logo-row-h-scaled) no-repeat,
-      linear-gradient(var(--logo-line), var(--logo-line)) var(--logo-col2-scaled) var(--logo-row2-top) / 1px var(--logo-row-h-scaled) no-repeat,
-      linear-gradient(var(--logo-line), var(--logo-line)) var(--logo-grid-w-scaled) var(--logo-row2-top) / 1px var(--logo-row-h-scaled) no-repeat;
+    display: none;
+  }
+
+  .home-clients {
+    box-sizing: border-box;
+    box-shadow:
+      inset 1px 0 0 var(--logo-line),
+      inset -1px 0 0 var(--logo-line);
   }
 
   .home-client-cell {
@@ -2492,6 +2479,12 @@ body.home-combined.theme-dark .home-about-cta-actions a:hover {
     padding: 0;
     min-width: 0;
     min-height: 0;
+    box-sizing: border-box;
+  }
+
+  .home-client-cell:nth-child(3n + 1),
+  .home-client-cell:nth-child(3n + 2) {
+    box-shadow: inset -1px 0 0 var(--logo-line);
   }
 
   .home-client-cell .home-client-divider,
