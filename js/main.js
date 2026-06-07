@@ -116,12 +116,19 @@
     if (!workHeading) return;
 
     var aboutHeading = document.getElementById("home-about-heading");
-    var SECTION_ANCHOR_TOP = 66;
+    var DESKTOP_SECTION_ANCHOR_TOP = 66;
+    var MOBILE_SECTION_ANCHOR_TOP = 55;
     var scrollAnimating = false;
     var scrollNavIntent = null;
 
+    function getSectionAnchorTop() {
+      return window.matchMedia("(max-width: 768px)").matches
+        ? MOBILE_SECTION_ANCHOR_TOP
+        : DESKTOP_SECTION_ANCHOR_TOP;
+    }
+
     function getSectionScrollTarget(heading) {
-      return getScrollY() + (heading.getBoundingClientRect().top - SECTION_ANCHOR_TOP);
+      return getScrollY() + (heading.getBoundingClientRect().top - getSectionAnchorTop());
     }
 
     function getWorkScrollTarget() {
@@ -133,7 +140,7 @@
     }
 
     function snapSectionToAnchor(heading) {
-      var delta = heading.getBoundingClientRect().top - SECTION_ANCHOR_TOP;
+      var delta = heading.getBoundingClientRect().top - getSectionAnchorTop();
       if (Math.abs(delta) > 0.25) setScrollY(getScrollY() - delta);
     }
 

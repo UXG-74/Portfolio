@@ -758,10 +758,17 @@ body.home-combined.theme-dark .home-about-footer a:hover {
   scroll-margin-top: var(--anchor-lead-offset);
 }
 
-/* Home WORK / ABOUT nav: heading lands 66px below viewport top (matches main.js) */
+/* Home WORK / ABOUT nav: heading anchor offset (matches main.js) */
 body.home-combined #work-index-heading,
 body.home-combined #home-about-heading {
   scroll-margin-top: 66px;
+}
+
+@media (max-width: 768px) {
+  body.home-combined #work-index-heading,
+  body.home-combined #home-about-heading {
+    scroll-margin-top: 55px;
+  }
 }
 
 .btn-ghost-pill {
