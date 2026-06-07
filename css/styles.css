@@ -3037,6 +3037,7 @@ body.case-figma-page .work-inner-figma .h3 {
   }
 
   body.case-figma-page .work-inner-mobile .mobile-kicker {
+    margin-bottom: 4px !important;
     font-size: 12px !important;
     font-weight: 500 !important;
     line-height: 1.3 !important;
