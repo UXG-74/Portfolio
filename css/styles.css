@@ -3032,8 +3032,11 @@ body.case-figma-page .work-inner-figma .h3 {
 
 /* Case-study mobile type — own scale (inline page <style> font shorthands were winning / cache made fixes invisible). */
 @media (max-width: 768px) {
+  body.case-figma-page .work-inner-mobile p {
+    margin-bottom: 24px !important;
+  }
+
   body.case-figma-page .work-inner-mobile .mobile-kicker {
-    margin-bottom: 8px !important;
     font-size: 12px !important;
     font-weight: 500 !important;
     line-height: 1.3 !important;
