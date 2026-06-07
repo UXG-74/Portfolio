@@ -175,8 +175,7 @@
       .work-inner-mobile > .mobile-services,
       .work-inner-mobile > .mobile-block,
       .work-inner-mobile > .mobile-image,
-      .work-inner-mobile > .mobile-stack,
-      .work-inner-mobile > .mobile-cta-band {
+      .work-inner-mobile > .mobile-stack {
         margin-bottom: 24px;
       }
       .work-inner-mobile > :last-child {
@@ -209,22 +208,6 @@
         margin-bottom: 32px;
       }
       .work-inner-mobile .mobile-body p:last-child { margin-bottom: 0; }
-      .work-inner-mobile .mobile-cta-band {
-        margin: 32px 0;
-        padding: 0;
-        background: transparent;
-      }
-      .work-inner-mobile .mobile-cta-lead {
-        margin: 0 0 10px;
-        color: #1e1e1e;
-        font: 500 16px/1.2 Inter, system-ui, sans-serif;
-      }
-      .work-inner-mobile .mobile-cta-copy {
-        color: #f2f2f2;
-        font: 500 16px/1.2 Inter, system-ui, sans-serif;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
       .work-inner-mobile .mobile-stack {
         display: grid;
         grid-template-columns: 1fr;
@@ -251,9 +234,6 @@
         color: #f3f3f3;
       }
       body.theme-dark .work-inner-mobile .mobile-services-kicker { color: #a5a5a5; }
-      body.theme-dark .work-inner-mobile .mobile-cta-band { background: transparent; }
-      body.theme-dark .work-inner-mobile .mobile-cta-lead { color: #f3f3f3; }
-      body.theme-dark .work-inner-mobile .mobile-cta-copy { color: #f3f3f3; }
       @media (max-width: 768px) {
         .work-inner-wrap { display: none; }
         .work-inner-mobile { display: block; }
@@ -274,6 +254,19 @@
         .work-inner-mobile .mobile-hero video,
         .work-inner-mobile .mobile-image img,
         .work-inner-mobile .mobile-image video {
+          object-position: center center;
+        }
+
+        .work-inner-mobile [data-kinetik-marketing-hero-mobile],
+        .work-inner-mobile [data-kinetik-community-mobile] {
+          height: auto;
+          aspect-ratio: 2800 / 1560;
+          background: #0b0f14;
+        }
+
+        .work-inner-mobile [data-kinetik-marketing-hero-mobile] img,
+        .work-inner-mobile [data-kinetik-community-mobile] img {
+          object-fit: contain;
           object-position: center center;
         }
 
@@ -397,11 +390,6 @@
         <p class="body24">The outcome is a coherent product story in layouts and handover: one voice (&quot;KINETIK&quot;), journeys from landing through daily ritual, and interaction patterns that respect hesitation in high-stakes analytics — without the experience reading like a campaign poster wrapped around an empty shell.</p>
       </div>
 
-      <div data-kinetik-cta-band class="kinetik-cta-band" style="position:absolute;left:0;top:3851px;width:1440px;box-sizing:border-box;padding:0 96px;display:flex;align-items:center;justify-content:space-between;gap:24px">
-        <p class="kinetik-cta-lead" style="margin:0;max-width:980px;color:#1e1e1e;font-size:38px;line-height:1.2;font-weight:500">Visit the Kinetik website here</p>
-        <a class="btn-contact btn-contact--email figma-site-cta" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer">See the site</a>
-      </div>
-
       <div data-kinetik-overview style="position:absolute;left:592px;top:4052px;width:735px;display:flex;flex-direction:column;gap:32px">
         <p class="label">OVERVIEW</p>
         <p class="h3" data-kinetik-overview-h>Design language that carries from story to telemetry.</p>
@@ -486,7 +474,7 @@
         <p class="h3">What this proves.</p>
         <div style="display:flex;flex-direction:column;gap:16px">
           <p class="body24">AI accelerates the messy middle — research synthesis, variants, KPI copy drafts, motion studies — but design still owns tone, friction, and truth. Kinetik is a case in disciplined iteration: fewer loud claims, more consistent signals, and a product world that earns return visits because it feels considered.</p>
-          <p class="body24">The live site and extended screens are the artifact — motion, campaign detail, and deeper narrative continue on the Kinetik website via See the site above.</p>
+          <p class="body24">The live site and extended screens are the artifact — motion, campaign detail, and deeper narrative continue on the Kinetik website.</p>
         </div>
       </div>
 
@@ -548,11 +536,6 @@
           <img src="/img/kinetik-hero.png" alt="" />
         </div>
 
-        <div class="mobile-cta-band">
-          <p class="mobile-cta-lead">Visit the Kinetik website here</p>
-          <a class="btn-contact btn-contact--email" href="https://geddevine.framer.website/works/prevayl" target="_blank" rel="noopener noreferrer">See the site</a>
-        </div>
-
         <div class="mobile-block" data-kinetik-overview-block>
           <p class="mobile-kicker">OVERVIEW</p>
           <p class="mobile-h">Design language that carries from story to telemetry.</p>
@@ -587,7 +570,7 @@
         </div>
 
         <div class="mobile-stack" data-kinetik-speed-media-mobile>
-          <div class="mobile-image"><img src="/img/kinetik-community.png" alt="Kinetik Community: leaderboard and See where you rank marketing screen." /></div>
+          <div class="mobile-image" data-kinetik-community-mobile><img src="/img/kinetik-community.png" alt="Kinetik Community: leaderboard and See where you rank marketing screen." /></div>
           <div class="mobile-image"><img src="/img/kinetik-outcomes.png" alt="Kinetik outcomes graphic summarizing research themes and prioritized UX decisions." /></div>
           <div class="mobile-image"><img src="/img/kinetik-analytic-wireframe.png" alt="Kinetik analytics wireframe with progress, workout, and goals annotations." /></div>
         </div>
@@ -661,7 +644,7 @@
           <p class="mobile-h">What this proves.</p>
           <div class="mobile-body">
             <p>AI accelerates the messy middle — research synthesis, variants, KPI copy drafts, motion studies — but design still owns tone, friction, and truth. Kinetik is a case in disciplined iteration: fewer loud claims, more consistent signals, and a product world that earns return visits because it feels considered.</p>
-            <p>The live site and extended screens are the artifact — motion, campaign detail, and deeper narrative continue on the Kinetik website via See the site above.</p>
+            <p>The live site and extended screens are the artifact — motion, campaign detail, and deeper narrative continue on the Kinetik website.</p>
           </div>
         </div>
 
@@ -733,7 +716,6 @@
           var constraint = frame.querySelector("[data-kinetik-constraint]");
           var gapBlock = frame.querySelector("[data-kinetik-gap-block]");
           var hero = frame.querySelector("[data-kinetik-marketing-hero]");
-          var band = frame.querySelector("[data-kinetik-cta-band]");
           var overview = frame.querySelector("[data-kinetik-overview]");
           var media = frame.querySelector("[data-kinetik-overview-media]");
           var headline = frame.querySelector("[data-kinetik-overview-h]");
@@ -759,11 +741,8 @@
           if (gapBlock && hero) {
             setTop(hero, topBelow(frame, s, gapBlock, GAP));
           }
-          if (hero && band) {
-            setTop(band, topBelow(frame, s, hero, GAP));
-          }
-          if (band && overview) {
-            setTop(overview, topBelow(frame, s, band, GAP));
+          if (hero && overview) {
+            setTop(overview, topBelow(frame, s, hero, GAP));
           }
           if (headline && media) {
             setTop(media, (headline.getBoundingClientRect().top - frameTop(frame)) / s);
