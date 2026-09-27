@@ -4390,6 +4390,7 @@ var LANDING = (function () {
   var store = { get: function (k) { try { return localStorage.getItem('ds.' + k); } catch (e) { return null; } }, set: function (k, v) { try { if (v == null) localStorage.removeItem('ds.' + k); else localStorage.setItem('ds.' + k, v); } catch (e) {} } };
   var prefs = { brand: store.get('brand') || 'reference', shape: store.get('shape') || T.defaultShape, theme: store.get('theme') || 'auto' };
   if (!T.brands[prefs.brand]) prefs.brand = 'reference';
+  if (window.MATTER_STUDIO) { prefs.brand = 'reference'; prefs.shape = T.defaultShape; }
   if (!T.shapes[prefs.shape]) prefs.shape = T.defaultShape;
   function applyPrefs() {
     root.setAttribute('data-brand', prefs.brand);
@@ -4441,9 +4442,9 @@ var LANDING = (function () {
     var shapeBtns = Object.keys(T.shapes).map(function (k) { return '<button type="button" data-shape="' + k + '" aria-pressed="' + (prefs.shape === k) + '">' + T.shapes[k].label + '</button>'; }).join('');
     var themeBtns = [['light', 'Light'], ['dark', 'Dark'], ['auto', 'Auto']].map(function (t) { return '<button type="button" data-theme-set="' + t[0] + '" aria-pressed="' + (prefs.theme === t[0]) + '">' + t[1] + '</button>'; }).join('');
     return '<div class="side__search">' + SI('search') + '<input id="navsearch" type="search" placeholder="Search" aria-label="Search the design system" autocomplete="off"></div>' +
-      '<div class="prefs" role="group" aria-label="Preview settings"><div class="prefs__row"><span class="prefs__label">Brand</span><div class="brandpick">' + brandBtns + '</div></div>' +
+      (window.MATTER_STUDIO ? '' : '<div class="prefs" role="group" aria-label="Preview settings"><div class="prefs__row"><span class="prefs__label">Brand</span><div class="brandpick">' + brandBtns + '</div></div>' +
       '<div class="prefs__row"><span class="prefs__label">Shape</span><div class="seg seg--sm">' + shapeBtns + '</div></div>' +
-      '<div class="prefs__row"><span class="prefs__label">Appearance</span><div class="seg seg--sm">' + themeBtns + '</div></div></div>' +
+      '<div class="prefs__row"><span class="prefs__label">Appearance</span><div class="seg seg--sm">' + themeBtns + '</div></div></div>') +
       '<nav class="nav" aria-label="Documentation">' +
       '<div class="nav__group"><div class="nav__title">Get started</div>' + link('home', 'Home') + link('overview', 'Introduction') + link('process', 'How it’s made') + '</div>' +
       '<div class="nav__group"><div class="nav__title">Foundations</div>' + FOUND.map(function (f) { return link(f[0], f[1]); }).join('') + '</div>' +
