@@ -3231,3 +3231,9 @@ body.case-figma-page .site-footer {
   }
 }
 
+
+/* Keep "Design system" on one line in the mobile menu on narrow phones */
+.nav-drawer > a {
+  white-space: nowrap;
+  font-size: min(2.5rem, calc(11.4vw - 7px));
+}
