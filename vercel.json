@@ -1,4 +1,18 @@
 {
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/:v(me|systems|foundations|atoms|molecules|organisms|lucille-london|distrelec|kinetik|footasylum|aldermore|telco|configurator)",
+      "destination": "/portfolio.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/portfolio",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(fonts|img|al|cs|ds|fa|kt|tc)/(.*)",
