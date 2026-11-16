@@ -2,7 +2,7 @@
   "cleanUrls": false,
   "rewrites": [
     {
-      "source": "/:v(me|systems|foundations|atoms|molecules|organisms|lucille-london|distrelec|kinetik|footasylum|aldermore|telco|configurator)",
+      "source": "/:v(me|systems|foundations|atoms|molecules|organisms|templates|lucille-london|distrelec|kinetik|footasylum|aldermore|telco|configurator)",
       "destination": "/portfolio.html"
     }
   ],
@@ -15,7 +15,7 @@
   ],
   "headers": [
     {
-      "source": "/(fonts|img|al|cs|ds|fa|kt|tc)/(.*)",
+      "source": "/(fonts|img|al|cs|ds|fa|kt|tc|sys)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
